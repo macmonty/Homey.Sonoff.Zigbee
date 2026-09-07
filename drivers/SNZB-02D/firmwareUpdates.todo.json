@@ -1,0 +1,29 @@
+{
+  "_note": "Bloque 'firmwareUpdates' retirado de app.json (driver SNZB-02D) porque el/los binario(s) (snzb-02d_v2.3.0.ota) referenciados no existen en el proyecto y rompian 'homey app validate' (el schema exige 'files' no vacio y homey valida que cada ruta exista). Cuando se disponga del .ota real: 1) colocarlo en drivers/SNZB-02D/assets/firmware/<nombre>.ota, 2) verificar/actualizar 'size' e 'integrity' (sha256) contra el fichero real, 3) volver a pegar el contenido de 'firmwareUpdates' de abajo dentro del objeto del driver SNZB-02D en app.json, 4) homey app validate.",
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware from SONOFF (latest official release).",
+          "sv": "Firmware från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "SNZB-02D"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 8960,
+            "imageType": 2053,
+            "manufacturerCode": 4742,
+            "size": 264118,
+            "name": "snzb-02d_v2.3.0.ota",
+            "integrity": "sha256:71f4bfbc9fb8d00914ed2623e66c4d10da5fc46d21caeb50be0b32ddf37143d2"
+          }
+        ]
+      }
+    ]
+  }
+}

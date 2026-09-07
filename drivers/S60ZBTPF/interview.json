@@ -1,0 +1,603 @@
+
+  "ids": {
+    "modelId": "S60ZBTPF",
+    "manufacturerName": "SONOFF"
+  },
+  "endpoints": {
+    "ieeeAddress": "a4:c1:38:08:52:f3:ff:ff",
+    "networkAddress": 49025,
+    "modelId": "S60ZBTPF",
+    "manufacturerName": "SONOFF",
+    "endpointDescriptors": [
+      {
+        "status": "SUCCESS",
+        "nwkAddrOfInterest": 49025,
+        "_reserved": 32,
+        "endpointId": 1,
+        "applicationProfileId": 260,
+        "applicationDeviceId": 81,
+        "applicationDeviceVersion": 0,
+        "_reserved1": 1,
+        "inputClusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820,
+          2821,
+          64599,
+          64529
+        ],
+        "outputClusters": [
+          10,
+          25
+        ]
+      },
+      {
+        "status": "SUCCESS",
+        "nwkAddrOfInterest": 49025,
+        "_reserved": 10,
+        "endpointId": 242,
+        "applicationProfileId": 41440,
+        "applicationDeviceId": 97,
+        "applicationDeviceVersion": 0,
+        "_reserved1": 0,
+        "inputClusters": [],
+        "outputClusters": [
+          33
+        ]
+      }
+    ],
+    "deviceType": "router",
+    "receiveWhenIdle": true,
+    "swBuildId": "1.0.2",
+    "capabilities": {
+      "alternatePANCoordinator": false,
+      "deviceType": true,
+      "powerSourceMains": true,
+      "receiveWhenIdle": true,
+      "security": false,
+      "allocateAddress": true
+    },
+    "extendedEndpointDescriptors": {
+      "1": {
+        "clusters": {
+          "basic": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 0,
+                "name": "zclVersion"
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 1,
+                "name": "appVersion"
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 2,
+                "name": "stackVersion"
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 3,
+                "name": "hwVersion"
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 4,
+                "name": "manufacturerName"
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 5,
+                "name": "modelId"
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 6,
+                "name": "dateCode"
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 7,
+                "name": "powerSource"
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 17,
+                "name": "physicalEnv"
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 16384,
+                "name": "swBuildId"
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "name": "clusterRevision"
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "identify": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 0,
+                "name": "identifyTime",
+                "value": 0
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "name": "clusterRevision",
+                "value": 2
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "groups": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 0,
+                "name": "nameSupport",
+                "value": {
+                  "type": "Buffer",
+                  "data": [
+                    0
+                  ]
+                },
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "name": "clusterRevision",
+                "value": 3
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "scenes": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 0,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 1,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 2,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 3,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 4,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "name": "clusterRevision",
+                "value": 3
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "onOff": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 0,
+                "name": "onOff",
+                "value": false,
+                "reportingConfiguration": {
+                  "direction": "reported",
+                  "attributeDataType": 16,
+                  "minInterval": 1,
+                  "maxInterval": 600,
+                  "status": "SUCCESS"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable",
+                  "reportable"
+                ],
+                "id": 16387,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "name": "clusterRevision",
+                "value": 2
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "metering": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 0,
+                "name": "currentSummationDelivered",
+                "value": 0,
+                "reportingConfiguration": {
+                  "direction": "reported",
+                  "attributeDataType": 37,
+                  "minInterval": 30,
+                  "maxInterval": 3600,
+                  "minChange": 50,
+                  "status": "SUCCESS"
+                }
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 512
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 768
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 769,
+                "name": "multiplier",
+                "value": 1
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 770,
+                "name": "divisor",
+                "value": 1000
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 771
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 774
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "name": "clusterRevision",
+                "value": 2
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "electricalMeasurement": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 0,
+                "name": "measurementType",
+                "value": {
+                  "type": "Buffer",
+                  "data": [
+                    1,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 1285,
+                "name": "rmsVoltage",
+                "value": 23816,
+                "reportingConfiguration": {
+                  "direction": "reported",
+                  "attributeDataType": 33,
+                  "minInterval": 60,
+                  "maxInterval": 300,
+                  "minChange": 500,
+                  "status": "SUCCESS"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 1288,
+                "name": "rmsCurrent",
+                "value": 0,
+                "reportingConfiguration": {
+                  "direction": "reported",
+                  "attributeDataType": 33,
+                  "minInterval": 10,
+                  "maxInterval": 300,
+                  "minChange": 100,
+                  "status": "SUCCESS"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 1291,
+                "name": "activePower",
+                "value": 0,
+                "reportingConfiguration": {
+                  "direction": "reported",
+                  "attributeDataType": 41,
+                  "minInterval": 10,
+                  "maxInterval": 300,
+                  "minChange": 10,
+                  "status": "SUCCESS"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 1536,
+                "name": "acVoltageMultiplier",
+                "value": 1,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 1537,
+                "name": "acVoltageDivisor",
+                "value": 100,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 1538,
+                "name": "acCurrentMultiplier",
+                "value": 1,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 1539,
+                "name": "acCurrentDivisor",
+                "value": 100,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 1540,
+                "name": "acPowerMultiplier",
+                "value": 1,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 1541,
+                "name": "acPowerDivisor",
+                "value": 1,
+                "reportingConfiguration": {
+                  "status": "NOT_FOUND",
+                  "direction": "reported"
+                }
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "name": "clusterRevision",
+                "value": 3
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "diagnostics": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 283
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 284
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 285
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "name": "clusterRevision",
+                "value": 3
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        },
+        "bindings": {
+          "time": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "name": "clusterRevision",
+                "value": 2
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "ota": {}
+        }
+      },
+      "242": {
+        "clusters": {},
+        "bindings": {}
+      }
+    }
+  }

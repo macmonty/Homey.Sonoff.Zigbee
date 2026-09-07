@@ -1,0 +1,29 @@
+{
+  "_note": "Bloque 'firmwareUpdates' retirado de app.json (driver ZBMINIL2) porque el/los binario(s) (zigbeeminil2_100E_stand_ota_file.ota) referenciados no existen en el proyecto y rompian 'homey app validate' (el schema exige 'files' no vacio y homey valida que cada ruta exista). Cuando se disponga del .ota real: 1) colocarlo en drivers/ZBMINIL2/assets/firmware/<nombre>.ota, 2) verificar/actualizar 'size' e 'integrity' (sha256) contra el fichero real, 3) volver a pegar el contenido de 'firmwareUpdates' de abajo dentro del objeto del driver ZBMINIL2 en app.json, 4) homey app validate.",
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware from SONOFF (latest official release).",
+          "sv": "Firmware från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "ZBMINIL2"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4110,
+            "imageType": 4,
+            "manufacturerCode": 4742,
+            "size": 259018,
+            "name": "zigbeeminil2_100E_stand_ota_file.ota",
+            "integrity": "sha256:1699d16906bd0b638459c66958aa68b2d54168fd3e3f832c9cf16352ef54f3aa"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_note": "Bloque 'firmwareUpdates' retirado de app.json (driver ZBM5-2C-split) porque el/los binario(s) (zbm5-120-zed_v1.0.4.ota, zbm5-120-zr_v1.0.6.ota) referenciados no existen en el proyecto y rompian 'homey app validate' (el schema exige 'files' no vacio y homey valida que cada ruta exista). Cuando se disponga del .ota real: 1) colocarlo en drivers/ZBM5-2C-split/assets/firmware/<nombre>.ota, 2) verificar/actualizar 'size' e 'integrity' (sha256) contra el fichero real, 3) volver a pegar el contenido de 'firmwareUpdates' de abajo dentro del objeto del driver ZBM5-2C-split en app.json, 4) homey app validate.",
+  "firmwareUpdates": {
+    "wakeInstruction": {
+      "en": "This is a mains-powered device — it should update automatically. Keep it powered during the update.",
+      "sv": "Detta är en nätansluten enhet — den uppdateras automatiskt. Låt den vara strömsatt under uppdateringen."
+    },
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware from SONOFF (latest official release).",
+          "sv": "Firmware från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "ZBM5-2C-120",
+            "ZBM5-2C-80/86"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4100,
+            "imageType": 9,
+            "manufacturerCode": 4742,
+            "size": 273908,
+            "name": "zbm5-120-zed_v1.0.4.ota",
+            "integrity": "sha256:3ac028728cec1ae6c1a654eb7629090d98484c9b4f3931b4c1ce52257c2eca09"
+          },
+          {
+            "fileVersion": 4102,
+            "imageType": 10,
+            "manufacturerCode": 4742,
+            "size": 295168,
+            "name": "zbm5-120-zr_v1.0.6.ota",
+            "integrity": "sha256:ac88f7addb1b30fe57df810313ab4ee6000a22bde0c5710f03496a03c9c7318c"
+          }
+        ]
+      }
+    ]
+  }
+}

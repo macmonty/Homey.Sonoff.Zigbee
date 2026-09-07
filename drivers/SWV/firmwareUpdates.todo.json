@@ -1,0 +1,33 @@
+{
+  "_note": "Bloque 'firmwareUpdates' retirado de app.json (driver SWV) porque el/los binario(s) (zbswv_v1.0.4.ota) referenciados no existen en el proyecto y rompian 'homey app validate' (el schema exige 'files' no vacio y homey valida que cada ruta exista). Cuando se disponga del .ota real: 1) colocarlo en drivers/SWV/assets/firmware/<nombre>.ota, 2) verificar/actualizar 'size' e 'integrity' (sha256) contra el fichero real, 3) volver a pegar el contenido de 'firmwareUpdates' de abajo dentro del objeto del driver SWV en app.json, 4) homey app validate.",
+  "firmwareUpdates": {
+    "wakeInstruction": {
+      "en": "Press the button on the valve once to wake it up so the update can start.",
+      "sv": "Tryck en gång på knappen på ventilen för att väcka den så att uppdateringen kan starta."
+    },
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware v1.0.4 — fixes the bug where the valve could shut itself off automatically after some time on v1.0.3.",
+          "sv": "Firmware v1.0.4 — åtgärdar felet där ventilen kunde stänga av sig själv automatiskt efter en stund på v1.0.3."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "SWV"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4100,
+            "imageType": 8202,
+            "manufacturerCode": 4742,
+            "size": 272354,
+            "name": "zbswv_v1.0.4.ota",
+            "integrity": "sha256:6b59bffc4823df4fabbddc6007daad947ae4689b1bc01197607362a56ba152bf"
+          }
+        ]
+      }
+    ]
+  }
+}

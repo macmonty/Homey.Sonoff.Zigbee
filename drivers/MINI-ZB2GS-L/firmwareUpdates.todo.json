@@ -1,0 +1,33 @@
+{
+  "_note": "Bloque 'firmwareUpdates' retirado de app.json (driver MINI-ZB2GS-L) porque el binario 'mini-zb2gs_v1.0.7.ota' referenciado no existe en el proyecto y rompía `homey app validate`. Cuando se disponga del .ota real: 1) colocarlo en drivers/MINI-ZB2GS-L/assets/firmware/mini-zb2gs_v1.0.7.ota, 2) verificar/actualizar 'size' e 'integrity' (sha256) contra el fichero real, 3) volver a pegar el contenido de 'firmwareUpdates' de abajo dentro del objeto del driver MINI-ZB2GS-L en app.json, 4) `homey app validate`.",
+  "firmwareUpdates": {
+    "wakeInstruction": {
+      "en": "This is a mains-powered device — it should update automatically. Keep it powered during the update.",
+      "sv": "Detta är en nätansluten enhet — den uppdateras automatiskt. Låt den vara strömsatt under uppdateringen."
+    },
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware v1.0.7 from SONOFF (shared MINI-ZB2GS firmware line; only applied if the device reports a matching image type).",
+          "sv": "Firmware v1.0.7 från SONOFF (delad MINI-ZB2GS-firmware; tillämpas bara om enheten rapporterar matchande image-typ)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "MINI-ZB2GS-L"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4103,
+            "imageType": 68,
+            "manufacturerCode": 4742,
+            "size": 297974,
+            "name": "mini-zb2gs_v1.0.7.ota",
+            "integrity": "sha256:a260ee9ad1e1c91bb6b89e01dfec4e4b9088de1a573b9b8e9b106b3d3cc0db91"
+          }
+        ]
+      }
+    ]
+  }
+}

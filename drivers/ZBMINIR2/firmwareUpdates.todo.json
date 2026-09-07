@@ -1,0 +1,29 @@
+{
+  "_note": "Bloque 'firmwareUpdates' retirado de app.json (driver ZBMINIR2) porque el/los binario(s) (zbminir2_v1.0.8.ota) referenciados no existen en el proyecto y rompian 'homey app validate' (el schema exige 'files' no vacio y homey valida que cada ruta exista). Cuando se disponga del .ota real: 1) colocarlo en drivers/ZBMINIR2/assets/firmware/<nombre>.ota, 2) verificar/actualizar 'size' e 'integrity' (sha256) contra el fichero real, 3) volver a pegar el contenido de 'firmwareUpdates' de abajo dentro del objeto del driver ZBMINIR2 en app.json, 4) homey app validate.",
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware from SONOFF (latest official release).",
+          "sv": "Firmware från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "ZBMINIR2"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4104,
+            "imageType": 8,
+            "manufacturerCode": 4742,
+            "size": 277180,
+            "name": "zbminir2_v1.0.8.ota",
+            "integrity": "sha256:2c8b13851a05ee1c17b28cbe37b7edce5280c437dca8da4894a17aae84501220"
+          }
+        ]
+      }
+    ]
+  }
+}

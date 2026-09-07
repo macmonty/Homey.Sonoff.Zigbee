@@ -1,0 +1,13 @@
+{
+  "ota": {
+    "up_to_date": "Up to date",
+    "new_firmware": "New firmware available",
+    "starting": "Starting update to",
+    "updating": "Updating to",
+    "resuming": "Resuming update to",
+    "complete": "Updated to"
+  },
+  "settings": {
+    "press_button": "Press the button on the device to confirm the new settings."
+  }
+}

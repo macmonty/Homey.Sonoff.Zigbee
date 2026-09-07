@@ -1,0 +1,13 @@
+{
+  "ota": {
+    "up_to_date": "Aktuell",
+    "new_firmware": "Neue Firmware verfügbar",
+    "starting": "Update starten auf",
+    "updating": "Aktualisiere auf",
+    "resuming": "Update fortsetzen auf",
+    "complete": "Aktualisiert auf"
+  },
+  "settings": {
+    "press_button": "Drücken Sie die Taste am Gerät, um die neuen Einstellungen zu bestätigen."
+  }
+}
