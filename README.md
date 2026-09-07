@@ -2,6 +2,8 @@
 
 Homey app adding support for SONOFF Zigbee devices.
 
+**Current version: 1.16.0**
+
 ## Changelog (fixes)
 
 - **v1.16.0** — Silenced harmless but noisy log errors from Sonoff scene buttons (e.g. SNZB-01M) using their remote-control feature (group/identify/on-off commands to other devices), which no driver handled. Removed a validation warning on S60ZBTPF caused by a redundant energy setting (it only measures import, not export).
