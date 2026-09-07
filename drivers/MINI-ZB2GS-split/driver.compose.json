@@ -1,0 +1,165 @@
+{
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/MINI-ZB2GS-split/assets/images/large.png",
+    "small": "/drivers/MINI-ZB2GS-split/assets/images/small.png"
+  },
+  "name": {
+    "en": "Switch DUO — separate channels",
+    "sv": "Strömbrytare DUO — separata kanaler",
+    "nl": "Schakelaar DUO — aparte kanalen",
+    "da": "Afbryder DUO — separate kanaler",
+    "de": "Schalter DUO — getrennte Kanäle",
+    "es": "Interruptor DUO — canales separados",
+    "fr": "Interrupteur DUO — canaux séparés",
+    "it": "Interruttore DUO — canali separati",
+    "no": "Bryter DUO — separate kanaler",
+    "pl": "Przełącznik DUO — osobne kanały",
+    "ru": "Выключатель DUO — раздельные каналы",
+    "ko": "스위치 DUO — 분리된 채널"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Channel 1",
+        "sv": "Kanal 1",
+        "nl": "Kanaal 1",
+        "da": "Kanal 1",
+        "de": "Kanal 1",
+        "es": "Canal 1",
+        "fr": "Canal 1",
+        "it": "Canale 1",
+        "no": "Kanal 1",
+        "pl": "Kanał 1",
+        "ru": "Канал 1",
+        "ko": "채널 1"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "MINI-ZB2GS"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          64529
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "devices": {
+      "channel2": {
+        "class": "socket",
+        "capabilities": [
+          "onoff"
+        ],
+        "capabilitiesOptions": {
+          "onoff": {
+            "title": {
+              "en": "Channel 2",
+              "sv": "Kanal 2",
+              "nl": "Kanaal 2",
+              "da": "Kanal 2",
+              "de": "Kanal 2",
+              "es": "Canal 2",
+              "fr": "Canal 2",
+              "it": "Canale 2",
+              "no": "Kanal 2",
+              "pl": "Kanał 2",
+              "ru": "Канал 2",
+              "ko": "채널 2"
+            }
+          }
+        },
+        "name": {
+          "en": "Switch DUO — Channel 2",
+          "sv": "Strömbrytare DUO — Kanal 2",
+          "nl": "Schakelaar DUO — Kanaal 2",
+          "da": "Afbryder DUO — Kanal 2",
+          "de": "Schalter DUO — Kanal 2",
+          "es": "Interruptor DUO — Canal 2",
+          "fr": "Interrupteur DUO — Canal 2",
+          "it": "Interruttore DUO — Canale 2",
+          "no": "Bryter DUO — Kanal 2",
+          "pl": "Przełącznik DUO — Kanał 2",
+          "ru": "Выключатель DUO — Канал 2",
+          "ko": "스위치 DUO — 채널 2"
+        }
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/MINI-ZB2GS-split/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button on the top for approx. 10 seconds until the LED blinks rapidly.",
+        "sv": "Tryck och håll in knappen på ovansidan i ca 10 sekunder tills LED-lampan blinkar snabbt.",
+        "nl": "Houd de knop aan de bovenkant ongeveer 10 seconden ingedrukt totdat de LED snel knippert.",
+        "da": "Tryk og hold knappen på toppen nede i ca. 10 sekunder, indtil LED'en blinker hurtigt.",
+        "de": "Halten Sie die Taste oben ca. 10 Sekunden lang gedrückt, bis die LED schnell blinkt.",
+        "es": "Mantenga pulsado el botón superior durante aproximadamente 10 segundos hasta que el LED parpadee rápidamente.",
+        "fr": "Maintenez le bouton du dessus enfoncé pendant environ 10 secondes jusqu'à ce que la LED clignote rapidement.",
+        "it": "Tenere premuto il pulsante sulla parte superiore per circa 10 secondi fino a quando il LED lampeggia rapidamente.",
+        "no": "Trykk og hold knappen på toppen i ca. 10 sekunder til LED-en blinker raskt.",
+        "pl": "Naciśnij i przytrzymaj przycisk na górze przez około 10 sekund, aż dioda LED zacznie szybko migać.",
+        "ru": "Нажмите и удерживайте кнопку сверху около 10 секунд, пока светодиод не начнет быстро мигать.",
+        "ko": "LED가 빠르게 깜박일 때까지 상단 버튼을 약 10초 동안 누르고 있으세요."
+      }
+    }
+  },
+  "firmwareUpdates": {
+    "wakeInstruction": {
+      "en": "This is a mains-powered device — it should update automatically. Keep it powered during the update.",
+      "sv": "Detta är en nätansluten enhet — den uppdateras automatiskt. Låt den vara strömsatt under uppdateringen."
+    },
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware v1.0.7 from SONOFF (latest official release).",
+          "sv": "Firmware v1.0.7 från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "MINI-ZB2GS"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4103,
+            "imageType": 68,
+            "manufacturerCode": 4742,
+            "size": 297974,
+            "name": "mini-zb2gs_v1.0.7.ota",
+            "integrity": "sha256:a260ee9ad1e1c91bb6b89e01dfec4e4b9088de1a573b9b8e9b106b3d3cc0db91"
+          }
+        ]
+      }
+    ]
+  }
+}

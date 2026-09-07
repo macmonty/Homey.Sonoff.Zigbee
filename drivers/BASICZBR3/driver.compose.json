@@ -1,0 +1,68 @@
+{
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/BASICZBR3/assets/images/large.png",
+    "small": "/drivers/BASICZBR3/assets/images/small.png"
+  },
+  "name": {
+    "en": "Switch BASICZBR3",
+    "sv": "Strömbrytare BASICZBR3",
+    "nl": "Schakelaar BASICZBR3",
+    "da": "Afbryder BASICZBR3",
+    "de": "Schalter BASICZBR3",
+    "es": "Interruptor BASICZBR3",
+    "fr": "Interrupteur BASICZBR3",
+    "it": "Interruttore BASICZBR3",
+    "no": "Bryter BASICZBR3",
+    "pl": "Przełącznik BASICZBR3",
+    "ru": "Выключатель BASICZBR3",
+    "ko": "스위치 BASICZBR3"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "BASICZBR3"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/BASICZBR3/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button on the device until the LED blinks rapidly.",
+        "sv": "Tryck och håll in parningsknappen på enheten tills LED-lampan blinkar snabbt.",
+        "nl": "Houd de koppelknop op het apparaat ingedrukt totdat de LED snel knippert.",
+        "da": "Tryk og hold parringsknappen på enheden nede, indtil LED'en blinker hurtigt.",
+        "de": "Halten Sie die Pairing-Taste am Gerät gedrückt, bis die LED schnell blinkt.",
+        "es": "Mantenga pulsado el botón de emparejamiento del dispositivo hasta que el LED parpadee rápidamente.",
+        "fr": "Maintenez enfoncé le bouton d'appairage de l'appareil jusqu'à ce que la LED clignote rapidement.",
+        "it": "Tenere premuto il pulsante di abbinamento sul dispositivo fino a quando il LED lampeggia rapidamente.",
+        "no": "Trykk og hold paringsknappen på enheten til LED-en blinker raskt.",
+        "pl": "Naciśnij i przytrzymaj przycisk parowania na urządzeniu, aż dioda LED zacznie szybko migać.",
+        "ru": "Нажмите и удерживайте кнопку сопряжения на устройстве, пока светодиод не начнет быстро мигать.",
+        "ko": "LED가 빠르게 깜박일 때까지 장치의 페어링 버튼을 누르고 있으세요."
+      }
+    }
+  }
+}

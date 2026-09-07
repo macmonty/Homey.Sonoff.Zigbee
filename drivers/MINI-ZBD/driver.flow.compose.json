@@ -1,0 +1,36 @@
+{
+  "triggers": [
+    {
+      "id": "MINI-ZBD:click",
+      "title": {
+        "en": "Toggle switch",
+        "da": "Vippekontakt",
+        "de": "Kippschalter",
+        "es": "Interruptor de palanca",
+        "fr": "Interrupteur à bascule",
+        "it": "Interruttore a levetta",
+        "ko": "토글 스위치",
+        "nl": "Tuimelschakelaar",
+        "no": "Vippebryter",
+        "pl": "Przełącznik",
+        "ru": "Тумблер",
+        "sv": "Växla strömbrytare"
+      },
+      "titleFormatted": {
+        "en": "Toggle switch",
+        "da": "Vippekontakt",
+        "de": "Kippschalter",
+        "es": "Interruptor de palanca",
+        "fr": "Interrupteur à bascule",
+        "it": "Interruttore a levetta",
+        "ko": "토글 스위치",
+        "nl": "Tuimelschakelaar",
+        "no": "Vippebryter",
+        "pl": "Przełącznik",
+        "ru": "Тумблер",
+        "sv": "Växla strömbrytare"
+      },
+      "args": []
+    }
+  ]
+}

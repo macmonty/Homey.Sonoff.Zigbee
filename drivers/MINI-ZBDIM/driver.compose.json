@@ -1,13 +1,25 @@
 {
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/MINI-ZBDIM/assets/images/large.png",
+    "small": "/drivers/MINI-ZBDIM/assets/images/small.png"
+  },
   "name": {
     "en": "MINI-ZBDIM Dimmer",
-    "es": "Atenuador MINI-ZBDIM",
+    "sv": "MINI-ZBDIM Dimmer",
     "nl": "MINI-ZBDIM Dimmer",
+    "da": "MINI-ZBDIM Dæmper",
     "de": "MINI-ZBDIM Dimmer",
+    "es": "Atenuador MINI-ZBDIM",
     "fr": "Variateur MINI-ZBDIM",
     "it": "Dimmer MINI-ZBDIM",
     "no": "MINI-ZBDIM Dimmer",
-    "sv": "MINI-ZBDIM Dimmer",
     "pl": "Ściemniacz MINI-ZBDIM",
     "ru": "Диммер MINI-ZBDIM",
     "ko": "MINI-ZBDIM 디머"
@@ -18,24 +30,477 @@
     "dim",
     "measure_power",
     "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "start_calibration"
   ],
   "zigbee": {
-    "manufacturerName": ["SONOFF"],
-    "productId": ["MINI-ZBDIM"],
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "MINI-ZBDIM"
+    ],
     "endpoints": {
       "1": {
-        "clusters": [0, 3, 4, 5, 6, 8, 2820, 2821, 64599, 64529],
-        "bindings": [6, 8, 2820]
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          2820,
+          2821,
+          64599,
+          64529
+        ],
+        "bindings": [
+          6,
+          8,
+          2820
+        ]
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/MINI-ZBDIM/assets/learn.svg",
       "instruction": {
         "en": "Press the button on the device for 5 seconds until the LED blinks rapidly to enter pairing mode.",
         "es": "Mantén pulsado el botón del dispositivo durante 5 segundos hasta que el LED parpadee rápidamente para entrar en modo de emparejamiento."
       }
     }
   },
-  "$extends": ["defaults"]
+  "settings": [
+    {
+      "id": "switch_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "External switch mode",
+        "es": "Modo de interruptor externo"
+      },
+      "hint": {
+        "en": "Type of physical switch wired to the device.",
+        "es": "Tipo de interruptor físico conectado al dispositivo."
+      },
+      "value": "0",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Edge (rocker)",
+            "es": "Borde (basculante)"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Pulse (momentary)",
+            "es": "Pulso (momentáneo)"
+          }
+        },
+        {
+          "id": "3",
+          "label": {
+            "en": "Double pulse",
+            "es": "Doble pulsación"
+          }
+        },
+        {
+          "id": "4",
+          "label": {
+            "en": "Triple pulse",
+            "es": "Triple pulsación"
+          }
+        }
+      ]
+    },
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-on behavior",
+        "da": "Adfærd ved opstart",
+        "de": "Verhalten beim Einschalten",
+        "es": "Comportamiento de encendido",
+        "fr": "Comportement de mise sous tension",
+        "it": "Comportamento all'accensione",
+        "ko": "전원 켜기 동작",
+        "nl": "Gedrag bij inschakelen",
+        "no": "Oppstartsatferd",
+        "pl": "Zachowanie podczas włączania",
+        "ru": "Поведение при включении питания",
+        "sv": "Beteende vid start"
+      },
+      "value": "last_state",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "da": "Slukket",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "ko": "끄기",
+            "nl": "Uit",
+            "no": "Av",
+            "pl": "Wyłączony",
+            "ru": "Выключено",
+            "sv": "Av"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "da": "Tændt",
+            "de": "Ein",
+            "es": "Encendido",
+            "fr": "Allumé",
+            "it": "Acceso",
+            "ko": "켜기",
+            "nl": "Aan",
+            "no": "På",
+            "pl": "Włączony",
+            "ru": "Включено",
+            "sv": "På"
+          }
+        },
+        {
+          "id": "toggle",
+          "label": {
+            "en": "Toggle",
+            "da": "Skift",
+            "de": "Umschalten",
+            "es": "Alternar",
+            "fr": "Basculer",
+            "it": "Alterna",
+            "ko": "토글",
+            "nl": "Wisselen",
+            "no": "Veksle",
+            "pl": "Przełącz",
+            "ru": "Переключить",
+            "sv": "Växla"
+          }
+        },
+        {
+          "id": "last_state",
+          "label": {
+            "en": "Last state",
+            "da": "Sidste tilstand",
+            "de": "Letzter Zustand",
+            "es": "Último estado",
+            "fr": "Dernier état",
+            "it": "Ultimo stato",
+            "ko": "마지막 상태",
+            "nl": "Laatste staat",
+            "no": "Siste tilstand",
+            "pl": "Ostatni stan",
+            "ru": "Последнее состояние",
+            "sv": "Senaste tillstånd"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Dimmer settings",
+        "es": "Ajustes del atenuador"
+      },
+      "children": [
+        {
+          "id": "min_brightness_threshold",
+          "type": "number",
+          "label": {
+            "en": "Minimum brightness (%)",
+            "es": "Brillo mínimo (%)"
+          },
+          "hint": {
+            "en": "Lowest brightness level, mapped to 1% on the slider.",
+            "es": "Nivel de brillo más bajo, equivalente al 1% en el deslizador."
+          },
+          "value": 1,
+          "min": 1,
+          "max": 99,
+          "step": 1
+        },
+        {
+          "id": "max_brightness_threshold",
+          "type": "number",
+          "label": {
+            "en": "Maximum brightness (%)",
+            "es": "Brillo máximo (%)"
+          },
+          "hint": {
+            "en": "Highest brightness level, mapped to 100% on the slider.",
+            "es": "Nivel de brillo más alto, equivalente al 100% en el deslizador."
+          },
+          "value": 100,
+          "min": 2,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "dimming_light_rate",
+          "type": "dropdown",
+          "label": {
+            "en": "Dimming speed (physical switch)",
+            "es": "Velocidad de atenuación (interruptor físico)"
+          },
+          "hint": {
+            "en": "Speed of brightness change when using the physical switch.",
+            "es": "Velocidad de cambio de brillo al usar el interruptor de pared."
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "1x (slowest)",
+                "es": "1x (más lento)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "2x",
+                "es": "2x"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "3x (normal)",
+                "es": "3x (normal)"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "4x",
+                "es": "4x"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "5x (fastest)",
+                "es": "5x (más rápido)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "App transition time (s)",
+            "es": "Tiempo de transición desde la app (s)"
+          },
+          "hint": {
+            "en": "Duration of brightness transitions triggered from the app.",
+            "es": "Duración de las transiciones de brillo al cambiarlo desde la app."
+          },
+          "value": 0,
+          "min": 0,
+          "max": 5,
+          "step": 0.1
+        }
+      ]
+    },
+    {
+      "id": "calibration_info",
+      "type": "label",
+      "label": {
+        "en": "Calibration status",
+        "es": "Estado de calibración"
+      },
+      "hint": {
+        "en": "Read-only. Updated automatically after starting calibration from the device Maintenance menu.",
+        "es": "Solo lectura. Se actualiza automáticamente tras iniciar la calibración desde el menú de Mantenimiento del dispositivo."
+      },
+      "value": "unknown"
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Delayed power-on",
+        "es": "Encendido retardado"
+      },
+      "children": [
+        {
+          "id": "delayed_power_on_state",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable",
+            "es": "Activar"
+          },
+          "hint": {
+            "en": "Turn the device on automatically after the delay below, once powered.",
+            "es": "Enciende el dispositivo automáticamente tras el retardo indicado, al recibir alimentación."
+          },
+          "value": false
+        },
+        {
+          "id": "delayed_power_on_time",
+          "type": "number",
+          "label": {
+            "en": "Delay (seconds)",
+            "es": "Retardo (segundos)"
+          },
+          "hint": {
+            "en": "Time to wait before the delayed power-on action (0.5 - 3599.5 seconds).",
+            "es": "Tiempo de espera antes del encendido retardado (0.5 - 3599.5 segundos)."
+          },
+          "value": 0.5,
+          "min": 0.5,
+          "max": 3599.5,
+          "step": 0.5
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Inching",
+        "sv": "Inching",
+        "nl": "Inching",
+        "da": "Inching",
+        "de": "Inching",
+        "es": "Inching",
+        "fr": "Inching",
+        "it": "Inching",
+        "no": "Inching",
+        "pl": "Inching",
+        "ru": "Инчинг",
+        "ko": "인칭"
+      },
+      "children": [
+        {
+          "id": "inching_control",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable",
+            "sv": "Aktivera",
+            "nl": "Inschakelen",
+            "da": "Aktiver",
+            "de": "Aktivieren",
+            "es": "Activar",
+            "fr": "Activer",
+            "it": "Attiva",
+            "no": "Aktiver",
+            "pl": "Włącz",
+            "ru": "Включить",
+            "ko": "활성화"
+          },
+          "hint": {
+            "en": "Automatically turn off/on after a specified time",
+            "sv": "Stäng av/på automatiskt efter angiven tid"
+          },
+          "value": false
+        },
+        {
+          "id": "inching_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Action",
+            "sv": "Åtgärd",
+            "nl": "Actie",
+            "da": "Handling",
+            "de": "Aktion",
+            "es": "Acción",
+            "fr": "Action",
+            "it": "Azione",
+            "no": "Handling",
+            "pl": "Akcja",
+            "ru": "Действие",
+            "ko": "동작"
+          },
+          "hint": {
+            "en": "Turn off after turning on, or turn on after turning off",
+            "sv": "Stäng av efter att ha slagit på, eller slå på efter att ha stängt av"
+          },
+          "value": "off",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Turn off after on",
+                "sv": "Stäng av efter på",
+                "nl": "Uitschakelen na aan",
+                "da": "Sluk efter tændt",
+                "de": "Ausschalten nach Ein",
+                "es": "Apagar después de encender",
+                "fr": "Éteindre après allumage",
+                "it": "Spegni dopo accensione",
+                "no": "Slå av etter på",
+                "pl": "Wyłącz po włączeniu",
+                "ru": "Выключить после включения",
+                "ko": "켠 후 끄기"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Turn on after off",
+                "sv": "Slå på efter av",
+                "nl": "Inschakelen na uit",
+                "da": "Tænd efter slukket",
+                "de": "Einschalten nach Aus",
+                "es": "Encender después de apagar",
+                "fr": "Allumer après extinction",
+                "it": "Accendi dopo spegnimento",
+                "no": "Slå på etter av",
+                "pl": "Włącz po wyłączeniu",
+                "ru": "Включить после выключения",
+                "ko": "끈 후 켜기"
+              }
+            }
+          ]
+        },
+        {
+          "id": "inching_time",
+          "type": "number",
+          "label": {
+            "en": "Time (seconds)",
+            "sv": "Tid (sekunder)",
+            "nl": "Tijd (seconden)",
+            "da": "Tid (sekunder)",
+            "de": "Zeit (Sekunden)",
+            "es": "Tiempo (segundos)",
+            "fr": "Temps (secondes)",
+            "it": "Tempo (secondi)",
+            "no": "Tid (sekunder)",
+            "pl": "Czas (sekundy)",
+            "ru": "Время (секунды)",
+            "ko": "시간 (초)"
+          },
+          "hint": {
+            "en": "Time before automatic action (0.5 - 3599.5 seconds)",
+            "sv": "Tid före automatisk åtgärd (0.5 - 3599.5 sekunder)"
+          },
+          "value": 0.5,
+          "attr": {
+            "min": 0.5,
+            "max": 3599.5,
+            "step": 0.5
+          }
+        }
+      ]
+    }
+  ],
+  "capabilitiesOptions": {
+    "start_calibration": {
+      "maintenanceAction": true,
+      "title": {
+        "en": "Start calibration",
+        "es": "Iniciar calibración"
+      },
+      "desc": {
+        "en": "Calibrates the dimmer to the connected bulb's dimming range for smoother, more consistent brightness control. Takes about 2 minutes; the device is unavailable during calibration.",
+        "es": "Calibra el atenuador al rango de la bombilla conectada para un control de brillo más suave y consistente. Tarda unos 2 minutos; el dispositivo no estará disponible durante la calibración."
+      }
+    }
+  }
 }

@@ -1,1 +1,13 @@
-{}
+{
+  "ota": {
+    "up_to_date": "À jour",
+    "new_firmware": "Nouveau firmware disponible",
+    "starting": "Démarrage mise à jour vers",
+    "updating": "Mise à jour vers",
+    "resuming": "Reprise de la mise à jour vers",
+    "complete": "Mis à jour vers"
+  },
+  "settings": {
+    "press_button": "Appuyez sur le bouton de l'appareil pour confirmer les nouveaux réglages."
+  }
+}

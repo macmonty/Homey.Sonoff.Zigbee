@@ -1,5 +1,15 @@
 {
-  "id": "SonoffSNZB03",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/SNZB-03/assets/images/large.png",
+    "small": "/drivers/SNZB-03/assets/images/small.png"
+  },
   "name": {
     "en": "Motion Sensor SNZB-03",
     "sv": "Rörelsesensor SNZB-03",
@@ -41,7 +51,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/SNZB-03/assets/learn.svg",
       "instruction": {
         "en": "Press reset on bottom with a pin for aprox 10 seconds until the red LED blinks rapidly.",
         "nl": "Druk op reset aan de onderkant met een speld voor ongeveer 10 seconden totdat de rode LED snel knippert.",
@@ -57,8 +67,5 @@
         "sv": "Tryck på återställningsknappen på botten med en nål i cirka 10 sekunder tills den röda lysdioden blinkar snabbt."
       }
     }
-  },
-  "$extends": [
-    "defaults"
-  ]
+  }
 }

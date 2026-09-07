@@ -1,0 +1,31 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Energy today",
+    "sv": "Energi idag",
+    "nl": "Energie vandaag",
+    "da": "Energi i dag",
+    "de": "Energie heute",
+    "es": "Energía hoy",
+    "fr": "Énergie aujourd'hui",
+    "it": "Energia oggi",
+    "no": "Energi i dag",
+    "pl": "Energia dzisiaj",
+    "ru": "Энергия сегодня",
+    "ko": "오늘 에너지"
+  },
+  "units": {
+    "en": "kWh"
+  },
+  "insights": true,
+  "desc": {
+    "en": "Energy consumed today",
+    "sv": "Energi förbrukad idag"
+  },
+  "chartType": "spline",
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/energy.svg"
+}

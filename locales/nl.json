@@ -1,1 +1,13 @@
-{}
+{
+  "ota": {
+    "up_to_date": "Up-to-date",
+    "new_firmware": "Nieuwe firmware beschikbaar",
+    "starting": "Update starten naar",
+    "updating": "Bijwerken naar",
+    "resuming": "Update hervatten naar",
+    "complete": "Bijgewerkt naar"
+  },
+  "settings": {
+    "press_button": "Druk op de knop op het apparaat om de nieuwe instellingen te bevestigen."
+  }
+}

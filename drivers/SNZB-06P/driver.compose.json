@@ -1,5 +1,15 @@
 {
-  "id": "SonoffSNZB06P",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/SNZB-06P/assets/images/large.png",
+    "small": "/drivers/SNZB-06P/assets/images/small.png"
+  },
   "name": {
     "en": "Presence Sensor SNZB-06P",
     "sv": "Närvarosensor SNZB-06P",
@@ -16,8 +26,7 @@
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_motion",
-    "alarm_contact",
+    "alarm_presence",
     "sonoff_illuminance"
   ],
   "zigbee": {
@@ -40,7 +49,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/SNZB-06P/assets/learn.svg",
       "instruction": {
         "en": "Press reset on top for aprox 10 seconds until the red LED blinks.",
         "nl": "Houd de resetknop bovenop ongeveer 10 seconden ingedrukt totdat de rode LED knippert.",
@@ -57,7 +66,146 @@
       }
     }
   },
-  "$extends": [
-    "defaults"
-  ]
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Occupied",
+        "nl": "Bezette",
+        "da": "Optaget",
+        "de": "Besetzt",
+        "es": "Ocupado",
+        "fr": "Occupé",
+        "it": "Occupato",
+        "no": "Opptatt",
+        "sv": "Upptagen",
+        "pl": "Zajęty",
+        "ru": "Занятый",
+        "ko": "점유"
+      },
+      "children": [
+        {
+          "id": "occupied_to_unoccupied_delay",
+          "type": "number",
+          "label": {
+            "en": "Delay",
+            "nl": "Vertraging",
+            "da": "Forsinkelse",
+            "de": "Verzögerung",
+            "es": "Retraso",
+            "fr": "Délai",
+            "it": "Ritardo",
+            "no": "Forsinkelse",
+            "sv": "Fördröjning",
+            "pl": "Opóźnienie",
+            "ru": "Задержка",
+            "ko": "지연"
+          },
+          "value": 60,
+          "attr": {
+            "min": 15,
+            "max": 65535,
+            "step": 1
+          }
+        },
+        {
+          "id": "occupied_threshold",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity",
+            "nl": "Gevoeligheid",
+            "da": "Følsomhed",
+            "de": "Empfindlichkeit",
+            "es": "Sensibilidad",
+            "fr": "Sensibilité",
+            "it": "Sensibilità",
+            "no": "Følsomhet",
+            "sv": "Känslighet",
+            "pl": "Czułość",
+            "ru": "Чувствительность",
+            "ko": "민감도"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "Low",
+                "nl": "Laag",
+                "da": "Lav",
+                "de": "Niedrig",
+                "es": "Bajo",
+                "fr": "Bas",
+                "it": "Basso",
+                "no": "Lav",
+                "sv": "Låg",
+                "pl": "Niski",
+                "ru": "Низкий",
+                "ko": "낮은"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Medium",
+                "nl": "Middel",
+                "da": "Mellem",
+                "de": "Mittel",
+                "es": "Medio",
+                "fr": "Moyen",
+                "it": "Medio",
+                "no": "Middels",
+                "sv": "Medium",
+                "pl": "Średni",
+                "ru": "Средний",
+                "ko": "중간"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Hight",
+                "nl": "Hoog",
+                "da": "Høj",
+                "de": "Hoch",
+                "es": "Alto",
+                "fr": "Haut",
+                "it": "Alto",
+                "no": "Høy",
+                "sv": "Hög",
+                "pl": "Wysoki",
+                "ru": "Высокий",
+                "ko": "높은"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware from SONOFF (latest official release).",
+          "sv": "Firmware från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "SNZB-06P"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4101,
+            "imageType": 2060,
+            "manufacturerCode": 4742,
+            "size": 258206,
+            "name": "snzb-06p_v1.0.5.ota",
+            "integrity": "sha256:ea70687072e8c9230bf40d5571b23eff9fb7f2b43c7ce33abf0197d6fbd8ac35"
+          }
+        ]
+      }
+    ]
+  }
 }

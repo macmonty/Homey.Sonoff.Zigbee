@@ -1,5 +1,15 @@
 {
-  "id": "SonoffSNZB01P",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/SNZB-01P/assets/images/large.png",
+    "small": "/drivers/SNZB-01P/assets/images/small.png"
+  },
   "name": {
     "en": "Button SNZB-01P",
     "sv": "Knapp SNZB-01P",
@@ -43,7 +53,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/SNZB-01P/assets/learn.svg",
       "instruction": {
         "en": "Press button on side for aprox 10 seconds until the red LED blinks rapidly.",
         "nl": "Druk op de knop aan de zijkant voor ongeveer 10 seconden totdat de rode LED snel begint te knipperen.",
@@ -59,8 +69,5 @@
         "sv": "Tryck på knappen på sidan i ungefär 10 sekunder tills den röda LED-lampan blinkar snabbt."
       }
     }
-  },
-  "$extends": [
-    "defaults"
-  ]
+  }
 }

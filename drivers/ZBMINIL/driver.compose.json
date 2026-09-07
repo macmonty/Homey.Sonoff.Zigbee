@@ -1,13 +1,47 @@
 {
-  "id": "SonoffZBMINIL",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/ZBMINIL/assets/images/large.png",
+    "small": "/drivers/ZBMINIL/assets/images/small.png"
+  },
   "name": {
-    "en": "ZBMINI-L Switch",
-    "sv": "ZBMINI-L Strömbrytare"
+    "en": "Switch ZBMINI-L",
+    "sv": "Strömbrytare ZBMINI-L",
+    "da": "Skift ZBMINI-L",
+    "de": "Schalter ZBMINI-L",
+    "es": "Interruptor ZBMINI-L",
+    "fr": "Switch ZBMINI-L",
+    "it": "Interruttore ZBMINI-L",
+    "ko": "ZBMINI-L 스위치",
+    "nl": "Schakelaar ZBMINI-L",
+    "no": "Bryter ZBMINI-L",
+    "pl": "Przełącznik ZBMINI-L",
+    "ru": "Выключатель ZBMINI-L"
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "migrate_to_socket"
   ],
+  "capabilitiesOptions": {
+    "migrate_to_socket": {
+      "maintenanceAction": true,
+      "title": {
+        "en": "Switch device type to socket",
+        "sv": "Byt enhetstyp till strömuttag"
+      },
+      "desc": {
+        "en": "Tap to switch this device from 'light' to 'socket' type. Then you can use 'What's plugged in?' under device settings to choose what's actually connected. Warning: existing flow cards targeting this device as a light may stop working.",
+        "sv": "Tryck för att byta enhetens typ från 'lampa' till 'strömuttag'. Sedan kan du välja 'Vad är inkopplat?' under inställningar. Varning: befintliga flödeskort som styr enheten som lampa kan sluta fungera."
+      }
+    }
+  },
   "zigbee": {
     "manufacturerName": [
       "SONOFF"
@@ -23,16 +57,99 @@
           6,
           7
         ],
-        "bindings": [
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/ZBMINIL/assets/learn.svg",
       "instruction": {
-        "en": "Press the button on the top for aprox. 10 seconds until the green LED blinks rapidly."
+        "en": "Press the button on the top for aprox. 10 seconds until the green LED blinks rapidly.",
+        "da": "Tryk på knappen øverst i ca. 10 sekunder, indtil den grønne LED blinker hurtigt.",
+        "de": "Drücken Sie den Knopf auf der Oberseite für ca. 10 Sekunden, bis die grüne LED schnell blinkt.",
+        "es": "Presione el botón en la parte superior durante aprox. 10 segundos hasta que el LED verde parpadee rápidamente.",
+        "fr": "Appuyez sur le bouton en haut pour plus d’informations. 10 secondes jusqu’à ce que la LED verte clignote rapidement.",
+        "it": "Premere il pulsante in alto per ca. 10 secondi fino a quando il LED verde lampeggia rapidamente.",
+        "ko": "위쪽에 있는 버튼을 눌러 약식을 확인합니다. 녹색 LED가 빠르게 깜박일 때까지 10초 동안 기다립니다.",
+        "nl": "Druk op de knop aan de bovenkant voor ongeveer. 10 seconden totdat de groene LED snel knippert.",
+        "no": "Trykk på knappen på toppen i ca. 10 sekunder til den grønne LED-lampen blinker raskt.",
+        "pl": "Naciśnij przycisk na górze, aby uzyskać ok. 10 sekund, aż zielona dioda LED zacznie szybko migać.",
+        "ru": "Нажмите кнопку вверху для приблизости. 10 секунд, пока зеленый светодиод не начнет быстро мигать.",
+        "sv": "Tryck på knappen på ovansidan för ca. 10 sekunder tills den gröna lysdioden blinkar snabbt."
       }
     }
   },
-  "$extends": ["defaults"]
+  "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-on behavior",
+        "da": "Adfærd ved opstart",
+        "de": "Verhalten beim Einschalten",
+        "es": "Comportamiento de encendido",
+        "fr": "Comportement de mise sous tension",
+        "it": "Comportamento all'accensione",
+        "ko": "전원 켜기 동작",
+        "nl": "Gedrag bij inschakelen",
+        "no": "Oppstartsatferd",
+        "pl": "Zachowanie podczas włączania",
+        "ru": "Поведение при включении питания",
+        "sv": "Beteende vid start"
+      },
+      "value": "off",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "da": "Af",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "De",
+            "it": "Spento",
+            "ko": "끄기",
+            "nl": "Af",
+            "no": "Av",
+            "pl": "Od",
+            "ru": "От",
+            "sv": "Bort"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "da": "På",
+            "de": "Auf",
+            "es": "En",
+            "fr": "Sur",
+            "it": "Su",
+            "ko": "에",
+            "nl": "Op",
+            "no": "På",
+            "pl": "Na",
+            "ru": "На",
+            "sv": "På"
+          }
+        },
+        {
+          "id": "last_state",
+          "label": {
+            "en": "Last state",
+            "da": "Sidste tilstand",
+            "de": "Letzter Zustand",
+            "es": "Último estado",
+            "fr": "Dernier état",
+            "it": "Ultimo stato",
+            "ko": "마지막 상태",
+            "nl": "Laatste staat",
+            "no": "Siste tilstand",
+            "pl": "Ostatni stan",
+            "ru": "Последнее состояние",
+            "sv": "Sista tillstånd"
+          }
+        }
+      ]
+    }
+  ]
 }

@@ -1,0 +1,142 @@
+{
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/MINI-ZBRBS/assets/images/large.png",
+    "small": "/drivers/MINI-ZBRBS/assets/images/small.png"
+  },
+  "name": {
+    "en": "Roller shutter MINI-ZBRBS",
+    "sv": "Rulljalusi MINI-ZBRBS",
+    "nl": "Rolluik MINI-ZBRBS",
+    "da": "Rullegardin MINI-ZBRBS",
+    "de": "Rollladen MINI-ZBRBS",
+    "es": "Persiana MINI-ZBRBS",
+    "fr": "Volet roulant MINI-ZBRBS",
+    "it": "Tapparella MINI-ZBRBS",
+    "no": "Rullegardin MINI-ZBRBS",
+    "pl": "Roleta MINI-ZBRBS",
+    "ru": "Рольставни MINI-ZBRBS",
+    "ko": "롤러 셔터 MINI-ZBRBS"
+  },
+  "class": "windowcoverings",
+  "capabilities": [
+    "windowcoverings_state",
+    "windowcoverings_set"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "MINI-ZBRBS"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          258,
+          64529
+        ],
+        "bindings": [
+          258
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/MINI-ZBRBS/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button on the back of the device for approximately 5 seconds until the LED blinks rapidly.",
+        "sv": "Tryck och håll in parningsknappen på enhetens baksida i ca 5 sekunder tills LED-lampan blinkar snabbt.",
+        "nl": "Houd de koppelknop op de achterkant van het apparaat ongeveer 5 seconden ingedrukt totdat de LED snel knippert.",
+        "da": "Tryk og hold parringsknappen på enhedens bagside nede i ca. 5 sekunder, indtil LED'en blinker hurtigt.",
+        "de": "Halten Sie die Pairing-Taste auf der Rückseite des Geräts ca. 5 Sekunden lang gedrückt, bis die LED schnell blinkt.",
+        "es": "Mantenga pulsado el botón de emparejamiento en la parte posterior del dispositivo durante aproximadamente 5 segundos hasta que el LED parpadee rápidamente.",
+        "fr": "Maintenez le bouton d'appairage à l'arrière de l'appareil enfoncé pendant environ 5 secondes jusqu'à ce que la LED clignote rapidement.",
+        "it": "Tenere premuto il pulsante di abbinamento sul retro del dispositivo per circa 5 secondi fino a quando il LED lampeggia rapidamente.",
+        "no": "Trykk og hold paringsknappen på baksiden av enheten i ca. 5 sekunder til LED-en blinker raskt.",
+        "pl": "Naciśnij i przytrzymaj przycisk parowania z tyłu urządzenia przez około 5 sekund, aż dioda LED zacznie szybko migać.",
+        "ru": "Нажмите и удерживайте кнопку сопряжения на задней стороне устройства около 5 секунд, пока светодиод не начнет быстро мигать.",
+        "ko": "LED가 빠르게 깜박일 때까지 장치 뒷면의 페어링 버튼을 약 5초 동안 누르고 있으세요."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "motor_travel_calibration_action",
+      "type": "dropdown",
+      "label": {
+        "en": "Motor travel calibration",
+        "sv": "Motorlängdskalibrering",
+        "nl": "Motoreindkalibratie",
+        "da": "Motorvandringskalibrering",
+        "de": "Motorlauf-Kalibrierung",
+        "es": "Calibración de recorrido del motor",
+        "fr": "Calibration du parcours moteur",
+        "it": "Calibrazione corsa motore",
+        "no": "Motorslagskalibrering",
+        "pl": "Kalibracja drogi silnika",
+        "ru": "Калибровка хода мотора",
+        "ko": "모터 이동 보정"
+      },
+      "value": "none",
+      "values": [
+        {
+          "id": "none",
+          "label": {
+            "en": "(no action)",
+            "sv": "(ingen åtgärd)"
+          }
+        },
+        {
+          "id": "start_automatic",
+          "label": {
+            "en": "Start automatic calibration",
+            "sv": "Starta automatisk kalibrering"
+          }
+        },
+        {
+          "id": "start_manual",
+          "label": {
+            "en": "Start manual calibration",
+            "sv": "Starta manuell kalibrering"
+          }
+        },
+        {
+          "id": "manual_2_fully_opened",
+          "label": {
+            "en": "Manual: mark fully opened",
+            "sv": "Manuell: markera helt öppen"
+          }
+        },
+        {
+          "id": "manual_3_fully_closed",
+          "label": {
+            "en": "Manual: mark fully closed",
+            "sv": "Manuell: markera helt stängd"
+          }
+        },
+        {
+          "id": "clear",
+          "label": {
+            "en": "Clear calibration",
+            "sv": "Rensa kalibrering"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Choose a calibration action and save. The device needs to know the full travel before percentage control works. Select an action, save settings, and the device will execute it. The setting auto-resets to '(no action)' afterwards.",
+        "sv": "Välj en kalibreringsåtgärd och spara. Enheten måste känna till hela slaglängden innan procentstyrning fungerar. Välj en åtgärd, spara inställningar, så utför enheten den. Inställningen återställs automatiskt till '(ingen åtgärd)' efteråt."
+      }
+    }
+  ]
+}

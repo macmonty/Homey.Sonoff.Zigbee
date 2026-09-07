@@ -1,0 +1,127 @@
+{
+  "triggers": [
+    {
+      "id": "SNZB-02DR2:button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "sv": "Knapp tryckt",
+        "nl": "Knop ingedrukt",
+        "da": "Knap trykket",
+        "de": "Taste gedrückt",
+        "es": "Botón presionado",
+        "fr": "Bouton pressé",
+        "it": "Pulsante premuto",
+        "no": "Knapp trykket",
+        "pl": "Przycisk wciśnięty",
+        "ru": "Кнопка нажата",
+        "ko": "버튼 눌림"
+      },
+      "titleFormatted": {
+        "en": "Button pressed",
+        "sv": "Knapp tryckt",
+        "nl": "Knop ingedrukt",
+        "da": "Knap trykket",
+        "de": "Taste gedrückt",
+        "es": "Botón presionado",
+        "fr": "Bouton pressé",
+        "it": "Pulsante premuto",
+        "no": "Knapp trykket",
+        "pl": "Przycisk wciśnięty",
+        "ru": "Кнопка нажата",
+        "ko": "버튼 눌림"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "snzb02dr2_clear_ext_temp",
+      "title": {
+        "en": "Clear outdoor temperature",
+        "sv": "Rensa utomhustemperatur",
+        "nl": "Wis buitentemperatuur",
+        "da": "Ryd udetemperatur",
+        "de": "Außentemperatur zurücksetzen",
+        "es": "Borrar temperatura exterior",
+        "fr": "Effacer la température extérieure",
+        "it": "Cancella temperatura esterna",
+        "no": "Fjern utetemperatur",
+        "pl": "Wyczyść temperaturę zewnętrzną",
+        "ru": "Сбросить температуру на улице",
+        "ko": "외부 온도 지우기"
+      },
+      "titleFormatted": {
+        "en": "Clear outdoor temperature display",
+        "sv": "Rensa visning av utomhustemperatur",
+        "nl": "Wis weergave buitentemperatuur",
+        "da": "Ryd visning af udetemperatur",
+        "de": "Anzeige der Außentemperatur zurücksetzen",
+        "es": "Borrar visualización de temperatura exterior",
+        "fr": "Effacer l'affichage de la température extérieure",
+        "it": "Cancella visualizzazione temperatura esterna",
+        "no": "Fjern visning av utetemperatur",
+        "pl": "Wyczyść wyświetlanie temperatury zewnętrznej",
+        "ru": "Сбросить отображение температуры на улице",
+        "ko": "외부 온도 표시 지우기"
+      },
+      "args": []
+    },
+    {
+      "id": "snzb02dr2_set_ext_temp",
+      "title": {
+        "en": "Set outdoor temperature",
+        "sv": "Ange utomhustemperatur",
+        "nl": "Stel buitentemperatuur in",
+        "da": "Angiv udetemperatur",
+        "de": "Außentemperatur setzen",
+        "es": "Establecer temperatura exterior",
+        "fr": "Définir la température extérieure",
+        "it": "Imposta temperatura esterna",
+        "no": "Sett utetemperatur",
+        "pl": "Ustaw temperaturę zewnętrzną",
+        "ru": "Установить температуру на улице",
+        "ko": "외부 온도 설정"
+      },
+      "titleFormatted": {
+        "en": "Set outdoor temperature to [[temperature]] °C",
+        "sv": "Sätt utomhustemperatur till [[temperature]] °C",
+        "nl": "Stel buitentemperatuur in op [[temperature]] °C",
+        "da": "Angiv udetemperatur til [[temperature]] °C",
+        "de": "Außentemperatur auf [[temperature]] °C setzen",
+        "es": "Establecer temperatura exterior a [[temperature]] °C",
+        "fr": "Définir la température extérieure à [[temperature]] °C",
+        "it": "Imposta temperatura esterna a [[temperature]] °C",
+        "no": "Sett utetemperatur til [[temperature]] °C",
+        "pl": "Ustaw temperaturę zewnętrzną na [[temperature]] °C",
+        "ru": "Установить температуру на улице на [[temperature]] °C",
+        "ko": "외부 온도를 [[temperature]] °C로 설정"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "temperature",
+          "title": {
+            "en": "Temperature",
+            "sv": "Temperatur",
+            "nl": "Temperatuur",
+            "da": "Temperatur",
+            "de": "Temperatur",
+            "es": "Temperatura",
+            "fr": "Température",
+            "it": "Temperatura",
+            "no": "Temperatur",
+            "pl": "Temperatura",
+            "ru": "Температура",
+            "ko": "온도"
+          },
+          "min": -50,
+          "max": 60,
+          "step": 0.1,
+          "placeholder": {
+            "en": "Temperature in °C"
+          }
+        }
+      ]
+    }
+  ]
+}

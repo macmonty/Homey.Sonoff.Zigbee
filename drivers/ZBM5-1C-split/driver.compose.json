@@ -1,0 +1,126 @@
+{
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/ZBM5-1C-split/assets/images/large.png",
+    "small": "/drivers/ZBM5-1C-split/assets/images/small.png"
+  },
+  "name": {
+    "en": "Wall switch ZBM5 (1-channel)",
+    "sv": "Väggbrytare ZBM5 (1-kanals)",
+    "nl": "Wall switch ZBM5 (1-channel)",
+    "da": "Wall switch ZBM5 (1-channel)",
+    "de": "Wall switch ZBM5 (1-channel)",
+    "es": "Wall switch ZBM5 (1-channel)",
+    "fr": "Wall switch ZBM5 (1-channel)",
+    "it": "Wall switch ZBM5 (1-channel)",
+    "no": "Wall switch ZBM5 (1-channel)",
+    "pl": "Wall switch ZBM5 (1-channel)",
+    "ru": "Wall switch ZBM5 (1-channel)",
+    "ko": "Wall switch ZBM5 (1-channel)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Channel 1",
+        "sv": "Kanal 1",
+        "nl": "Kanaal 1",
+        "da": "Kanal 1",
+        "de": "Kanal 1",
+        "es": "Canal 1",
+        "fr": "Canal 1",
+        "it": "Canale 1",
+        "no": "Kanal 1",
+        "pl": "Kanał 1",
+        "ru": "Канал 1",
+        "ko": "채널 1"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "ZBM5-1C-120",
+      "ZBM5-1C-80/86"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          64529
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/ZBM5-1C-split/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold any rocker for approx. 10 seconds until the LED blinks rapidly.",
+        "sv": "Tryck och håll in valfri vippa i ca 10 sekunder tills LED-lampan blinkar snabbt.",
+        "nl": "Houd een willekeurige wip ongeveer 10 seconden ingedrukt totdat de LED snel knippert.",
+        "da": "Tryk og hold en vilkårlig vippe nede i ca. 10 sekunder, indtil LED'en blinker hurtigt.",
+        "de": "Halten Sie eine beliebige Wippe ca. 10 Sekunden lang gedrückt, bis die LED schnell blinkt.",
+        "es": "Mantenga pulsado cualquier balancín durante aproximadamente 10 segundos hasta que el LED parpadee rápidamente.",
+        "fr": "Maintenez n'importe quelle bascule enfoncée pendant environ 10 secondes jusqu'à ce que la LED clignote rapidement.",
+        "it": "Tenere premuto un bilanciere qualsiasi per circa 10 secondi fino a quando il LED lampeggia rapidamente.",
+        "no": "Trykk og hold en vilkårlig vippe i ca. 10 sekunder til LED-en blinker raskt.",
+        "pl": "Naciśnij i przytrzymaj dowolny klawisz przez około 10 sekund, aż dioda LED zacznie szybko migać.",
+        "ru": "Нажмите и удерживайте любую клавишу около 10 секунд, пока светодиод не начнет быстро мигать.",
+        "ko": "LED가 빠르게 깜박일 때까지 아무 로커나 약 10초 동안 누르고 있으세요."
+      }
+    }
+  },
+  "firmwareUpdates": {
+    "wakeInstruction": {
+      "en": "This is a mains-powered device — it should update automatically. Keep it powered during the update.",
+      "sv": "Detta är en nätansluten enhet — den uppdateras automatiskt. Låt den vara strömsatt under uppdateringen."
+    },
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware from SONOFF (latest official release).",
+          "sv": "Firmware från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "ZBM5-1C-120",
+            "ZBM5-1C-80/86"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4100,
+            "imageType": 9,
+            "manufacturerCode": 4742,
+            "size": 273908,
+            "name": "zbm5-120-zed_v1.0.4.ota",
+            "integrity": "sha256:3ac028728cec1ae6c1a654eb7629090d98484c9b4f3931b4c1ce52257c2eca09"
+          },
+          {
+            "fileVersion": 4102,
+            "imageType": 10,
+            "manufacturerCode": 4742,
+            "size": 295168,
+            "name": "zbm5-120-zr_v1.0.6.ota",
+            "integrity": "sha256:ac88f7addb1b30fe57df810313ab4ee6000a22bde0c5710f03496a03c9c7318c"
+          }
+        ]
+      }
+    ]
+  }
+}

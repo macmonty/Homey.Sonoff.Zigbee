@@ -1,9 +1,30 @@
 {
-  "id": "SonoffSNZB06P",
-  "name": {
-    "en": "Termostat TRVZB"
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/TRVZB/assets/images/large.png",
+    "small": "/drivers/TRVZB/assets/images/small.png"
   },
-  "class": "sensor",
+  "name": {
+    "en": "Termostat TRVZB",
+    "da": "TRVZB termostat",
+    "de": "TRVZB-Thermostat",
+    "es": "Termostato TRVZB",
+    "fr": "Thermostat TRVZB",
+    "it": "Termostato TRVZB",
+    "ko": "TRVZB 온도 조절기",
+    "nl": "TRVZB thermostaat",
+    "no": "TRVZB termostat",
+    "pl": "Termostat TRVZB",
+    "ru": "Термостат ТРВЗБ",
+    "sv": "TRVZB termostat"
+  },
+  "class": "thermostat",
   "capabilities": [
     "measure_temperature",
     "target_temperature",
@@ -12,7 +33,9 @@
   ],
   "energy": {
     "batteries": [
-      "AA",  "AA",  "AA"
+      "AA",
+      "AA",
+      "AA"
     ]
   },
   "zigbee": {
@@ -32,18 +55,168 @@
           64529
         ],
         "bindings": [
-          10       
+          10
         ]
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/TRVZB/assets/learn.svg",
       "instruction": {
-        "en": "Turn the temp to off and press the button for 5 seconds until the signal-symbol start blink."
+        "en": "Turn the temp to off and press the button for 5 seconds until the signal-symbol start blink.",
+        "da": "Sluk for temperaturen, og tryk på knappen i 5 sekunder, indtil signalsymbolet begynder at blinke.",
+        "de": "Schalten Sie die Temperatur aus und drücken Sie die Taste 5 Sekunden lang, bis das Signalsymbol zu blinken beginnt.",
+        "es": "Apague la temperatura y presione el botón durante 5 segundos hasta que el símbolo de señal comience a parpadear.",
+        "fr": "Mettez la température sur off et appuyez sur le bouton pendant 5 secondes jusqu’à ce que le symbole du signal commence à clignoter.",
+        "it": "Disattivare la temperatura e premere il pulsante per 5 secondi fino a quando il simbolo del segnale inizia a lampeggiare.",
+        "ko": "온도를 끄고 신호 기호가 깜박이기 시작할 때까지 버튼을 5초 동안 누릅니다.",
+        "nl": "Zet de temperatuur uit en houd de knop 5 seconden ingedrukt totdat het signaalsymbool begint te knipperen.",
+        "no": "Slå temperaturen til av og trykk på knappen i 5 sekunder til signalsymbolet begynner å blinke.",
+        "pl": "Wyłącz temperaturę i naciśnij przycisk przez 5 sekund, aż symbol sygnału zacznie migać.",
+        "ru": "Выключите температуру и нажмите кнопку в течение 5 секунд, пока сигнал не начнет мигать.",
+        "sv": "Stäng av tempen och tryck på knappen i 5 sekunder tills signalsymbolen börjar blinka."
       }
     }
   },
-  "$extends": [
-    "defaults"
-  ]
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Settings",
+        "da": "Indstillinger",
+        "de": "Einstellungen",
+        "es": "Configuración",
+        "fr": "Paramètres",
+        "it": "Impostazioni",
+        "ko": "설정",
+        "nl": "Instellingen",
+        "no": "Innstillinger",
+        "pl": "Ustawienia",
+        "ru": "Параметры",
+        "sv": "Inställningar"
+      },
+      "children": [
+        {
+          "id": "localTemperatureCalibration",
+          "type": "number",
+          "label": {
+            "en": "Local Temperature Calibration",
+            "da": "Lokal temperaturkalibrering",
+            "de": "Lokale Temperaturkalibrierung",
+            "es": "Calibración de temperatura local",
+            "fr": "Étalonnage local de la température",
+            "it": "Calibrazione della temperatura locale",
+            "ko": "로컬 온도 교정",
+            "nl": "Kalibratie van lokale temperatuur",
+            "no": "Lokal temperaturkalibrering",
+            "pl": "Lokalna kalibracja temperatury",
+            "ru": "Калибровка локальной температуры",
+            "sv": "Lokal temperaturkalibrering"
+          },
+          "hint": {
+            "en": "Adjust the local temperature calibration.",
+            "da": "Juster den lokale temperaturkalibrering.",
+            "de": "Passen Sie die lokale Temperaturkalibrierung an.",
+            "es": "Ajuste la calibración de la temperatura local.",
+            "fr": "Ajustez l’étalonnage de la température locale.",
+            "it": "Regolare la calibrazione della temperatura locale.",
+            "ko": "지역 온도 보정을 조정하십시오.",
+            "nl": "Pas de kalibratie van de lokale temperatuur aan.",
+            "no": "Juster den lokale temperaturkalibreringen.",
+            "pl": "Dostosuj lokalną kalibrację temperatury.",
+            "ru": "Отрегулируйте локальную калибровку температуры.",
+            "sv": "Justera den lokala temperaturkalibreringen."
+          },
+          "min": -7,
+          "max": 7,
+          "step": 0.1,
+          "default": 0
+        },
+        {
+          "id": "child_lock",
+          "type": "checkbox",
+          "label": {
+            "en": "Child lock",
+            "da": "Børnesikring",
+            "de": "Kindersicherung",
+            "es": "Cerradura para niños",
+            "fr": "Sécurité enfant",
+            "it": "Blocco bambini",
+            "ko": "차일드 락",
+            "nl": "Kinderslot",
+            "no": "Barnesikring",
+            "pl": "Zabezpieczenie przed dziećmi",
+            "ru": "Блокировка от детей",
+            "sv": "Barnlås"
+          }
+        },
+        {
+          "id": "open_window",
+          "type": "checkbox",
+          "label": {
+            "en": "Open window detection",
+            "da": "Registrering af åbent vindue",
+            "de": "Erkennung offener Fenster",
+            "es": "Detección de ventana abierta",
+            "fr": "Détection de fenêtre ouverte",
+            "it": "Rilevamento finestra aperta",
+            "ko": "열린 창 감지",
+            "nl": "Detectie van open ramen",
+            "no": "Gjenkjenning av åpent vindu",
+            "pl": "Wykrywanie otwartego okna",
+            "ru": "Обнаружение открытого окна",
+            "sv": "Detektering av öppet fönster"
+          }
+        },
+        {
+          "id": "frost_protection_temperature",
+          "type": "number",
+          "label": {
+            "en": "Frost protection temperature",
+            "da": "Frostsikringstemperatur",
+            "de": "Temperatur des Frostschutzes",
+            "es": "Temperatura de protección contra heladas",
+            "fr": "Température de protection contre le gel",
+            "it": "Temperatura di protezione antigelo",
+            "ko": "서리 방지 온도",
+            "nl": "Vorstbescherming temperatuur",
+            "no": "Frostsikringstemperatur",
+            "pl": "Temperatura ochrony przed zamarzaniem",
+            "ru": "Температура защиты от замерзания",
+            "sv": "Temperatur för frostskydd"
+          },
+          "attr": {
+            "min": 4,
+            "max": 35,
+            "step": 0.1
+          }
+        }
+      ]
+    }
+  ],
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware from SONOFF (latest official release).",
+          "sv": "Firmware från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "TRVZB"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 5124,
+            "imageType": 8199,
+            "manufacturerCode": 4742,
+            "size": 332220,
+            "name": "trvzb_v1.4.4.ota",
+            "integrity": "sha256:1286b7e8c981a6fd9548067b33938dc431b27e47688cf208224632f9e0bd8de7"
+          }
+        ]
+      }
+    ]
+  }
 }

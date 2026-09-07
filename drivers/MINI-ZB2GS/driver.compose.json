@@ -1,13 +1,69 @@
 {
-  "id": "SonoffMINI-ZB2GS",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/MINI-ZB2GS/assets/images/large.png",
+    "small": "/drivers/MINI-ZB2GS/assets/images/small.png"
+  },
+  "deprecated": true,
   "name": {
-    "en": "MINI-ZB2GS Switch",
-    "it": "MINI-ZB2GS Switch"
+    "en": "Switch DUO (2-channel)",
+    "sv": "Strömbrytare DUO (2-kanals)",
+    "nl": "Schakelaar DUO (2-kanaals)",
+    "da": "Afbryder DUO (2-kanal)",
+    "de": "Schalter DUO (2-Kanal)",
+    "es": "Interruptor DUO (2 canales)",
+    "fr": "Interrupteur DUO (2 canaux)",
+    "it": "Interruttore DUO (2 canali)",
+    "no": "Bryter DUO (2-kanal)",
+    "pl": "Przełącznik DUO (2-kanałowy)",
+    "ru": "Выключатель DUO (2-канальный)",
+    "ko": "스위치 DUO (2채널)"
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "onoff.l2"
   ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Channel 1",
+        "sv": "Kanal 1",
+        "nl": "Kanaal 1",
+        "da": "Kanal 1",
+        "de": "Kanal 1",
+        "es": "Canal 1",
+        "fr": "Canal 1",
+        "it": "Canale 1",
+        "no": "Kanal 1",
+        "pl": "Kanał 1",
+        "ru": "Канал 1",
+        "ko": "채널 1"
+      }
+    },
+    "onoff.l2": {
+      "title": {
+        "en": "Channel 2",
+        "sv": "Kanal 2",
+        "nl": "Kanaal 2",
+        "da": "Kanal 2",
+        "de": "Kanal 2",
+        "es": "Canal 2",
+        "fr": "Canal 2",
+        "it": "Canale 2",
+        "no": "Kanal 2",
+        "pl": "Kanał 2",
+        "ru": "Канал 2",
+        "ko": "채널 2"
+      }
+    }
+  },
   "zigbee": {
     "manufacturerName": [
       "SONOFF"
@@ -29,33 +85,286 @@
       "2": {
         "clusters": [
           0,
-          6,
-          64529
+          6
         ],
         "bindings": [
           6
         ]
       }
     },
-    "devices": {
-      "secondChannel": {
-        "class": "socket",
-        "name": {
-          "en": "MINI-ZB2GS Switch (Channel 2)",
-          "it": "MINI-ZB2GS Switch (Canale 2)"
-        },
-        "capabilities": [
-          "onoff"
-        ]
-      }
-    },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/MINI-ZB2GS/assets/learn.svg",
       "instruction": {
-        "en": "Press the button on the device for approximately 10 seconds until the LED blinks rapidly.",
-        "it": "Premi il pulsante sul dispositivo per circa 10 secondi fino a quando il LED lampeggia rapidamente."
+        "en": "Press and hold the button on the top for approx. 10 seconds until the LED blinks rapidly.",
+        "sv": "Tryck och håll in knappen på ovansidan i ca 10 sekunder tills LED-lampan blinkar snabbt.",
+        "nl": "Houd de knop aan de bovenkant ongeveer 10 seconden ingedrukt totdat de LED snel knippert.",
+        "da": "Tryk og hold knappen på toppen nede i ca. 10 sekunder, indtil LED'en blinker hurtigt.",
+        "de": "Halten Sie die Taste oben ca. 10 Sekunden lang gedrückt, bis die LED schnell blinkt.",
+        "es": "Mantenga pulsado el botón superior durante aproximadamente 10 segundos hasta que el LED parpadee rápidamente.",
+        "fr": "Maintenez le bouton du dessus enfoncé pendant environ 10 secondes jusqu'à ce que la LED clignote rapidement.",
+        "it": "Tenere premuto il pulsante sulla parte superiore per circa 10 secondi fino a quando il LED lampeggia rapidamente.",
+        "no": "Trykk og hold knappen på toppen i ca. 10 sekunder til LED-en blinker raskt.",
+        "pl": "Naciśnij i przytrzymaj przycisk na górze przez około 10 sekund, aż dioda LED zacznie szybko migać.",
+        "ru": "Нажмите и удерживайте кнопку сверху около 10 секунд, пока светодиод не начнет быстро мигать.",
+        "ko": "LED가 빠르게 깜박일 때까지 상단 버튼을 약 10초 동안 누르고 있으세요."
       }
     }
   },
-  "$extends": ["defaults"]
+  "settings": [
+    {
+      "id": "network_indicator",
+      "type": "checkbox",
+      "label": {
+        "en": "Network indicator LED",
+        "sv": "Nätverksindikator-LED"
+      },
+      "value": true,
+      "hint": {
+        "en": "Turn the blue network status LED on or off.",
+        "sv": "Tänd eller släck den blå nätverksstatuslampan."
+      }
+    },
+    {
+      "id": "switch_mode_l1",
+      "type": "dropdown",
+      "label": {
+        "en": "Switch mode — Channel 1",
+        "sv": "Brytarläge — Kanal 1",
+        "da": "Skift tilstand — Kanal 1",
+        "de": "Switch-Modus — Kanal 1",
+        "es": "Modo de cambio — Canal 1",
+        "fr": "Mode de l'interrupteur — Canal 1",
+        "it": "Modalità interruttore — Canale 1",
+        "ko": "스위치 모드 — 채널 1",
+        "nl": "Schakelmodus — Kanaal 1",
+        "no": "Bryter modus — Kanal 1",
+        "pl": "Tryb przełącznika — Kanał 1",
+        "ru": "Режим переключателя — Канал 1"
+      },
+      "value": "0",
+      "hint": {
+        "en": "Type of external switch wired to channel 1. Use 'Pulse' for self-resetting (momentary) buttons. 'Edge' is the default for a normal rocker.",
+        "sv": "Typ av extern brytare ansluten till kanal 1. Använd 'Puls' för återfjädrande (momentan) tryckknapp. 'Kant' är standard för vanlig vippbrytare."
+      },
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Edge (rocker)",
+            "sv": "Kant (vippbrytare)",
+            "da": "Rand (vippekontakt)",
+            "de": "Kante (Wippe)",
+            "es": "Borde (basculante)",
+            "fr": "Bord (basculant)",
+            "it": "Bordo (bilanciere)",
+            "ko": "가장자리 (로커)",
+            "nl": "Rand (tuimelschakelaar)",
+            "no": "Kant (vippebryter)",
+            "pl": "Krawędź (kołyskowy)",
+            "ru": "Край (клавишный)"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Pulse (momentary)",
+            "sv": "Puls (återfjädrande)",
+            "da": "Puls (momentan)",
+            "de": "Puls (Taster)",
+            "es": "Pulso (momentáneo)",
+            "fr": "Impulsion (poussoir)",
+            "it": "Impulso (momentaneo)",
+            "ko": "맥박 (모멘터리)",
+            "nl": "Puls (drukknop)",
+            "no": "Puls (selvfjærende)",
+            "pl": "Puls (chwilowy)",
+            "ru": "Импульс (нажимной)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Follow switch",
+            "sv": "Följ brytaren",
+            "da": "Følg kontakten",
+            "de": "Schalter folgen",
+            "es": "Interruptor de seguimiento",
+            "fr": "Suivre l'interrupteur",
+            "it": "Segui l'interruttore",
+            "ko": "팔로우 스위치",
+            "nl": "Volgschakelaar",
+            "no": "Følg bryteren",
+            "pl": "Podążaj za przełącznikiem",
+            "ru": "Переключатель слежения"
+          }
+        },
+        {
+          "id": "130",
+          "label": {
+            "en": "Follow switch (inverted)",
+            "sv": "Följ brytaren (inverterad)",
+            "da": "Følg kontakten (inverter)",
+            "de": "Schalter folgen (invertiert)",
+            "es": "Interruptor de seguimiento (invertir)",
+            "fr": "Suivre l'interrupteur (inverser)",
+            "it": "Segui l'interruttore (inverti)",
+            "ko": "팔로우 스위치 (반전)",
+            "nl": "Volgschakelaar (omgekeerd)",
+            "no": "Følg bryteren (invertert)",
+            "pl": "Podążaj za przełącznikiem (odwrócony)",
+            "ru": "Переключатель слежения (инвертированный)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "switch_mode_l2",
+      "type": "dropdown",
+      "label": {
+        "en": "Switch mode — Channel 2",
+        "sv": "Brytarläge — Kanal 2",
+        "da": "Skift tilstand — Kanal 2",
+        "de": "Switch-Modus — Kanal 2",
+        "es": "Modo de cambio — Canal 2",
+        "fr": "Mode de l'interrupteur — Canal 2",
+        "it": "Modalità interruttore — Canale 2",
+        "ko": "스위치 모드 — 채널 2",
+        "nl": "Schakelmodus — Kanaal 2",
+        "no": "Bryter modus — Kanal 2",
+        "pl": "Tryb przełącznika — Kanał 2",
+        "ru": "Режим переключателя — Канал 2"
+      },
+      "value": "0",
+      "hint": {
+        "en": "Type of external switch wired to channel 2. See channel 1 for details.",
+        "sv": "Typ av extern brytare ansluten till kanal 2. Se kanal 1 för detaljer."
+      },
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Edge (rocker)",
+            "sv": "Kant (vippbrytare)",
+            "da": "Rand (vippekontakt)",
+            "de": "Kante (Wippe)",
+            "es": "Borde (basculante)",
+            "fr": "Bord (basculant)",
+            "it": "Bordo (bilanciere)",
+            "ko": "가장자리 (로커)",
+            "nl": "Rand (tuimelschakelaar)",
+            "no": "Kant (vippebryter)",
+            "pl": "Krawędź (kołyskowy)",
+            "ru": "Край (клавишный)"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Pulse (momentary)",
+            "sv": "Puls (återfjädrande)",
+            "da": "Puls (momentan)",
+            "de": "Puls (Taster)",
+            "es": "Pulso (momentáneo)",
+            "fr": "Impulsion (poussoir)",
+            "it": "Impulso (momentaneo)",
+            "ko": "맥박 (모멘터리)",
+            "nl": "Puls (drukknop)",
+            "no": "Puls (selvfjærende)",
+            "pl": "Puls (chwilowy)",
+            "ru": "Импульс (нажимной)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Follow switch",
+            "sv": "Följ brytaren",
+            "da": "Følg kontakten",
+            "de": "Schalter folgen",
+            "es": "Interruptor de seguimiento",
+            "fr": "Suivre l'interrupteur",
+            "it": "Segui l'interruttore",
+            "ko": "팔로우 스위치",
+            "nl": "Volgschakelaar",
+            "no": "Følg bryteren",
+            "pl": "Podążaj za przełącznikiem",
+            "ru": "Переключатель слежения"
+          }
+        },
+        {
+          "id": "130",
+          "label": {
+            "en": "Follow switch (inverted)",
+            "sv": "Följ brytaren (inverterad)",
+            "da": "Følg kontakten (inverter)",
+            "de": "Schalter folgen (invertiert)",
+            "es": "Interruptor de seguimiento (invertir)",
+            "fr": "Suivre l'interrupteur (inverser)",
+            "it": "Segui l'interruttore (inverti)",
+            "ko": "팔로우 스위치 (반전)",
+            "nl": "Volgschakelaar (omgekeerd)",
+            "no": "Følg bryteren (invertert)",
+            "pl": "Podążaj za przełącznikiem (odwrócony)",
+            "ru": "Переключатель слежения (инвертированный)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "detach_relay_l1",
+      "type": "checkbox",
+      "label": {
+        "en": "Detach relay — Channel 1 (experimental)",
+        "sv": "Frikoppla relä — Kanal 1 (experimentell)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Experimental: Sonoff firmware may reject this write from Homey with MALFORMED_COMMAND. Kept as a setting so it lights up automatically when a future firmware/SDK fix lands. When working: the physical rocker for channel 1 stops switching the relay — useful for controlling a smart bulb via scene instead.",
+        "sv": "Experimentell: Sonoffs firmware kan avvisa denna skrivning från Homey med MALFORMED_COMMAND. Behålls som inställning så den fungerar automatiskt när framtida firmware/SDK-fix kommer. När den fungerar: den fysiska vippan för kanal 1 slutar växla reläet — användbart för att istället styra en smart lampa via scen."
+      }
+    },
+    {
+      "id": "detach_relay_l2",
+      "type": "checkbox",
+      "label": {
+        "en": "Detach relay — Channel 2 (experimental)",
+        "sv": "Frikoppla relä — Kanal 2 (experimentell)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Experimental — see Channel 1 note.",
+        "sv": "Experimentell — se anmärkning för kanal 1."
+      }
+    }
+  ],
+  "firmwareUpdates": {
+    "wakeInstruction": {
+      "en": "This is a mains-powered device — it should update automatically. Keep it powered during the update.",
+      "sv": "Detta är en nätansluten enhet — den uppdateras automatiskt. Låt den vara strömsatt under uppdateringen."
+    },
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware v1.0.7 from SONOFF (latest official release).",
+          "sv": "Firmware v1.0.7 från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "MINI-ZB2GS"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4103,
+            "imageType": 68,
+            "manufacturerCode": 4742,
+            "size": 297974,
+            "name": "mini-zb2gs_v1.0.7.ota",
+            "integrity": "sha256:a260ee9ad1e1c91bb6b89e01dfec4e4b9088de1a573b9b8e9b106b3d3cc0db91"
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -1,5 +1,15 @@
 {
-  "id": "SonoffSNZB03P",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/SNZB-03P/assets/images/large.png",
+    "small": "/drivers/SNZB-03P/assets/images/small.png"
+  },
   "name": {
     "en": "Motion Sensor SNZB-03P",
     "sv": "Rörelsesensor SNZB-03P",
@@ -44,14 +54,137 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/SNZB-03P/assets/learn.svg",
       "instruction": {
         "en": "Press button for aprox 10 seconds until the red LED blinks rapidly.",
-        "sv": "Tryck på knappen i cirka 10 sekunder tills den röda lysdioden blinkar snabbt."
+        "sv": "Tryck på knappen i cirka 10 sekunder tills den röda lysdioden blinkar snabbt.",
+        "da": "Tryk på knappen i ca. 10 sekunder, indtil den røde LED blinker hurtigt.",
+        "de": "Drücken Sie die Taste ca. 10 Sekunden lang, bis die rote LED schnell blinkt.",
+        "es": "Presione el botón durante aproximadamente 10 segundos hasta que el LED rojo parpadee rápidamente.",
+        "fr": "Appuyez sur le bouton pendant environ 10 secondes jusqu’à ce que la LED rouge clignote rapidement.",
+        "it": "Premere il pulsante per circa 10 secondi fino a quando il LED rosso lampeggia rapidamente.",
+        "ko": "빨간색 LED가 빠르게 깜박일 때까지 약 10초 동안 버튼을 누릅니다.",
+        "nl": "Houd de knop ongeveer 10 seconden ingedrukt totdat de rode LED snel knippert.",
+        "no": "Trykk på knappen i ca. 10 sekunder til den røde LED-lampen blinker raskt.",
+        "pl": "Naciśnij przycisk przez około 10 sekund, aż czerwona dioda LED zacznie szybko migać.",
+        "ru": "Нажмите кнопку примерно на 10 секунд, пока красный светодиод не начнет быстро мигать."
       }
     }
   },
-  "$extends": [
-    "defaults"
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Occupied",
+        "nl": "Bezette",
+        "da": "Optaget",
+        "de": "Besetzt",
+        "es": "Ocupado",
+        "fr": "Occupé",
+        "it": "Occupato",
+        "no": "Opptatt",
+        "sv": "Upptagen",
+        "pl": "Zajęty",
+        "ru": "Занятый",
+        "ko": "점유"
+      },
+      "children": [
+        {
+          "id": "occupied_to_unoccupied_delay",
+          "type": "number",
+          "label": {
+            "en": "Delay",
+            "nl": "Vertraging",
+            "da": "Forsinkelse",
+            "de": "Verzögerung",
+            "es": "Retraso",
+            "fr": "Délai",
+            "it": "Ritardo",
+            "no": "Forsinkelse",
+            "sv": "Fördröjning",
+            "pl": "Opóźnienie",
+            "ru": "Задержка",
+            "ko": "지연"
+          },
+          "value": 60,
+          "attr": {
+            "min": 15,
+            "max": 60,
+            "step": 1
+          }
+        },
+        {
+          "id": "occupied_threshold",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensitivity",
+            "nl": "Gevoeligheid",
+            "da": "Følsomhed",
+            "de": "Empfindlichkeit",
+            "es": "Sensibilidad",
+            "fr": "Sensibilité",
+            "it": "Sensibilità",
+            "no": "Følsomhet",
+            "sv": "Känslighet",
+            "pl": "Czułość",
+            "ru": "Чувствительность",
+            "ko": "민감도"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "Low",
+                "nl": "Laag",
+                "da": "Lav",
+                "de": "Niedrig",
+                "es": "Bajo",
+                "fr": "Bas",
+                "it": "Basso",
+                "no": "Lav",
+                "sv": "Låg",
+                "pl": "Niski",
+                "ru": "Низкий",
+                "ko": "낮은"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Medium",
+                "nl": "Middel",
+                "da": "Mellem",
+                "de": "Mittel",
+                "es": "Medio",
+                "fr": "Moyen",
+                "it": "Medio",
+                "no": "Middels",
+                "sv": "Medium",
+                "pl": "Średni",
+                "ru": "Средний",
+                "ko": "중간"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Hight",
+                "nl": "Hoog",
+                "da": "Høj",
+                "de": "Hoch",
+                "es": "Alto",
+                "fr": "Haut",
+                "it": "Alto",
+                "no": "Høy",
+                "sv": "Hög",
+                "pl": "Wysoki",
+                "ru": "Высокий",
+                "ko": "높은"
+              }
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

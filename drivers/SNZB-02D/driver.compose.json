@@ -1,5 +1,15 @@
 {
-  "id": "SonoffSNZB02D",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/SNZB-02D/assets/images/large.png",
+    "small": "/drivers/SNZB-02D/assets/images/small.png"
+  },
   "name": {
     "en": "Thermometer SNZB-02D",
     "sv": "Termometer SNZB-02D",
@@ -49,7 +59,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/SNZB-02D/assets/learn.svg",
       "instruction": {
         "en": "Press button on back side for approx 10 seconds until the red LED blinks rapidly.",
         "nl": "Druk ongeveer 10 seconden op de knop aan de achterkant totdat de rode LED snel knippert.",
@@ -66,7 +76,407 @@
       }
     }
   },
-  "$extends": [
-    "defaults"
-  ]
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Calibration",
+        "nl": "Kalibratie",
+        "da": "Kalibrering",
+        "de": "Kalibrierung",
+        "es": "Calibración",
+        "fr": "Calibration",
+        "it": "Calibrazione",
+        "no": "Kalibrering",
+        "sv": "Kalibrering",
+        "pl": "Kalibracja",
+        "ru": "Калибровка",
+        "ko": "보정"
+      },
+      "children": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature offset",
+            "nl": "Temperatuurcorrectie",
+            "da": "Temperaturforskydning",
+            "de": "Temperaturkorrektur",
+            "es": "Compensación de temperatura",
+            "fr": "Décalage de température",
+            "it": "Offset di temperatura",
+            "no": "Temperaturforskyvning",
+            "sv": "Temperaturförskjutning",
+            "pl": "Offset temperatury",
+            "ru": "Смещение температуры",
+            "ko": "온도 편차"
+          },
+          "hint": {
+            "en": "Set a value to compensate a temperature offset.\nRange: -10 - 10, step size 0.1, \ndefault: 0 [°C]",
+            "nl": "Stel een waarde in om een temperatuurafwijking te compenseren.\nBereik: -10 - 10, stapgrootte 0.1,\nstandaard: 0 [°C]",
+            "da": "Indstil en værdi for at kompensere for en temperaturforskydning.\nOmråde: -10 - 10, trinstørrelse 0,1,\nstandard: 0 [°C]",
+            "de": "Legen Sie einen Wert fest, um eine Temperaturabweichung zu kompensieren.\nBereich: -10 - 10, Schrittweite 0,1,\nStandard: 0 [°C]",
+            "es": "Establezca un valor para compensar una desviación de temperatura.\nRango: -10 - 10, tamaño del paso 0,1,\npredeterminado: 0 [°C]",
+            "fr": "Définir une valeur pour compenser un décalage de température.\nPlage : -10 - 10, taille du pas 0,1,\ndéfaut : 0 [°C]",
+            "it": "Impostare un valore per compensare un offset di temperatura.\nGamma: -10 - 10, dimensione del passo 0,1,\npredefinito: 0 [°C]",
+            "no": "Sett en verdi for å kompensere for en temperaturforskyvning.\nOmråde: -10 - 10, trinnstørrelse 0,1,\nstandard: 0 [°C]",
+            "sv": "Ställ in ett värde för att kompensera för en temperaturskiftning.\nOmråde: -10 - 10, stegstorlek 0,1,\nstandard: 0 [°C]",
+            "pl": "Ustaw wartość, aby skompensować odstępstwo temperatury.\nZakres: -10 - 10, krok 0,1,\ndomyślnie: 0 [°C]",
+            "ru": "Установите значение для компенсации смещения температуры.\nДиапазон: -10 - 10, шаг 0,1,\nпо умолчанию: 0 [°C]",
+            "ko": "온도 편차를 보상하기 위해 값을 설정하십시오.\n범위: -10 - 10, 단계 크기 0.1,\n기본값: 0 [°C]"
+          },
+          "value": 0,
+          "attr": {
+            "min": -10,
+            "max": 10,
+            "step": 0.1
+          },
+          "units": {
+            "en": "°C",
+            "nl": "°C",
+            "da": "°C",
+            "de": "°C",
+            "es": "°C",
+            "fr": "°C",
+            "it": "°C",
+            "no": "°C",
+            "sv": "°C",
+            "pl": "°C",
+            "ru": "°C",
+            "ko": "°C"
+          }
+        },
+        {
+          "id": "humidity_offset",
+          "type": "number",
+          "label": {
+            "en": "Humidity offset",
+            "nl": "Luchtvochtigheids compensatie",
+            "da": "Fugtighedsforskydning",
+            "de": "Feuchtigkeitskorrektur",
+            "es": "Compensación de humedad",
+            "fr": "Décalage d'humidité",
+            "it": "Offset di umidità",
+            "no": "Fuktighetsforskyvning",
+            "sv": "Fuktighetsförskjutning",
+            "pl": "Offset wilgotności",
+            "ru": "Смещение влажности",
+            "ko": "습도 편차"
+          },
+          "hint": {
+            "en": "Set a correction to compensate a humidity offset.\nRange: -10 - 10, step size 1, \ndefault: 0 [%]",
+            "nl": "Stel een correctiewaarde in om een Luchtvochtigheids verschil te compenseren.\nBereik: -10 - 10, stap grootte 1, \nstandaard: 0 [%]",
+            "da": "Indstil en korrektion for at kompensere for en fugtighedsforskydning.\nOmråde: -10 - 10, trinstørrelse 1,\nstandard: 0 [%]",
+            "de": "Legen Sie eine Korrektur fest, um eine Feuchtigkeitsabweichung zu kompensieren.\nBereich: -10 - 10, Schrittweite 1,\nStandard: 0 [%]",
+            "es": "Establezca una corrección para compensar una desviación de humedad.\nRango: -10 - 10, tamaño del paso 1,\npredeterminado: 0 [%]",
+            "fr": "Définir une correction pour compenser un décalage d'humidité.\nPlage : -10 - 10, taille du pas 1,\ndéfaut : 0 [%]",
+            "it": "Impostare una correzione per compensare un offset di umidità.\nGamma: -10 - 10, dimensione del passo 1,\npredefinito: 0 [%]",
+            "no": "Sett en korreksjon for å kompensere for en fuktighetsforskyvning.\nOmråde: -10 - 10, trinnstørrelse 1,\nstandard: 0 [%]",
+            "sv": "Ställ in en korrektion för att kompensera för en fuktförskjutning.\nOmråde: -10 - 10, stegstorlek 1,\nstandard: 0 [%]",
+            "pl": "Ustaw korektę, aby skompensować odstępstwo wilgotności.\nZakres: -10 - 10, krok 1,\ndomyślnie: 0 [%]",
+            "ru": "Установите коррекцию для компенсации смещения влажности.\nДиапазон: -10 - 10, шаг 1,\nпо умолчанию: 0 [%]",
+            "ko": "습도 편차를 보상하기 위해 보정을 설정하십시오.\n범위: -10 - 10, 단계 크기 1,\n기본값: 0 [%]"
+          },
+          "value": 0,
+          "attr": {
+            "min": -10,
+            "max": 10,
+            "step": 1
+          },
+          "units": {
+            "en": "%",
+            "nl": "%",
+            "da": "%",
+            "de": "%",
+            "es": "%",
+            "fr": "%",
+            "it": "%",
+            "no": "%",
+            "sv": "%",
+            "pl": "%",
+            "ru": "%",
+            "ko": "%"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Reporting",
+        "nl": "Rapportage",
+        "da": "Rapportering",
+        "de": "Berichterstattung",
+        "es": "Informes",
+        "fr": "Rapports",
+        "it": "Segnalazione",
+        "no": "Rapportering",
+        "sv": "Rapportering",
+        "pl": "Raportowanie",
+        "ru": "Отчётность",
+        "ko": "보고"
+      },
+      "children": [
+        {
+          "id": "reporting_interval",
+          "type": "radio",
+          "label": {
+            "en": "Reporting interval",
+            "nl": "Rapportage-interval",
+            "da": "Rapporteringsinterval",
+            "de": "Meldeintervall",
+            "es": "Intervalo de reporte",
+            "fr": "Intervalle de rapport",
+            "it": "Intervallo di segnalazione",
+            "no": "Rapporteringsintervall",
+            "sv": "Rapporteringsintervall",
+            "pl": "Interwał raportowania",
+            "ru": "Интервал отчётности",
+            "ko": "보고 간격"
+          },
+          "value": "90",
+          "values": [
+            {
+              "id": "30",
+              "label": {
+                "en": "Fast — report every 30 s (more battery)",
+                "nl": "Snel — rapporteer elke 30 s (meer batterij)",
+                "da": "Hurtig — rapportér hvert 30. s (mere batteri)",
+                "de": "Schnell — alle 30 s melden (mehr Akku)",
+                "es": "Rápido — reportar cada 30 s (más batería)",
+                "fr": "Rapide — rapport toutes les 30 s (plus de batterie)",
+                "it": "Veloce — segnala ogni 30 s (più batteria)",
+                "no": "Rask — rapporter hvert 30. s (mer batteri)",
+                "sv": "Snabb — rapportera var 30:e s (mer batteri)",
+                "pl": "Szybki — raport co 30 s (więcej baterii)",
+                "ru": "Быстро — отчёт каждые 30 с (больше батареи)",
+                "ko": "빠름 — 30초마다 보고 (배터리 많이 사용)"
+              }
+            },
+            {
+              "id": "90",
+              "label": {
+                "en": "Normal — report every 90 s (default)",
+                "nl": "Normaal — rapporteer elke 90 s (standaard)",
+                "da": "Normal — rapportér hvert 90. s (standard)",
+                "de": "Normal — alle 90 s melden (Standard)",
+                "es": "Normal — reportar cada 90 s (predeterminado)",
+                "fr": "Normal — rapport toutes les 90 s (défaut)",
+                "it": "Normale — segnala ogni 90 s (predefinito)",
+                "no": "Normal — rapporter hvert 90. s (standard)",
+                "sv": "Normal — rapportera var 90:e s (standard)",
+                "pl": "Normalny — raport co 90 s (domyślnie)",
+                "ru": "Нормально — отчёт каждые 90 с (по умолчанию)",
+                "ko": "보통 — 90초마다 보고 (기본값)"
+              }
+            },
+            {
+              "id": "300",
+              "label": {
+                "en": "Battery saver — report every 5 min",
+                "nl": "Batterijbesparing — rapporteer elke 5 min",
+                "da": "Batteribesparer — rapportér hvert 5. min",
+                "de": "Energiesparer — alle 5 min melden",
+                "es": "Ahorro de batería — reportar cada 5 min",
+                "fr": "Économie de batterie — rapport toutes les 5 min",
+                "it": "Risparmio batteria — segnala ogni 5 min",
+                "no": "Batteriesparing — rapporter hvert 5. min",
+                "sv": "Batterisparläge — rapportera var 5:e min",
+                "pl": "Oszczędność baterii — raport co 5 min",
+                "ru": "Экономия батареи — отчёт каждые 5 мин",
+                "ko": "배터리 절약 — 5분마다 보고"
+              }
+            },
+            {
+              "id": "600",
+              "label": {
+                "en": "Minimal — report every 10 min (least battery)",
+                "nl": "Minimaal — rapporteer elke 10 min (minste batterij)",
+                "da": "Minimal — rapportér hvert 10. min (mindst batteri)",
+                "de": "Minimal — alle 10 min melden (wenigster Akku)",
+                "es": "Mínimo — reportar cada 10 min (menos batería)",
+                "fr": "Minimal — rapport toutes les 10 min (moins de batterie)",
+                "it": "Minimo — segnala ogni 10 min (meno batteria)",
+                "no": "Minimal — rapporter hvert 10. min (minst batteri)",
+                "sv": "Minimal — rapportera var 10:e min (minst batteri)",
+                "pl": "Minimalny — raport co 10 min (najmniej baterii)",
+                "ru": "Минимально — отчёт каждые 10 мин (меньше всего батареи)",
+                "ko": "최소 — 10분마다 보고 (배터리 최소 사용)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "temperature_decimals",
+          "type": "radio",
+          "label": {
+            "en": "Temperature reporting decimals",
+            "nl": "Decimalen in temperatuurrapportage",
+            "da": "Decimaler i temperaturrapportering",
+            "de": "Dezimalstellen in Temperaturberichten",
+            "es": "Decimales en el reporte de temperatura",
+            "fr": "Décimales dans le rapport de température",
+            "it": "Decimali nel reporting della temperatura",
+            "no": "Desimaler i temperaturrapportering",
+            "sv": "Decimaler i temperaturrapporteringen",
+            "pl": "Miejsca dziesiętne w raportowaniu temperatury",
+            "ru": "Десятичные знаки в отчёте о температуре",
+            "ko": "온도 보고서의 소수점 자리"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Report temperature value with 0 decimals (21 °C)",
+                "nl": "Rapporteer temperatuurwaarde zonder decimalen (21 °C)",
+                "da": "Rapporter temperaturværdi uden decimaler (21 °C)",
+                "de": "Temperaturwert ohne Dezimalstellen berichten (21 °C)",
+                "es": "Informe el valor de temperatura sin decimales (21 °C)",
+                "fr": "Rapporter la valeur de température sans décimale (21 °C)",
+                "it": "Riporta il valore della temperatura senza decimali (21 °C)",
+                "no": "Rapporter temperaturverdi uten desimaler (21 °C)",
+                "sv": "Rapportera temperaturvärde utan decimaler (21 °C)",
+                "pl": "Zgłoś wartość temperatury bez miejsc dziesiętnych (21 °C)",
+                "ru": "Сообщите значение температуры без десятичных знаков (21 °C)",
+                "ko": "소수점 없이 온도 값을 보고 (21 °C)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Report temperature value with 1 decimal (21.4 °C)",
+                "nl": "Rapporteer temperatuurwaarde met 1 decimaal (21,4 °C)",
+                "da": "Rapporter temperaturværdi med 1 decimal (21,4 °C)",
+                "de": "Temperaturwert mit 1 Dezimalstelle berichten (21,4 °C)",
+                "es": "Informe el valor de temperatura con 1 decimal (21,4 °C)",
+                "fr": "Rapporter la valeur de température avec 1 décimale (21,4 °C)",
+                "it": "Riporta il valore della temperatura con 1 decimale (21,4 °C)",
+                "no": "Rapporter temperaturverdi med 1 desimal (21,4 °C)",
+                "sv": "Rapportera temperaturvärde med 1 decimal (21,4 °C)",
+                "pl": "Zgłoś wartość temperatury z 1 miejscem dziesiętnym (21,4 °C)",
+                "ru": "Сообщите значение температуры с 1 десятичным знаком (21,4 °C)",
+                "ko": "온도 값을 소수점 한 자리로 보고하십시오 (21.4 °C)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Report temperature value with 2 decimals (21.37 °C)",
+                "nl": "Rapporteer temperatuurwaarde met 2 decimalen (21,37 °C)",
+                "da": "Rapporter temperaturværdi med 2 decimaler (21,37 °C)",
+                "de": "Temperaturwert mit 2 Dezimalstellen berichten (21,37 °C)",
+                "es": "Informe el valor de temperatura con 2 decimales (21,37 °C)",
+                "fr": "Rapporter la valeur de température avec 2 décimales (21,37 °C)",
+                "it": "Riporta il valore della temperatura con 2 decimali (21,37 °C)",
+                "no": "Rapporter temperaturverdi med 2 desimaler (21,37 °C)",
+                "sv": "Rapportera temperaturvärde med 2 decimaler (21,37 °C)",
+                "pl": "Zgłoś wartość temperatury z 2 miejscami dziesiętnymi (21,37 °C)",
+                "ru": "Сообщите значение температуры с 2 десятичными знаками (21,37 °C)",
+                "ko": "온도 값을 소수점 두 자리로 보고하십시오 (21.37 °C)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "humidity_decimals",
+          "type": "radio",
+          "label": {
+            "en": "Humidity reporting",
+            "nl": "Rapportage luchtvochtigheid",
+            "da": "Fugtighedsrapportering",
+            "de": "Feuchtigkeitsbericht",
+            "es": "Informe de humedad",
+            "fr": "Rapport d'humidité",
+            "it": "Reporting dell'umidità",
+            "no": "Fuktighetsrapportering",
+            "sv": "Rapportering av luftfuktighet",
+            "pl": "Raportowanie wilgotności",
+            "ru": "Отчет о влажности",
+            "ko": "습도 보고서"
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Report humidity value with 0 decimals (35 %)",
+                "nl": "Rapporteer luchtvochtigheidswaarde zonder decimalen (35 %)",
+                "da": "Rapporter fugtighedsværdi uden decimaler (35 %)",
+                "de": "Feuchtigkeitswert ohne Dezimalstellen berichten (35 %)",
+                "es": "Informe el valor de humedad sin decimales (35 %)",
+                "fr": "Rapporter la valeur d'humidité sans décimale (35 %)",
+                "it": "Riporta il valore di umidità senza decimali (35 %)",
+                "no": "Rapporter fuktighetsverdien uten desimaler (35 %)",
+                "sv": "Rapportera fuktvärde utan decimaler (35 %)",
+                "pl": "Zgłoś wartość wilgotności bez miejsc dziesiętnych (35 %)",
+                "ru": "Сообщите значение влажности без десятичных знаков (35 %)",
+                "ko": "소수점 없이 습도 값을 보고 (35 %)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Report humidity value with 1 decimal (35.2 %)",
+                "nl": "Rapporteer luchtvochtigheidswaarde met 1 decimaal (35,2 %)",
+                "da": "Rapporter fugtighedsværdi med 1 decimal (35,2 %)",
+                "de": "Berichten Sie den Feuchtigkeitswert mit 1 Dezimalstelle (35,2 %)",
+                "es": "Informe el valor de humedad con 1 decimal (35,2 %)",
+                "fr": "Rapporter la valeur d'humidité avec 1 décimale (35,2 %)",
+                "it": "Riporta il valore di umidità con 1 decimale (35,2 %)",
+                "no": "Rapporter fuktighetsverdien med 1 desimal (35,2 %)",
+                "sv": "Rapportera fuktvärde med 1 decimal (35,2 %)",
+                "pl": "Zgłoś wartość wilgotności z 1 miejscem dziesiętnym (35,2 %)",
+                "ru": "Сообщите значение влажности с 1 десятичным знаком (35,2 %)",
+                "ko": "습도 값을 소수점 한 자리로 보고하십시오 (35.2 %)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Report humidity value with 2 decimals (35.19 %)",
+                "nl": "Rapporteer luchtvochtigheidswaarde met 2 decimalen (35,19 %)",
+                "da": "Rapporter fugtighedsværdi med 2 decimaler (35,19 %)",
+                "de": "Berichten Sie den Feuchtigkeitswert mit 2 Dezimalstellen (35,19 %)",
+                "es": "Informe el valor de humedad con 2 decimales (35,19 %)",
+                "fr": "Rapporter la valeur d'humidité avec 2 décimales (35,19 %)",
+                "it": "Riporta il valore di umidità con 2 decimali (35,19 %)",
+                "no": "Rapporter fuktighetsverdien med 2 desimaler (35,19 %)",
+                "sv": "Rapportera fuktvärde med 2 decimaler (35,19 %)",
+                "pl": "Zgłoś wartość wilgotności z 2 miejscami dziesiętnymi (35,19 %)",
+                "ru": "Сообщите значение влажности с 2 десятичными знаками (35,19 %)",
+                "ko": "습도 값을 소수점 두 자리로 보고하십시오 (35.19 %)"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware from SONOFF (latest official release).",
+          "sv": "Firmware från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "SNZB-02D"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 8960,
+            "imageType": 2053,
+            "manufacturerCode": 4742,
+            "size": 264118,
+            "name": "snzb-02d_v2.3.0.ota",
+            "integrity": "sha256:71f4bfbc9fb8d00914ed2623e66c4d10da5fc46d21caeb50be0b32ddf37143d2"
+          }
+        ]
+      }
+    ]
+  }
 }

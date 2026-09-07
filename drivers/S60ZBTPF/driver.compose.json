@@ -1,0 +1,362 @@
+{
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/S60ZBTPF/assets/images/large.png",
+    "small": "/drivers/S60ZBTPF/assets/images/small.png"
+  },
+  "name": {
+    "en": "Wall Plug S60ZBTPF",
+    "sv": "Vägguttag S60ZBTPF",
+    "nl": "Stopcontact S60ZBTPF",
+    "da": "Stikkontakt S60ZBTPF",
+    "de": "Steckdose S60ZBTPF",
+    "es": "Enchufe S60ZBTPF",
+    "fr": "Prise murale S60ZBTPF",
+    "it": "Presa S60ZBTPF",
+    "no": "Stikkontakt S60ZBTPF",
+    "pl": "Gniazdko S60ZBTPF",
+    "ru": "Розетка S60ZBTPF",
+    "ko": "벽면 플러그 S60ZBTPF"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "measure_current",
+    "measure_voltage",
+    "meter_power",
+    "meter_power_today",
+    "meter_power_yesterday",
+    "meter_power_month"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "S60ZBTPF",
+      "S60ZBTPG"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820,
+          64599,
+          64529
+        ],
+        "bindings": [
+          6,
+          2820
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/S60ZBTPF/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button for 5 seconds until the LED flashes.",
+        "sv": "Tryck och håll knappen i 5 sekunder tills LED blinkar.",
+        "nl": "Houd de knop 5 seconden ingedrukt tot de LED knippert.",
+        "da": "Tryk og hold knappen i 5 sekunder, indtil LED blinker.",
+        "de": "Halten Sie die Taste 5 Sekunden gedrückt, bis die LED blinkt.",
+        "es": "Mantenga presionado el botón durante 5 segundos hasta que el LED parpadee.",
+        "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote.",
+        "it": "Tenere premuto il pulsante per 5 secondi fino a quando il LED lampeggia.",
+        "no": "Trykk og hold knappen i 5 sekunder til LED blinker.",
+        "pl": "Naciśnij i przytrzymaj przycisk przez 5 sekund, aż dioda LED zacznie migać.",
+        "ru": "Нажмите и удерживайте кнопку в течение 5 секунд, пока светодиод не начнет мигать.",
+        "ko": "LED가 깜박일 때까지 버튼을 5초간 길게 누르세요."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "network_indicator",
+      "type": "checkbox",
+      "label": {
+        "en": "Network indicator LED",
+        "sv": "Nätverksindikator-LED",
+        "es": "LED indicador de red"
+      },
+      "value": true,
+      "hint": {
+        "en": "Turn the blue network status LED on or off.",
+        "sv": "Tänd eller släck den blå nätverksstatuslampan.",
+        "es": "Enciende o apaga el LED azul de estado de red."
+      }
+    },
+    {
+      "id": "outlet_control_protect",
+      "type": "checkbox",
+      "label": {
+        "en": "Lock remote control",
+        "es": "Bloquear control remoto"
+      },
+      "value": false,
+      "hint": {
+        "en": "When enabled, the outlet ignores on/off commands from Homey and the physical button — use to prevent accidental control.",
+        "es": "Si se activa, el enchufe ignora las órdenes de encendido/apagado desde Homey y el botón físico — úsalo para evitar un control accidental."
+      }
+    },
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-on behavior",
+        "da": "Adfærd ved opstart",
+        "de": "Verhalten beim Einschalten",
+        "es": "Comportamiento de encendido",
+        "fr": "Comportement de mise sous tension",
+        "it": "Comportamento all'accensione",
+        "ko": "전원 켜기 동작",
+        "nl": "Gedrag bij inschakelen",
+        "no": "Oppstartsatferd",
+        "pl": "Zachowanie podczas włączania",
+        "ru": "Поведение при включении питания",
+        "sv": "Beteende vid start"
+      },
+      "value": "last_state",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "da": "Slukket",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "ko": "끄기",
+            "nl": "Uit",
+            "no": "Av",
+            "pl": "Wyłączony",
+            "ru": "Выключено",
+            "sv": "Av"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "da": "Tændt",
+            "de": "Ein",
+            "es": "Encendido",
+            "fr": "Allumé",
+            "it": "Acceso",
+            "ko": "켜기",
+            "nl": "Aan",
+            "no": "På",
+            "pl": "Włączony",
+            "ru": "Включено",
+            "sv": "På"
+          }
+        },
+        {
+          "id": "toggle",
+          "label": {
+            "en": "Toggle",
+            "da": "Skift",
+            "de": "Umschalten",
+            "es": "Alternar",
+            "fr": "Basculer",
+            "it": "Alterna",
+            "ko": "토글",
+            "nl": "Wisselen",
+            "no": "Veksle",
+            "pl": "Przełącz",
+            "ru": "Переключить",
+            "sv": "Växla"
+          }
+        },
+        {
+          "id": "last_state",
+          "label": {
+            "en": "Last state",
+            "da": "Sidste tilstand",
+            "de": "Letzter Zustand",
+            "es": "Último estado",
+            "fr": "Dernier état",
+            "it": "Ultimo stato",
+            "ko": "마지막 상태",
+            "nl": "Laatste staat",
+            "no": "Siste tilstand",
+            "pl": "Ostatni stan",
+            "ru": "Последнее состояние",
+            "sv": "Senaste tillstånd"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Inching",
+        "sv": "Inching",
+        "nl": "Inching",
+        "da": "Inching",
+        "de": "Inching",
+        "es": "Inching",
+        "fr": "Inching",
+        "it": "Inching",
+        "no": "Inching",
+        "pl": "Inching",
+        "ru": "Инчинг",
+        "ko": "인칭"
+      },
+      "children": [
+        {
+          "id": "inching_control",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable",
+            "sv": "Aktivera",
+            "nl": "Inschakelen",
+            "da": "Aktiver",
+            "de": "Aktivieren",
+            "es": "Activar",
+            "fr": "Activer",
+            "it": "Attiva",
+            "no": "Aktiver",
+            "pl": "Włącz",
+            "ru": "Включить",
+            "ko": "활성화"
+          },
+          "hint": {
+            "en": "Automatically turn off/on after a specified time",
+            "sv": "Stäng av/på automatiskt efter angiven tid"
+          },
+          "value": false
+        },
+        {
+          "id": "inching_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Action",
+            "sv": "Åtgärd",
+            "nl": "Actie",
+            "da": "Handling",
+            "de": "Aktion",
+            "es": "Acción",
+            "fr": "Action",
+            "it": "Azione",
+            "no": "Handling",
+            "pl": "Akcja",
+            "ru": "Действие",
+            "ko": "동작"
+          },
+          "hint": {
+            "en": "Turn off after turning on, or turn on after turning off",
+            "sv": "Stäng av efter att ha slagit på, eller slå på efter att ha stängt av"
+          },
+          "value": "off",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Turn off after on",
+                "sv": "Stäng av efter på",
+                "nl": "Uitschakelen na aan",
+                "da": "Sluk efter tændt",
+                "de": "Ausschalten nach Ein",
+                "es": "Apagar después de encender",
+                "fr": "Éteindre après allumage",
+                "it": "Spegni dopo accensione",
+                "no": "Slå av etter på",
+                "pl": "Wyłącz po włączeniu",
+                "ru": "Выключить после включения",
+                "ko": "켠 후 끄기"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Turn on after off",
+                "sv": "Slå på efter av",
+                "nl": "Inschakelen na uit",
+                "da": "Tænd efter slukket",
+                "de": "Einschalten nach Aus",
+                "es": "Encender después de apagar",
+                "fr": "Allumer après extinction",
+                "it": "Accendi dopo spegnimento",
+                "no": "Slå på etter av",
+                "pl": "Włącz po wyłączeniu",
+                "ru": "Включить после выключения",
+                "ko": "끈 후 켜기"
+              }
+            }
+          ]
+        },
+        {
+          "id": "inching_time",
+          "type": "number",
+          "label": {
+            "en": "Time (seconds)",
+            "sv": "Tid (sekunder)",
+            "nl": "Tijd (seconden)",
+            "da": "Tid (sekunder)",
+            "de": "Zeit (Sekunden)",
+            "es": "Tiempo (segundos)",
+            "fr": "Temps (secondes)",
+            "it": "Tempo (secondi)",
+            "no": "Tid (sekunder)",
+            "pl": "Czas (sekundy)",
+            "ru": "Время (секунды)",
+            "ko": "시간 (초)"
+          },
+          "hint": {
+            "en": "Time before automatic action (0.5 - 3599.5 seconds)",
+            "sv": "Tid före automatisk åtgärd (0.5 - 3599.5 sekunder)"
+          },
+          "value": 0.5,
+          "attr": {
+            "min": 0.5,
+            "max": 3599.5,
+            "step": 0.5
+          }
+        }
+      ]
+    }
+  ],
+  "firmwareUpdates": {
+    "wakeInstruction": {
+      "en": "This is a mains-powered device — it should update automatically. Keep it powered during the update.",
+      "sv": "Detta är en nätansluten enhet — den uppdateras automatiskt. Låt den vara strömsatt under uppdateringen."
+    },
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware v2.0.3 from SONOFF (latest official release).",
+          "es": "Firmware v2.0.3 de SONOFF (última versión oficial)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "S60ZBTPF",
+            "S60ZBTPG"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 8195,
+            "imageType": 11,
+            "manufacturerCode": 4742,
+            "size": 147808,
+            "name": "SN-TLSR8656-S60-01-v2.0.3.ota",
+            "integrity": "sha256:d717d5fb4a0f526b925bdb0a23875701f34296fe2b97245540214202247e5d6d"
+          }
+        ]
+      }
+    ]
+  }
+}

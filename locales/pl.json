@@ -1,1 +1,13 @@
-{}
+{
+  "ota": {
+    "up_to_date": "Aktualne",
+    "new_firmware": "Dostępne nowe oprogramowanie",
+    "starting": "Rozpoczynanie aktualizacji do",
+    "updating": "Aktualizacja do",
+    "resuming": "Wznawianie aktualizacji do",
+    "complete": "Zaktualizowano do"
+  },
+  "settings": {
+    "press_button": "Naciśnij przycisk na urządzeniu, aby potwierdzić nowe ustawienia."
+  }
+}

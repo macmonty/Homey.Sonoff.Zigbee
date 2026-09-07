@@ -1,0 +1,353 @@
+{
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/MINI-ZBD/assets/images/large.png",
+    "small": "/drivers/MINI-ZBD/assets/images/small.png"
+  },
+  "name": {
+    "en": "Switch MINI-ZBD (dry contact)",
+    "sv": "Strömbrytare MINI-ZBD (torrkontakt)",
+    "da": "Afbryder MINI-ZBD (tørkontakt)",
+    "de": "Schalter MINI-ZBD (Trockenkontakt)",
+    "es": "Interruptor MINI-ZBD (contacto seco)",
+    "fr": "Interrupteur MINI-ZBD (contact sec)",
+    "it": "Interruttore MINI-ZBD (contatto pulito)",
+    "no": "Bryter MINI-ZBD (tørrkontakt)",
+    "pl": "Przełącznik MINI-ZBD (styk bezpotencjałowy)",
+    "ru": "Выключатель MINI-ZBD (сухой контакт)",
+    "ko": "스위치 MINI-ZBD (무전압 접점)",
+    "nl": "Schakelaar MINI-ZBD (potentiaalvrij contact)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "migrate_to_socket"
+  ],
+  "capabilitiesOptions": {
+    "migrate_to_socket": {
+      "maintenanceAction": true,
+      "title": {
+        "en": "Switch device type to socket",
+        "sv": "Byt enhetstyp till strömuttag"
+      },
+      "desc": {
+        "en": "Tap to switch this device from 'light' to 'socket' type. Then you can use 'What's plugged in?' under device settings to choose what's actually connected. Warning: existing flow cards targeting this device as a light may stop working.",
+        "sv": "Tryck för att byta enhetens typ från 'lampa' till 'strömuttag'. Sedan kan du välja 'Vad är inkopplat?' under inställningar. Varning: befintliga flödeskort som styr enheten som lampa kan sluta fungera."
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "MINI-ZBD"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          64529
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/MINI-ZBD/assets/learn.svg",
+      "instruction": {
+        "en": "This device has no physical pairing button — toggle the connected external switch 10 times in a row (on-off-on-off...) to enter pairing mode.",
+        "es": "Este dispositivo no tiene botón físico de emparejamiento — activa el interruptor externo conectado 10 veces seguidas (encendido-apagado-encendido-apagado...) para entrar en modo de emparejamiento."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-on behavior",
+        "da": "Adfærd ved opstart",
+        "de": "Verhalten beim Einschalten",
+        "es": "Comportamiento de encendido",
+        "fr": "Comportement de mise sous tension",
+        "it": "Comportamento all'accensione",
+        "ko": "전원 켜기 동작",
+        "nl": "Gedrag bij inschakelen",
+        "no": "Oppstartsatferd",
+        "pl": "Zachowanie podczas włączania",
+        "ru": "Поведение при включении питания",
+        "sv": "Beteende vid start"
+      },
+      "value": "off",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "da": "Af",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "De",
+            "it": "Spento",
+            "ko": "끄기",
+            "nl": "Af",
+            "no": "Av",
+            "pl": "Od",
+            "ru": "От",
+            "sv": "Bort"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "da": "På",
+            "de": "Auf",
+            "es": "En",
+            "fr": "Sur",
+            "it": "Su",
+            "ko": "에",
+            "nl": "Op",
+            "no": "På",
+            "pl": "Na",
+            "ru": "На",
+            "sv": "På"
+          }
+        },
+        {
+          "id": "toggle",
+          "label": {
+            "en": "Toggle",
+            "da": "Skifte",
+            "de": "Umschalten",
+            "es": "Alternar",
+            "fr": "Cabillot",
+            "it": "Cavicchio",
+            "ko": "토글",
+            "nl": "Knevel",
+            "no": "Veksle",
+            "pl": "Przełączać",
+            "ru": "Коленчатый рычаг",
+            "sv": "Växla"
+          }
+        },
+        {
+          "id": "last_state",
+          "label": {
+            "en": "Last state",
+            "da": "Sidste tilstand",
+            "de": "Letzter Zustand",
+            "es": "Último estado",
+            "fr": "Dernier état",
+            "it": "Ultimo stato",
+            "ko": "마지막 상태",
+            "nl": "Laatste staat",
+            "no": "Siste tilstand",
+            "pl": "Ostatni stan",
+            "ru": "Последнее состояние",
+            "sv": "Sista tillstånd"
+          }
+        }
+      ]
+    },
+    {
+      "id": "power_on_delay_state",
+      "type": "checkbox",
+      "label": {
+        "en": "Power on delay state",
+        "da": "Forsinkelsestilstand for tænding",
+        "de": "Einschaltverzögerungsstatus",
+        "es": "Estado de retardo de encendido",
+        "fr": "État de retard de mise sous tension",
+        "it": "Stato di ritardo all'accensione",
+        "ko": "전원 켜기 지연 상태",
+        "nl": "Vertraagde status bij inschakelen",
+        "no": "Strøm på forsinkelsestilstand",
+        "pl": "Stan opóźnienia włączenia zasilania",
+        "ru": "Состояние задержки включения питания",
+        "sv": "Fördröjningsläge för påslagning"
+      }
+    },
+    {
+      "id": "power_on_delay_time",
+      "type": "number",
+      "label": {
+        "en": "Power on delay time",
+        "da": "Forsinkelsestid for tænding",
+        "de": "Einschaltverzögerungszeit",
+        "es": "Tiempo de retardo de encendido",
+        "fr": "Temps de retard de mise sous tension",
+        "it": "Tempo di ritardo all'accensione",
+        "ko": "전원 켜기 지연 시간",
+        "nl": "Vertragingstijd bij inschakelen",
+        "no": "Strøm på forsinkelsestid",
+        "pl": "Czas opóźnienia włączenia",
+        "ru": "Время задержки включения питания",
+        "sv": "Fördröjningstid för påslagning"
+      },
+      "min": 1,
+      "max": 3600,
+      "step": 1
+    },
+    {
+      "id": "switch_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Switch mode",
+        "da": "Skift tilstand",
+        "de": "Switch-Modus",
+        "es": "Modo de cambio",
+        "fr": "Changer de mode",
+        "it": "Cambia modalità",
+        "ko": "스위치 모드",
+        "nl": "Wissel modus",
+        "no": "Bytt modus",
+        "pl": "Przełącz tryb",
+        "ru": "Переключение режима",
+        "sv": "Växla läge"
+      },
+      "value": "0",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Edge",
+            "da": "Rand",
+            "de": "Rand",
+            "es": "Borde",
+            "fr": "Bord",
+            "it": "Bordo",
+            "ko": "가장자리",
+            "nl": "Rand",
+            "no": "Kant",
+            "pl": "Brzeg",
+            "ru": "Край",
+            "sv": "Kant"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Pulse",
+            "da": "Puls",
+            "de": "Puls",
+            "es": "Pulso",
+            "fr": "Pouls",
+            "it": "Polso",
+            "ko": "맥박",
+            "nl": "Polsslag",
+            "no": "Puls",
+            "pl": "Puls",
+            "ru": "Пульс",
+            "sv": "Puls"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Follow switch",
+            "da": "Følg kontakten",
+            "de": "Schalter folgen",
+            "es": "Interruptor de seguimiento",
+            "fr": "Suivre l’interrupteur",
+            "it": "Segui l'interruttore",
+            "ko": "팔로우 스위치",
+            "nl": "Volgschakelaar",
+            "no": "Følg bryteren",
+            "pl": "Podążaj za przełącznikiem",
+            "ru": "Переключатель слежения",
+            "sv": "Följ omkopplaren"
+          }
+        },
+        {
+          "id": "130",
+          "label": {
+            "en": "Follow switch (invert)",
+            "da": "Følg kontakten (inverter)",
+            "de": "Follow-Schalter (invertieren)",
+            "es": "Interruptor de seguimiento (invertir)",
+            "fr": "Suivre l’interrupteur (inverser)",
+            "it": "Segui l'interruttore (inverti)",
+            "ko": "팔로우 스위치(반전)",
+            "nl": "Volgschakelaar (omkeren)",
+            "no": "Følg bryteren (inverter)",
+            "pl": "Podążaj za przełącznikiem (odwróć)",
+            "ru": "Переключатель слежения (инвертированный)",
+            "sv": "Följ omkopplaren (invertera)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "detach_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Detach switch",
+        "da": "Afbryder kontakten",
+        "de": "Schalter abnehmen",
+        "es": "Interruptor de desconexión",
+        "fr": "Interrupteur de détachement",
+        "it": "Interruttore di distacco",
+        "ko": "분리 스위치",
+        "nl": "Schakelaar loskoppelen",
+        "no": "Koble fra bryteren",
+        "pl": "Odłącz przełącznik",
+        "ru": "Отсоединяющийся переключатель",
+        "sv": "Lossa omkopplare"
+      }
+    },
+    {
+      "id": "turbo_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Turbo mode",
+        "da": "Turbo-tilstand",
+        "de": "Turbo-Modus",
+        "es": "Modo turbo",
+        "fr": "Mode turbo",
+        "it": "Modalità turbo",
+        "ko": "터보 모드",
+        "nl": "Turbo modus",
+        "no": "Turbo-modus",
+        "pl": "Tryb turbo",
+        "ru": "Турбо режим",
+        "sv": "Turboläge"
+      }
+    }
+  ],
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware from SONOFF (latest official release).",
+          "sv": "Firmware från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "MINI-ZBD"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4104,
+            "imageType": 8,
+            "manufacturerCode": 4742,
+            "size": 277180,
+            "name": "zbminir2_v1.0.8.ota",
+            "integrity": "sha256:2c8b13851a05ee1c17b28cbe37b7edce5280c437dca8da4894a17aae84501220"
+          }
+        ]
+      }
+    ]
+  }
+}

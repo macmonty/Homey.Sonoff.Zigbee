@@ -1,0 +1,10 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Start dimmer calibration",
+    "es": "Iniciar calibración del atenuador"
+  },
+  "getable": false,
+  "setable": true,
+  "uiComponent": "button"
+}

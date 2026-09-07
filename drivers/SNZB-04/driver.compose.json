@@ -1,5 +1,15 @@
 {
-  "id": "SonoffSNZB04",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/SNZB-04/assets/images/large.png",
+    "small": "/drivers/SNZB-04/assets/images/small.png"
+  },
   "name": {
     "en": "Door/window Sensor SNZB-04",
     "sv": "Dörr-/fönstergivare SNZB-04",
@@ -41,7 +51,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/SNZB-04/assets/learn.svg",
       "instruction": {
         "en": "Press reset on bottom with a pin for aprox 10 seconds until the red LED blinks rapidly.",
         "nl": "Druk op reset aan de onderkant met een speld voor ongeveer 10 seconden totdat de rode LED snel knippert.",
@@ -53,11 +63,10 @@
         "no": "Trykk på reset på bunnen med en nål i ca. 10 sekunder til den røde LED-en blinker raskt.",
         "pl": "Naciśnij reset na spodzie szpilką przez około 10 sekund, aż czerwona dioda LED zacznie szybko migać.",
         "ru": "Нажмите кнопку сброса внизу с помощью булавки на около 10 секунд, пока красный светодиод не начнёт часто мигать.",
-        "ko": "핀을 사용하여 하단의 리셋 버튼을 약 10초 동안 눌러 빨간 LED가 빠르게 깜박일 때까지 기다리세요."
+        "ko": "핀을 사용하여 하단의 리셋 버튼을 약 10초 동안 눌러 빨간 LED가 빠르게 깜박일 때까지 기다리세요.",
+        "sv": "Tryck på reset på botten med en stift i cirka 10 sekunder tills den röda lysdioden blinkar snabbt."
       }
     }
   },
-  "$extends": [
-    "defaults"
-  ]
+  "settings": []
 }

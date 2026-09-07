@@ -1,276 +1,251 @@
 {
   "triggers": [
     {
-      "id": "SNZB-01M:button1_single",
+      "id": "SNZB-01M:button_action",
       "title": {
-        "en": "Button 1 – single press",
-        "es": "Botón 1 – pulsación simple",
-        "nl": "Knop 1 – enkel klikken",
-        "de": "Taste 1 – einfach drücken",
-        "fr": "Bouton 1 – appui simple",
-        "it": "Pulsante 1 – pressione singola",
-        "da": "Knap 1 – enkelt tryk",
-        "no": "Knapp 1 – enkelt trykk",
-        "sv": "Knapp 1 – enkelklick",
-        "pl": "Przycisk 1 – pojedyncze",
-        "ru": "Кнопка 1 – одно нажатие",
-        "ko": "버튼 1 – 단일 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button1_double",
-      "title": {
-        "en": "Button 1 – double press",
-        "es": "Botón 1 – doble pulsación",
-        "nl": "Knop 1 – dubbel klikken",
-        "de": "Taste 1 – doppelt drücken",
-        "fr": "Bouton 1 – double appui",
-        "it": "Pulsante 1 – doppia pressione",
-        "da": "Knap 1 – dobbelt tryk",
-        "no": "Knapp 1 – dobbelt trykk",
-        "sv": "Knapp 1 – dubbelklick",
-        "pl": "Przycisk 1 – podwójne",
-        "ru": "Кнопка 1 – двойное нажатие",
-        "ko": "버튼 1 – 이중 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button1_long",
-      "title": {
-        "en": "Button 1 – long press",
-        "es": "Botón 1 – pulsación larga",
-        "nl": "Knop 1 – lang ingedrukt",
-        "de": "Taste 1 – lang drücken",
-        "fr": "Bouton 1 – appui long",
-        "it": "Pulsante 1 – pressione lunga",
-        "da": "Knap 1 – langt tryk",
-        "no": "Knapp 1 – langt trykk",
-        "sv": "Knapp 1 – långtryckning",
-        "pl": "Przycisk 1 – długie",
-        "ru": "Кнопка 1 – долгое нажатие",
-        "ko": "버튼 1 – 길게 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button1_triple",
-      "title": {
-        "en": "Button 1 – triple press",
-        "es": "Botón 1 – triple pulsación",
-        "nl": "Knop 1 – drievoudig klikken",
-        "de": "Taste 1 – dreifach drücken",
-        "fr": "Bouton 1 – triple appui",
-        "it": "Pulsante 1 – tripla pressione",
-        "da": "Knap 1 – tredobbelt tryk",
-        "no": "Knapp 1 – trippelt trykk",
-        "sv": "Knapp 1 – trippelklick",
-        "pl": "Przycisk 1 – potrójne",
-        "ru": "Кнопка 1 – тройное нажатие",
-        "ko": "버튼 1 – 세 번 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button2_single",
-      "title": {
-        "en": "Button 2 – single press",
-        "es": "Botón 2 – pulsación simple",
-        "nl": "Knop 2 – enkel klikken",
-        "de": "Taste 2 – einfach drücken",
-        "fr": "Bouton 2 – appui simple",
-        "it": "Pulsante 2 – pressione singola",
-        "da": "Knap 2 – enkelt tryk",
-        "no": "Knapp 2 – enkelt trykk",
-        "sv": "Knapp 2 – enkelklick",
-        "pl": "Przycisk 2 – pojedyncze",
-        "ru": "Кнопка 2 – одно нажатие",
-        "ko": "버튼 2 – 단일 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button2_double",
-      "title": {
-        "en": "Button 2 – double press",
-        "es": "Botón 2 – doble pulsación",
-        "nl": "Knop 2 – dubbel klikken",
-        "de": "Taste 2 – doppelt drücken",
-        "fr": "Bouton 2 – double appui",
-        "it": "Pulsante 2 – doppia pressione",
-        "da": "Knap 2 – dobbelt tryk",
-        "no": "Knapp 2 – dobbelt trykk",
-        "sv": "Knapp 2 – dubbelklick",
-        "pl": "Przycisk 2 – podwójne",
-        "ru": "Кнопка 2 – двойное нажатие",
-        "ko": "버튼 2 – 이중 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button2_long",
-      "title": {
-        "en": "Button 2 – long press",
-        "es": "Botón 2 – pulsación larga",
-        "nl": "Knop 2 – lang ingedrukt",
-        "de": "Taste 2 – lang drücken",
-        "fr": "Bouton 2 – appui long",
-        "it": "Pulsante 2 – pressione lunga",
-        "da": "Knap 2 – langt tryk",
-        "no": "Knapp 2 – langt trykk",
-        "sv": "Knapp 2 – långtryckning",
-        "pl": "Przycisk 2 – długie",
-        "ru": "Кнопка 2 – долгое нажатие",
-        "ko": "버튼 2 – 길게 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button2_triple",
-      "title": {
-        "en": "Button 2 – triple press",
-        "es": "Botón 2 – triple pulsación",
-        "nl": "Knop 2 – drievoudig klikken",
-        "de": "Taste 2 – dreifach drücken",
-        "fr": "Bouton 2 – triple appui",
-        "it": "Pulsante 2 – tripla pressione",
-        "da": "Knap 2 – tredobbelt tryk",
-        "no": "Knapp 2 – trippelt trykk",
-        "sv": "Knapp 2 – trippelklick",
-        "pl": "Przycisk 2 – potrójne",
-        "ru": "Кнопка 2 – тройное нажатие",
-        "ko": "버튼 2 – 세 번 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button3_single",
-      "title": {
-        "en": "Button 3 – single press",
-        "es": "Botón 3 – pulsación simple",
-        "nl": "Knop 3 – enkel klikken",
-        "de": "Taste 3 – einfach drücken",
-        "fr": "Bouton 3 – appui simple",
-        "it": "Pulsante 3 – pressione singola",
-        "da": "Knap 3 – enkelt tryk",
-        "no": "Knapp 3 – enkelt trykk",
-        "sv": "Knapp 3 – enkelklick",
-        "pl": "Przycisk 3 – pojedyncze",
-        "ru": "Кнопка 3 – одно нажатие",
-        "ko": "버튼 3 – 단일 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button3_double",
-      "title": {
-        "en": "Button 3 – double press",
-        "es": "Botón 3 – doble pulsación",
-        "nl": "Knop 3 – dubbel klikken",
-        "de": "Taste 3 – doppelt drücken",
-        "fr": "Bouton 3 – double appui",
-        "it": "Pulsante 3 – doppia pressione",
-        "da": "Knap 3 – dobbelt tryk",
-        "no": "Knapp 3 – dobbelt trykk",
-        "sv": "Knapp 3 – dubbelklick",
-        "pl": "Przycisk 3 – podwójne",
-        "ru": "Кнопка 3 – двойное нажатие",
-        "ko": "버튼 3 – 이중 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button3_long",
-      "title": {
-        "en": "Button 3 – long press",
-        "es": "Botón 3 – pulsación larga",
-        "nl": "Knop 3 – lang ingedrukt",
-        "de": "Taste 3 – lang drücken",
-        "fr": "Bouton 3 – appui long",
-        "it": "Pulsante 3 – pressione lunga",
-        "da": "Knap 3 – langt tryk",
-        "no": "Knapp 3 – langt trykk",
-        "sv": "Knapp 3 – långtryckning",
-        "pl": "Przycisk 3 – długie",
-        "ru": "Кнопка 3 – долгое нажатие",
-        "ko": "버튼 3 – 길게 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button3_triple",
-      "title": {
-        "en": "Button 3 – triple press",
-        "es": "Botón 3 – triple pulsación",
-        "nl": "Knop 3 – drievoudig klikken",
-        "de": "Taste 3 – dreifach drücken",
-        "fr": "Bouton 3 – triple appui",
-        "it": "Pulsante 3 – tripla pressione",
-        "da": "Knap 3 – tredobbelt tryk",
-        "no": "Knapp 3 – trippelt trykk",
-        "sv": "Knapp 3 – trippelklick",
-        "pl": "Przycisk 3 – potrójne",
-        "ru": "Кнопка 3 – тройное нажатие",
-        "ko": "버튼 3 – 세 번 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button4_single",
-      "title": {
-        "en": "Button 4 – single press",
-        "es": "Botón 4 – pulsación simple",
-        "nl": "Knop 4 – enkel klikken",
-        "de": "Taste 4 – einfach drücken",
-        "fr": "Bouton 4 – appui simple",
-        "it": "Pulsante 4 – pressione singola",
-        "da": "Knap 4 – enkelt tryk",
-        "no": "Knapp 4 – enkelt trykk",
-        "sv": "Knapp 4 – enkelklick",
-        "pl": "Przycisk 4 – pojedyncze",
-        "ru": "Кнопка 4 – одно нажатие",
-        "ko": "버튼 4 – 단일 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button4_double",
-      "title": {
-        "en": "Button 4 – double press",
-        "es": "Botón 4 – doble pulsación",
-        "nl": "Knop 4 – dubbel klikken",
-        "de": "Taste 4 – doppelt drücken",
-        "fr": "Bouton 4 – double appui",
-        "it": "Pulsante 4 – doppia pressione",
-        "da": "Knap 4 – dobbelt tryk",
-        "no": "Knapp 4 – dobbelt trykk",
-        "sv": "Knapp 4 – dubbelklick",
-        "pl": "Przycisk 4 – podwójne",
-        "ru": "Кнопка 4 – двойное нажатие",
-        "ko": "버튼 4 – 이중 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button4_long",
-      "title": {
-        "en": "Button 4 – long press",
-        "es": "Botón 4 – pulsación larga",
-        "nl": "Knop 4 – lang ingedrukt",
-        "de": "Taste 4 – lang drücken",
-        "fr": "Bouton 4 – appui long",
-        "it": "Pulsante 4 – pressione lunga",
-        "da": "Knap 4 – langt tryk",
-        "no": "Knapp 4 – langt trykk",
-        "sv": "Knapp 4 – långtryckning",
-        "pl": "Przycisk 4 – długie",
-        "ru": "Кнопка 4 – долгое нажатие",
-        "ko": "버튼 4 – 길게 누름"
-      }
-    },
-    {
-      "id": "SNZB-01M:button4_triple",
-      "title": {
-        "en": "Button 4 – triple press",
-        "es": "Botón 4 – triple pulsación",
-        "nl": "Knop 4 – drievoudig klikken",
-        "de": "Taste 4 – dreifach drücken",
-        "fr": "Bouton 4 – triple appui",
-        "it": "Pulsante 4 – tripla pressione",
-        "da": "Knap 4 – tredobbelt tryk",
-        "no": "Knapp 4 – trippelt trykk",
-        "sv": "Knapp 4 – trippelklick",
-        "pl": "Przycisk 4 – potrójne",
-        "ru": "Кнопка 4 – тройное нажатие",
-        "ko": "버튼 4 – 세 번 누름"
-      }
+        "en": "Button press",
+        "sv": "Knapptryck",
+        "nl": "Knopdruk",
+        "da": "Knaptryk",
+        "de": "Tastendruck",
+        "es": "Pulsación de botón",
+        "fr": "Appui sur bouton",
+        "it": "Pressione pulsante",
+        "no": "Knappetrykk",
+        "pl": "Naciśnięcie przycisku",
+        "ru": "Нажатие кнопки",
+        "ko": "버튼 누름"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]]: [[action]]",
+        "sv": "Knapp [[button]]: [[action]]",
+        "nl": "Knop [[button]]: [[action]]",
+        "da": "Knap [[button]]: [[action]]",
+        "de": "Taste [[button]]: [[action]]",
+        "es": "Botón [[button]]: [[action]]",
+        "fr": "Bouton [[button]] : [[action]]",
+        "it": "Pulsante [[button]]: [[action]]",
+        "no": "Knapp [[button]]: [[action]]",
+        "pl": "Przycisk [[button]]: [[action]]",
+        "ru": "Кнопка [[button]]: [[action]]",
+        "ko": "버튼 [[button]]: [[action]]"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "sv": "Knapp",
+            "nl": "Knop",
+            "da": "Knap",
+            "de": "Taste",
+            "es": "Botón",
+            "fr": "Bouton",
+            "it": "Pulsante",
+            "no": "Knapp",
+            "pl": "Przycisk",
+            "ru": "Кнопка",
+            "ko": "버튼"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "Button 1",
+                "sv": "Knapp 1",
+                "nl": "Knop 1",
+                "da": "Knap 1",
+                "de": "Taste 1",
+                "es": "Botón 1",
+                "fr": "Bouton 1",
+                "it": "Pulsante 1",
+                "no": "Knapp 1",
+                "pl": "Przycisk 1",
+                "ru": "Кнопка 1",
+                "ko": "버튼 1"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Button 2",
+                "sv": "Knapp 2",
+                "nl": "Knop 2",
+                "da": "Knap 2",
+                "de": "Taste 2",
+                "es": "Botón 2",
+                "fr": "Bouton 2",
+                "it": "Pulsante 2",
+                "no": "Knapp 2",
+                "pl": "Przycisk 2",
+                "ru": "Кнопка 2",
+                "ko": "버튼 2"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Button 3",
+                "sv": "Knapp 3",
+                "nl": "Knop 3",
+                "da": "Knap 3",
+                "de": "Taste 3",
+                "es": "Botón 3",
+                "fr": "Bouton 3",
+                "it": "Pulsante 3",
+                "no": "Knapp 3",
+                "pl": "Przycisk 3",
+                "ru": "Кнопка 3",
+                "ko": "버튼 3"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Button 4",
+                "sv": "Knapp 4",
+                "nl": "Knop 4",
+                "da": "Knap 4",
+                "de": "Taste 4",
+                "es": "Botón 4",
+                "fr": "Bouton 4",
+                "it": "Pulsante 4",
+                "no": "Knapp 4",
+                "pl": "Przycisk 4",
+                "ru": "Кнопка 4",
+                "ko": "버튼 4"
+              }
+            }
+          ]
+        },
+        {
+          "name": "action",
+          "type": "dropdown",
+          "title": {
+            "en": "Action",
+            "sv": "Åtgärd",
+            "nl": "Actie",
+            "da": "Handling",
+            "de": "Aktion",
+            "es": "Acción",
+            "fr": "Action",
+            "it": "Azione",
+            "no": "Handling",
+            "pl": "Akcja",
+            "ru": "Действие",
+            "ko": "동작"
+          },
+          "values": [
+            {
+              "id": "single",
+              "label": {
+                "en": "Single click",
+                "sv": "Enkelklick",
+                "nl": "Enkele klik",
+                "da": "Enkeltklik",
+                "de": "Einzelklick",
+                "es": "Clic único",
+                "fr": "Clic simple",
+                "it": "Clic singolo",
+                "no": "Enkeltklikk",
+                "pl": "Pojedyncze kliknięcie",
+                "ru": "Одиночный клик",
+                "ko": "단일 클릭"
+              }
+            },
+            {
+              "id": "double",
+              "label": {
+                "en": "Double click",
+                "sv": "Dubbelklick",
+                "nl": "Dubbele klik",
+                "da": "Dobbeltklik",
+                "de": "Doppelklick",
+                "es": "Doble clic",
+                "fr": "Double clic",
+                "it": "Doppio clic",
+                "no": "Dobbeltklikk",
+                "pl": "Podwójne kliknięcie",
+                "ru": "Двойной клик",
+                "ko": "더블 클릭"
+              }
+            },
+            {
+              "id": "triple",
+              "label": {
+                "en": "Triple click",
+                "sv": "Trippelklick",
+                "nl": "Drievoudige klik",
+                "da": "Tripleklik",
+                "de": "Dreifachklick",
+                "es": "Triple clic",
+                "fr": "Triple clic",
+                "it": "Triplo clic",
+                "no": "Trippelklikk",
+                "pl": "Potrójne kliknięcie",
+                "ru": "Тройной клик",
+                "ko": "트리플 클릭"
+              }
+            },
+            {
+              "id": "long",
+              "label": {
+                "en": "Long press",
+                "sv": "Långtryck",
+                "nl": "Lang indrukken",
+                "da": "Langtryk",
+                "de": "Langer Druck",
+                "es": "Pulsación larga",
+                "fr": "Appui long",
+                "it": "Pressione lunga",
+                "no": "Langtrykk",
+                "pl": "Długie naciśnięcie",
+                "ru": "Долгое нажатие",
+                "ko": "길게 누름"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "sv": "Knapp",
+            "nl": "Knop",
+            "da": "Knap",
+            "de": "Taste",
+            "es": "Botón",
+            "fr": "Bouton",
+            "it": "Pulsante",
+            "no": "Knapp",
+            "pl": "Przycisk",
+            "ru": "Кнопка",
+            "ko": "버튼"
+          }
+        },
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action",
+            "sv": "Åtgärd",
+            "nl": "Actie",
+            "da": "Handling",
+            "de": "Aktion",
+            "es": "Acción",
+            "fr": "Action",
+            "it": "Azione",
+            "no": "Handling",
+            "pl": "Akcja",
+            "ru": "Действие",
+            "ko": "동작"
+          }
+        }
+      ]
     }
   ]
 }

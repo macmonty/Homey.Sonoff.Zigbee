@@ -1,0 +1,77 @@
+{
+  "title": {
+    "en": "Temperature is !{{higher|lower}} than",
+    "nl": "Temperatuur is !{{hoger|lager}} dan",
+    "da": "Temperaturen er !{{højere|lavere}} end",
+    "de": "Temperatur ist !{{höher|niedriger}} als",
+    "es": "La temperatura es !{{mayor|menor}} que",
+    "fr": "La température est !{{plus élevée|plus basse}} que",
+    "it": "La temperatura è !{{superiore|inferiore}} a",
+    "no": "Temperaturen er !{{høyere|lavere}} enn",
+    "sv": "Temperaturen är !{{högre|lägre}} än",
+    "pl": "Temperatura jest !{{wyższa|niższa}} niż",
+    "ru": "Температура !{{выше|ниже}}, чем",
+    "ko": "온도가 다음보다 !{{높음|낮음}}"
+  },
+  "titleFormatted": {
+    "en": "[[device]] temperature is !{{higher|lower}} than [[temperature]]°C",
+    "nl": "[[device]] temperatuur is !{{hoger|lager}} dan [[temperature]]°C",
+    "da": "[[device]] temperaturen er !{{højere|lavere}} end [[temperature]]°C",
+    "de": "[[device]] Temperatur ist !{{höher|niedriger}} als [[temperature]]°C",
+    "es": "[[device]] temperatura es !{{mayor|menor}} que [[temperature]]°C",
+    "fr": "[[device]] température est !{{plus élevée|plus basse}} que [[temperature]]°C",
+    "it": "[[device]] temperatura è !{{superiore|inferiore}} a [[temperature]]°C",
+    "no": "[[device]] temperaturen er !{{høyere|lavere}} enn [[temperature]]°C",
+    "sv": "[[device]] temperaturen är !{{högre|lägre}} än [[temperature]]°C",
+    "pl": "[[device]] temperatura jest !{{wyższa|niższa}} niż [[temperature]]°C",
+    "ru": "[[device]] температура !{{выше|ниже}}, чем [[temperature]]°C",
+    "ko": "[[device]] 온도가 [[temperature]]°C보다 !{{높음|낮음}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "nl": "Apparaat",
+        "da": "Enhed",
+        "de": "Gerät",
+        "es": "Dispositivo",
+        "fr": "Appareil",
+        "it": "Dispositivo",
+        "no": "Enhet",
+        "sv": "Enhet",
+        "pl": "Urządzenie",
+        "ru": "Устройство",
+        "ko": "장치"
+      },
+      "filter": "capabilities=measure_temperature"
+    },
+    {
+      "type": "number",
+      "name": "temperature",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur",
+        "da": "Temperatur",
+        "de": "Temperatur",
+        "es": "Temperatura",
+        "fr": "Température",
+        "it": "Temperatura",
+        "no": "Temperatur",
+        "sv": "Temperatur",
+        "pl": "Temperatura",
+        "ru": "Температура",
+        "ko": "온도"
+      },
+      "placeholder": {
+        "en": "Temperature",
+        "nl": "Temperatuur"
+      },
+      "min": -50,
+      "max": 100,
+      "step": 0.1
+    }
+  ],
+  "id": "measure_temperature_compare"
+}

@@ -1,35 +1,45 @@
 'use strict';
 
-const { ZigBeeDevice } = require("homey-zigbeedriver");
-
-const SonoffOnOffCluster = require("../../lib/SonoffOnOffCluster");
-
+const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { Cluster, CLUSTER } = require('zigbee-clusters');
 
-Cluster.addCluster(SonoffOnOffCluster);
+const SonoffOnOffCluster = require('../../lib/SonoffOnOffCluster');
+try {
+  Cluster.addCluster(SonoffOnOffCluster);
+} catch (err) {
+  // Cluster might already be registered by another driver
+}
 
 class SonoffZBMINI extends ZigBeeDevice {
 
- /**
-   * onInit is called when the device is initialized.
-   */
-    async onNodeInit({ zclNode }) {
-        this.log('Device initialized');
-        this.printNode();
+  async onNodeInit({ zclNode }) {
+    this.log('ZBMINI Switch initialized');
 
-        if (this.hasCapability('onoff')) {
-            this.registerCapability('onoff', CLUSTER.ON_OFF);
-        }
+    if (this.hasCapability('onoff')) {
+      this.registerCapability('onoff', CLUSTER.ON_OFF);
     }
 
-    
-
-  /**
-   * onDeleted is called when the user deleted the device.
-   */
-    async onDeleted() {
-        this.log("smartswitch removed");
+    try {
+      const { powerOnBehavior } = await this.zclNode.endpoints[1].clusters.onOff.readAttributes('powerOnBehavior');
+      await this.setSettings({ power_on_behavior: powerOnBehavior });
+    } catch (e) {
+      this.log('Could not read / update device settings', e.message);
     }
+  }
+
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    if (changedKeys.includes('power_on_behavior')) {
+      try {
+        await this.zclNode.endpoints[1].clusters.onOff.writeAttributes({ powerOnBehavior: newSettings.power_on_behavior });
+      } catch (error) {
+        this.error('Error updating the power on behavior', error.message);
+      }
+    }
+  }
+
+  async onDeleted() {
+    this.log('ZBMINI Switch removed');
+  }
 
 }
 

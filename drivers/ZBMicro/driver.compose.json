@@ -1,0 +1,166 @@
+{
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/ZBMicro/assets/images/large.png",
+    "small": "/drivers/ZBMicro/assets/images/small.png"
+  },
+  "name": {
+    "en": "Switch ZBMicro",
+    "sv": "Strömbrytare ZBMicro",
+    "da": "Skift ZBMicro",
+    "de": "Schalter ZBMicro",
+    "es": "Interruptor ZBMicro",
+    "fr": "Commutateur ZBMicro",
+    "it": "Interruttore ZBMicro",
+    "ko": "ZBMicro 전환",
+    "nl": "Schakelaar ZBMicro",
+    "no": "Bytt ZBMicro",
+    "pl": "Przełącznik ZBMicro",
+    "ru": "Переключатель ZBMicro"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "ZBMicro"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/ZBMicro/assets/learn.svg",
+      "instruction": {
+        "en": "Press the button on the top for aprox. 10 seconds until the green LED blinks rapidly.",
+        "da": "Tryk på knappen øverst i ca. 10 sekunder, indtil den grønne LED blinker hurtigt.",
+        "de": "Drücken Sie den Knopf auf der Oberseite für ca. 10 Sekunden, bis die grüne LED schnell blinkt.",
+        "es": "Presione el botón en la parte superior durante aprox. 10 segundos hasta que el LED verde parpadee rápidamente.",
+        "fr": "Appuyez sur le bouton en haut pour plus d’informations. 10 secondes jusqu’à ce que la LED verte clignote rapidement.",
+        "it": "Premere il pulsante in alto per ca. 10 secondi fino a quando il LED verde lampeggia rapidamente.",
+        "ko": "위쪽에 있는 버튼을 눌러 약식을 확인합니다. 녹색 LED가 빠르게 깜박일 때까지 10초 동안 기다립니다.",
+        "nl": "Druk op de knop aan de bovenkant voor ongeveer. 10 seconden totdat de groene LED snel knippert.",
+        "no": "Trykk på knappen på toppen i ca. 10 sekunder til den grønne LED-lampen blinker raskt.",
+        "pl": "Naciśnij przycisk na górze, aby uzyskać ok. 10 sekund, aż zielona dioda LED zacznie szybko migać.",
+        "ru": "Нажмите кнопку вверху для приблизости. 10 секунд, пока зеленый светодиод не начнет быстро мигать.",
+        "sv": "Tryck på knappen på ovansidan för ca. 10 sekunder tills den gröna lysdioden blinkar snabbt."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-on behavior",
+        "da": "Adfærd ved opstart",
+        "de": "Verhalten beim Einschalten",
+        "es": "Comportamiento de encendido",
+        "fr": "Comportement de mise sous tension",
+        "it": "Comportamento all'accensione",
+        "ko": "전원 켜기 동작",
+        "nl": "Gedrag bij inschakelen",
+        "no": "Oppstartsatferd",
+        "pl": "Zachowanie podczas włączania",
+        "ru": "Поведение при включении питания",
+        "sv": "Beteende vid start"
+      },
+      "value": "off",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "da": "Af",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "De",
+            "it": "Spento",
+            "ko": "끄기",
+            "nl": "Af",
+            "no": "Av",
+            "pl": "Od",
+            "ru": "От",
+            "sv": "Bort"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "da": "På",
+            "de": "Auf",
+            "es": "En",
+            "fr": "Sur",
+            "it": "Su",
+            "ko": "에",
+            "nl": "Op",
+            "no": "På",
+            "pl": "Na",
+            "ru": "На",
+            "sv": "På"
+          }
+        },
+        {
+          "id": "last_state",
+          "label": {
+            "en": "Last state",
+            "da": "Sidste tilstand",
+            "de": "Letzter Zustand",
+            "es": "Último estado",
+            "fr": "Dernier état",
+            "it": "Ultimo stato",
+            "ko": "마지막 상태",
+            "nl": "Laatste staat",
+            "no": "Siste tilstand",
+            "pl": "Ostatni stan",
+            "ru": "Последнее состояние",
+            "sv": "Sista tillstånd"
+          }
+        }
+      ]
+    }
+  ],
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware from SONOFF (latest official release).",
+          "sv": "Firmware från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "ZBMicro"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4101,
+            "imageType": 7,
+            "manufacturerCode": 4742,
+            "size": 269220,
+            "name": "zbmicro_v1.0.5.ota",
+            "integrity": "sha256:fc7707706a8e58ebe541c18fc23b7ffbeee5884edde6346821cbd2cacf9a67e0"
+          }
+        ]
+      }
+    ]
+  }
+}

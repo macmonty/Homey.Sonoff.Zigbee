@@ -1,1 +1,13 @@
-{}
+{
+  "ota": {
+    "up_to_date": "최신 상태",
+    "new_firmware": "새 펌웨어 사용 가능",
+    "starting": "업데이트 시작",
+    "updating": "업데이트 중",
+    "resuming": "업데이트 재개",
+    "complete": "업데이트 완료"
+  },
+  "settings": {
+    "press_button": "새 설정을 확인하려면 장치의 버튼을 누르십시오."
+  }
+}

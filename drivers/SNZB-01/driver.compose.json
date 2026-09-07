@@ -1,5 +1,15 @@
 {
-  "id": "SonoffSNZB01",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/SNZB-01/assets/images/large.png",
+    "small": "/drivers/SNZB-01/assets/images/small.png"
+  },
   "name": {
     "en": "Button SNZB-01",
     "sv": "Knapp SNZB-01",
@@ -43,7 +53,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/SNZB-01/assets/learn.svg",
       "instruction": {
         "en": "Remove the cover on the underside and press reset button with a pin for aprox 10 seconds until the red LED blinks rapidly.",
         "nl": "Verwijder de deksel aan de onderkant en druk ongeveer 10 seconden op de resetknop met een pen totdat de rode LED snel knippert.",
@@ -59,8 +69,5 @@
         "sv": "Ta bort locket på undersidan och tryck på återställningsknappen med en nål i cirka 10 sekunder tills den röda LED-lampan blinkar snabbt."
       }
     }
-  },
-  "$extends": [
-    "defaults"
-  ]
+  }
 }

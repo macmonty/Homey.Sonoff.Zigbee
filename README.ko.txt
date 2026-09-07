@@ -1,24 +1,83 @@
-Sonoff Zigbee
+소노프 지그비
 
-Homey 앱이 Sonoff 기기들을 지원합니다.
+Homey 앱은 Sonoff 장치에 대한 지원을 추가합니다.
 
-지원 기기:
--Sonoff SNZB-01 (사각형 버튼)
--Sonoff SNZB-01P (원형 버튼)
--Sonoff SNZB-02 (사각형 온도계)
--Sonoff SNZB-02D (디스플레이 포함 온도계)
--Sonoff SNZB-02P (원형 온도계)
--Sonoff SNZB-03 (모션 센서)
--Sonoff SNZB-03P (모션 센서)
--Sonoff SNZB-04 (도어/창문 센서)
--Sonoff SNZB-04P (도어/창문 센서)
--Sonoff SNZB-06P (재실 센서)
--Sonoff ZBCurtain (커튼)
--Sonoff TRVZB (방열기 밸브)
--Sonoff ZBMINI (스위치)
--Sonoff ZBMINI-L (스위치)
+지원 장치 (추가된 버전별로 그룹화):
+
+--- v1.0.9 ---
+-Sonoff SNZB-02   (사각 온도계)
+-Sonoff SNZB-02D  (디스플레이가 있는 온도계)
+
+--- v1.0.12 ---
+-Sonoff SNZB-04   (도어/창문 접촉)
+
+--- v1.0.14 ---
+-Sonoff SNZB-03   (모션 감지기)
+-Sonoff SNZB-06P  (존재 감지기)
+
+--- v1.2.0 ---
+-Sonoff ZBMINI-L  (스위치)
 -Sonoff ZBMINI-L2 (스위치)
--Sonoff ZBMINIR2 (스위치 / 라우터)
--Sonoff MINI-ZB2GS (스마트 스위치 2채널)
--Sonoff MINI-ZB2GS-L (스마트 스위치 2채널)
--Sonoff RF/TX 기기 (송수신)
+-Sonoff RF/TX 장치 (송신 및 수신)
+
+--- v1.4.0 ---
+-Sonoff ZBTRV     (라디에이터 밸브)
+-Sonoff SNZB-03P  (모션 감지기)
+-Sonoff SNZB-04P  (도어/창문 접촉)
+
+--- v1.5.0 ---
+-Sonoff ZBCurtain (커튼)
+
+--- v1.6.2 ---
+-Sonoff SNZB-05P  (누수 감지기)
+
+--- v1.7.0 ---
+-Sonoff ZBMINIR2  (외부 버튼이 있는 스위치)
+
+--- v1.7.1 ---
+-Sonoff SWV       (워터 밸브)
+
+--- v1.7.2 ---
+-Sonoff ZBMicro   (USB 스위치)
+
+--- v1.7.3 ---
+-Sonoff SNZB-02WD (실외 온도계)
+
+--- v1.7.9 ---
+-Sonoff S60ZBTPF  (전력 측정 기능이 있는 벽면 플러그)
+
+--- v1.9.0 ---
+-Sonoff SNZB-02DR2 (디스플레이가 있는 온도계)
+
+--- v1.10.0 ---
+-Sonoff SNZB-01M  (4-in-1 버튼)
+
+--- v1.12.0 ---
+-Sonoff DUO       (2채널 스위치, 중성선 필요)
+-Sonoff DUO-L     (2채널 스위치, 중성선 없음)
+
+--- v1.13.0 ---
+-Sonoff BASICZBR3 (스마트 스위치)
+-Sonoff MINI-ZBRBS (롤러 셔터 스위치)
+
+--- v1.14.0 ---
+-Sonoff DUO — 채널별 개별 드라이버
+
+--- v1.15.0 ---
+-Sonoff DUO-L — 채널별 개별 드라이버
+-Sonoff ZBM5      (벽 스위치, 1/2/3채널 — 채널별 개별 드라이버 추가됨)
+
+--- 정확한 버전이 기록되지 않음 ---
+-Sonoff SNZB-01   (사각 버튼)
+-Sonoff SNZB-01P  (원형 버튼)
+-Sonoff SNZB-02P  (원형 온도계)
+-Sonoff SNZB-02LD (프로브가 있는 실외 온도계)
+
+--- v1.16.0 ---
+-Sonoff MINI-ZBDIM (스마트 디머)
+-Sonoff ZBMINI    (스위치)
+-Sonoff MINI-ZB1GS (스마트 스위치)
+-Sonoff MINI-ZB1GSP (전력 측정 기능이 있는 스마트 스위치)
+
+--- v1.17.0 ---
+-Sonoff MINI-ZBD  (무전압 접점 스위치)

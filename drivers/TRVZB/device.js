@@ -3,108 +3,17 @@
 const Homey = require('homey');
 const SonoffBase = require('../sonoffbase');
 //const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { Cluster, ZCLDataTypes, ZCLDataType, CLUSTER, BoundCluster, ThermostatCluster } = require('zigbee-clusters');
-const { ZCLStandardHeader } = require('zigbee-clusters/lib/zclFrames');
+const { Cluster, CLUSTER } = require('zigbee-clusters');
 const SonoffCluster = require("../../lib/SonoffCluster");
+const SonoffTimeBoundCluster = require('../../lib/SonoffTimeBoundCluster');
 
 Cluster.addCluster(SonoffCluster);
-
 
 const Settings_Attributes = [
 	'child_lock',
 	'open_window',
 	'frost_protection_temperature'
 ];
-
-/*
-const TB_ATTRIBUTES = {
-
-	physicalMinLevel: {
-	  id: 0,
-	  type: ZCLDataTypes.uint8,
-	},
-}
-	*/
-
-function uintToBuf(buf, v, i) {
-	return buf.writeUInt32LE(v, i, this.length) - i;
-}
-
-function uintFromBuf(buf, i) {
-	if (buf.length - i < this.length) return 0;
-	return buf.readUInt32LE(i, this.length);
-}
-
-const DATATYPE_UTC = new ZCLDataType(0xE2, 'uint32', 4, uintToBuf, uintFromBuf)
-const DATATYPE_UTC2 = new ZCLDataType(0x23, 'uint32', 4, uintToBuf, uintFromBuf)
-
-class SonoffTimeBoundCluster extends BoundCluster {
-	constructor(endpoint) {
-		super();
-		this.ep = endpoint;
-	}
-	static get ID() {
-		return 10; // 0xA
-	}
-	static get NAME() {
-		return 'time';
-	}
-	static get ATTRIBUTES() {
-		return {
-			time: {
-				id: 0,
-				type: DATATYPE_UTC
-			},
-			local_time: {
-				id: 7,
-				type: DATATYPE_UTC2
-			}
-		};
-	}
-	get time() {
-		return this.time_since_2000(new Date());
-	}
-	get local_time() {
-		return this.time_since_2000(new Date());
-	}
-	time_since_2000(date) {
-		const year2000 = new Date('2000-01-01T00:00:00Z');
-		const timeSince2000 = date.getTime() - year2000.getTime();
-		return Math.floor(timeSince2000 / 1000) >>> 0;
-	}
-	async handleFrame(frame, meta, rawFrame) {
-		this.frame = frame;
-		return await super.handleFrame(frame, meta, rawFrame);
-		this.frame = null;
-	}
-	async readAttributes({ attributes }) {
-		var result = await super.readAttributes({ attributes });
-		const resp = new ZCLStandardHeader();
-		resp.frameControl.directionToClient = true;
-		resp.frameControl.disableDefaultResponse = true;
-		resp.trxSequenceNumber = this.frame.trxSequenceNumber;
-		resp.cmdId = 1;
-		resp.data = result.attributes;	
-		await this.ep._node.sendFrame(1, CLUSTER.TIME.ID, resp.toBuffer());
-		return result;
-	}
-}
-
-Cluster.addCluster(SonoffTimeBoundCluster);
-
-class TRVThermostatCluster extends ThermostatCluster {
-    static get ATTRIBUTES() {
-        return {
-            ...super.ATTRIBUTES,
-            customAttribute1: {
-                id: 41, 
-                type: ZCLDataTypes.uint16,
-            }
-        };
-    }
-}
-
-Cluster.addCluster(TRVThermostatCluster);
 
 class SonoffTRVZB extends SonoffBase {
 
@@ -129,7 +38,7 @@ class SonoffTRVZB extends SonoffBase {
 		});
 
 		if (this.isFirstInit()) {
-			
+
 			/*
 			await this.configureAttributeReporting([
 				{
@@ -175,8 +84,7 @@ class SonoffTRVZB extends SonoffBase {
 			
 		}
 
-		//zclNode.endpoints[1].bind('time', new SonoffTimeBoundCluster(this));
-		zclNode.endpoints[1].bind('time', zclNode.endpoints[1].clusters.time);
+		zclNode.endpoints[1].bind('time', new SonoffTimeBoundCluster(zclNode.endpoints[1]));
 		/*
 		const oldHandleFrame = zclNode.endpoints[1].handleFrame.bind(zclNode.endpoints[1]);
 		zclNode.endpoints[1].handleFrame = async (clusterId, frame, meta) => {
@@ -192,7 +100,6 @@ class SonoffTRVZB extends SonoffBase {
 			get: 'localTemperature',
 			getParser: value => value / 100
 		});
-			
 
 		this.registerCapability("target_temperature", CLUSTER.THERMOSTAT, {
 			report: 'occupiedHeatingSetpoint',
@@ -209,10 +116,10 @@ class SonoffTRVZB extends SonoffBase {
 				occupiedHeatingSetpoint: value * 100
 			});
 		});
-
+		
 		zclNode.endpoints[1].clusters[CLUSTER.THERMOSTAT.NAME]
 			.on('attr.localTemperatureCalibration', (value) => {
-				this.setSettings(o).catch(this.error);
+				this.setSettings({ localTemperatureCalibration: value }).catch(this.error);
 		});
 
 		Settings_Attributes.forEach( (attr) => {
@@ -225,7 +132,7 @@ class SonoffTRVZB extends SonoffBase {
 		});
 
 		this.checkAttributes();
-		
+
 		// Additional initialization code can be added here
 		this.log('Sonoff TRVZB device initialized');
 	}
@@ -242,19 +149,20 @@ class SonoffTRVZB extends SonoffBase {
 	}
 	
 	async onSettings({ oldSettings, newSettings, changedKeys }) {
-		const changedAttributes = Settings_Attributes.reduce((acc, key) => {
-			if (newSettings.hasOwnProperty(key)) {
+		const sonoffChangedKeys = changedKeys.filter(k => Settings_Attributes.includes(k));
+		if (sonoffChangedKeys.length > 0) {
+			const changedAttributes = sonoffChangedKeys.reduce((acc, key) => {
 				acc[key] = newSettings[key];
-				if (key.includes("temperature"))  
+				if (key.includes("temperature"))
 					acc[key] = acc[key] * 100;
-			}
-			return acc;
-		}, {});
+				return acc;
+			}, {});
+			await this.writeAttributes(SonoffCluster, changedAttributes);
+		}
 
-		await this.writeAttributes(SonoffCluster, changedAttributes);
-
-		await this.writeAttributes(CLUSTER.THERMOSTAT, {localTemperatureCalibration: newSettings.localTemperatureCalibration * 10});
-		//this.checkAttributes();
+		if (changedKeys.includes('localTemperatureCalibration')) {
+			await this.writeAttributes(CLUSTER.THERMOSTAT, { localTemperatureCalibration: newSettings.localTemperatureCalibration * 10 });
+		}
 	}
 
 	async checkAttributes() {
@@ -265,7 +173,6 @@ class SonoffTRVZB extends SonoffBase {
 			this.setSettings(data).catch(this.error);
 		});
 	}
-		
 
 }
 

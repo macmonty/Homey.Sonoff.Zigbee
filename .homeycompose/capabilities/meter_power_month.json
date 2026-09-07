@@ -1,0 +1,31 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Energy this month",
+    "sv": "Energi denna månad",
+    "nl": "Energie deze maand",
+    "da": "Energi denne måned",
+    "de": "Energie diesen Monat",
+    "es": "Energía este mes",
+    "fr": "Énergie ce mois",
+    "it": "Energia questo mese",
+    "no": "Energi denne måneden",
+    "pl": "Energia w tym miesiącu",
+    "ru": "Энергия за месяц",
+    "ko": "이번 달 에너지"
+  },
+  "units": {
+    "en": "kWh"
+  },
+  "insights": true,
+  "desc": {
+    "en": "Energy consumed this month",
+    "sv": "Energi förbrukad denna månad"
+  },
+  "chartType": "spline",
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/energy.svg"
+}

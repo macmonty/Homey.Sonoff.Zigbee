@@ -1,0 +1,87 @@
+{
+  "title": {
+    "en": "Humidity is !{{higher|lower}} than",
+    "nl": "Luchtvochtigheid is !{{hoger|lager}} dan",
+    "da": "Fugtigheden er !{{højere|lavere}} end",
+    "de": "Luftfeuchtigkeit ist !{{höher|niedriger}} als",
+    "es": "La humedad es !{{mayor|menor}} que",
+    "fr": "L'humidité est !{{plus élevée|plus basse}} que",
+    "it": "L'umidità è !{{superiore|inferiore}} a",
+    "no": "Fuktigheten er !{{høyere|lavere}} enn",
+    "sv": "Fuktigheten är !{{högre|lägre}} än",
+    "pl": "Wilgotność jest !{{wyższa|niższa}} niż",
+    "ru": "Влажность !{{выше|ниже}}, чем",
+    "ko": "습도가 다음보다 !{{높음|낮음}}"
+  },
+  "titleFormatted": {
+    "en": "[[device]] humidity is !{{higher|lower}} than [[humidity]]%",
+    "nl": "[[device]] luchtvochtigheid is !{{hoger|lager}} dan [[humidity]]%",
+    "da": "[[device]] fugtigheden er !{{højere|lavere}} end [[humidity]]%",
+    "de": "[[device]] Luftfeuchtigkeit ist !{{höher|niedriger}} als [[humidity]]%",
+    "es": "[[device]] humedad es !{{mayor|menor}} que [[humidity]]%",
+    "fr": "[[device]] humidité est !{{plus élevée|plus basse}} que [[humidity]]%",
+    "it": "[[device]] umidità è !{{superiore|inferiore}} a [[humidity]]%",
+    "no": "[[device]] fuktigheten er !{{høyere|lavere}} enn [[humidity]]%",
+    "sv": "[[device]] fuktigheten är !{{högre|lägre}} än [[humidity]]%",
+    "pl": "[[device]] wilgotność jest !{{wyższa|niższa}} niż [[humidity]]%",
+    "ru": "[[device]] влажность !{{выше|ниже}}, чем [[humidity]]%",
+    "ko": "[[device]] 습도가 [[humidity]]%보다 !{{높음|낮음}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "nl": "Apparaat",
+        "da": "Enhed",
+        "de": "Gerät",
+        "es": "Dispositivo",
+        "fr": "Appareil",
+        "it": "Dispositivo",
+        "no": "Enhet",
+        "sv": "Enhet",
+        "pl": "Urządzenie",
+        "ru": "Устройство",
+        "ko": "장치"
+      },
+      "filter": "capabilities=measure_humidity"
+    },
+    {
+      "type": "number",
+      "name": "humidity",
+      "title": {
+        "en": "Humidity",
+        "nl": "Luchtvochtigheid",
+        "da": "Fugtighed",
+        "de": "Luftfeuchtigkeit",
+        "es": "Humedad",
+        "fr": "Humidité",
+        "it": "Umidità",
+        "no": "Fuktighet",
+        "sv": "Fuktighet",
+        "pl": "Wilgotność",
+        "ru": "Влажность",
+        "ko": "습도"
+      },
+      "placeholder": {
+        "en": "Humidity",
+        "nl": "Luchtvochtigheid",
+        "da": "Fugtighed",
+        "de": "Luftfeuchtigkeit",
+        "es": "Humedad",
+        "fr": "Humidité",
+        "it": "Umidità",
+        "no": "Fuktighet",
+        "sv": "Fuktighet",
+        "pl": "Wilgotność",
+        "ru": "Влажность",
+        "ko": "습도"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1
+    }
+  ],
+  "id": "measure_humidity_compare"
+}

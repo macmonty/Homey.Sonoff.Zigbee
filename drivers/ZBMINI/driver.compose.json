@@ -1,8 +1,28 @@
 {
-  "id": "SonoffZBMINI",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/ZBMINI/assets/images/large.png",
+    "small": "/drivers/ZBMINI/assets/images/small.png"
+  },
   "name": {
     "en": "ZBMINI Switch",
-    "sv": "ZBMINI Strömbrytare"
+    "sv": "ZBMINI Strömbrytare",
+    "da": "ZBMINI Afbryder",
+    "de": "ZBMINI Schalter",
+    "es": "Interruptor ZBMINI",
+    "fr": "Interrupteur ZBMINI",
+    "it": "Interruttore ZBMINI",
+    "no": "ZBMINI Bryter",
+    "pl": "Przełącznik ZBMINI",
+    "ru": "Выключатель ZBMINI",
+    "ko": "ZBMINI 스위치",
+    "nl": "ZBMINI Schakelaar"
   },
   "class": "socket",
   "capabilities": [
@@ -22,15 +42,90 @@
           6
         ],
         "bindings": [
+          6
         ]
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/ZBMINI/assets/learn.svg",
       "instruction": {
-        "en": "Press the button on the top for aprox. 10 seconds until the green LED blinks rapidly."
+        "en": "Press the button on the top for aprox. 10 seconds until the green LED blinks rapidly.",
+        "es": "Presione el botón en la parte superior durante aprox. 10 segundos hasta que el LED verde parpadee rápidamente."
       }
     }
   },
-  "$extends": ["defaults"]
+  "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-on behavior",
+        "da": "Adfærd ved opstart",
+        "de": "Verhalten beim Einschalten",
+        "es": "Comportamiento de encendido",
+        "fr": "Comportement de mise sous tension",
+        "it": "Comportamento all'accensione",
+        "ko": "전원 켜기 동작",
+        "nl": "Gedrag bij inschakelen",
+        "no": "Oppstartsatferd",
+        "pl": "Zachowanie podczas włączania",
+        "ru": "Поведение при включении питания",
+        "sv": "Beteende vid start"
+      },
+      "value": "off",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "da": "Af",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "De",
+            "it": "Spento",
+            "ko": "끄기",
+            "nl": "Af",
+            "no": "Av",
+            "pl": "Od",
+            "ru": "От",
+            "sv": "Bort"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "da": "På",
+            "de": "Auf",
+            "es": "En",
+            "fr": "Sur",
+            "it": "Su",
+            "ko": "에",
+            "nl": "Op",
+            "no": "På",
+            "pl": "Na",
+            "ru": "На",
+            "sv": "På"
+          }
+        },
+        {
+          "id": "last_state",
+          "label": {
+            "en": "Last state",
+            "da": "Sidste tilstand",
+            "de": "Letzter Zustand",
+            "es": "Último estado",
+            "fr": "Dernier état",
+            "it": "Ultimo stato",
+            "ko": "마지막 상태",
+            "nl": "Laatste staat",
+            "no": "Siste tilstand",
+            "pl": "Ostatni stan",
+            "ru": "Последнее состояние",
+            "sv": "Sista tillstånd"
+          }
+        }
+      ]
+    }
+  ]
 }

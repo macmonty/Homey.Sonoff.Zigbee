@@ -3,7 +3,7 @@
     {
       "id": "SNZB-01:single_click",
       "title": {
-        "en": "Singel click",
+        "en": "Single click",
         "nl": "Enkele klik",
         "da": "Enkelt klik",
         "de": "Einzelklick",
@@ -15,7 +15,22 @@
         "pl": "Pojedyncze kliknięcie",
         "ru": "Одиночный щелчок",
         "ko": "단일 클릭"
-      }
+      },
+      "titleFormatted": {
+        "en": "Single click",
+        "nl": "Enkele klik",
+        "da": "Enkelt klik",
+        "de": "Einzelklick",
+        "es": "Clic simple",
+        "fr": "Clic simple",
+        "it": "Singolo clic",
+        "no": "Enkelt klikk",
+        "sv": "Enkelt klick",
+        "pl": "Pojedyncze kliknięcie",
+        "ru": "Одиночный щелчок",
+        "ko": "단일 클릭"
+      },
+      "args": []
     },
     {
       "id": "SNZB-01:double_click",
@@ -32,7 +47,22 @@
         "pl": "Podwójne kliknięcie",
         "ru": "Двойной щелчок",
         "ko": "더블 클릭"
-      }
+      },
+      "titleFormatted": {
+        "en": "Double click",
+        "nl": "Dubbele klik",
+        "da": "Dobbelt klik",
+        "de": "Doppelklick",
+        "es": "Doble clic",
+        "fr": "Double-clic",
+        "it": "Doppio clic",
+        "no": "Dobbelt klikk",
+        "sv": "Dubbelt klick",
+        "pl": "Podwójne kliknięcie",
+        "ru": "Двойной щелчок",
+        "ko": "더블 클릭"
+      },
+      "args": []
     },
     {
       "id": "SNZB-01:long_click",
@@ -49,7 +79,22 @@
         "pl": "Długie kliknięcie",
         "ru": "Длительный щелчок",
         "ko": "롱 클릭"
-      }
+      },
+      "titleFormatted": {
+        "en": "Long click",
+        "nl": "Lange klik",
+        "da": "Langt klik",
+        "de": "Langer Klick",
+        "es": "Clic largo",
+        "fr": "Clic long",
+        "it": "Clic lungo",
+        "no": "Langt klikk",
+        "sv": "Långt klick",
+        "pl": "Długie kliknięcie",
+        "ru": "Длительный щелчок",
+        "ko": "롱 클릭"
+      },
+      "args": []
     }
   ]
 }

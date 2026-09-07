@@ -1,0 +1,152 @@
+{
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/SWV/assets/images/large.png",
+    "small": "/drivers/SWV/assets/images/small.png"
+  },
+  "name": {
+    "en": "Water Valve SWV",
+    "sv": "Vattenventil SWV",
+    "da": "Vandventil SWV",
+    "de": "Wasserventil SWV",
+    "es": "Válvula de agua SWV",
+    "fr": "Vanne d’eau SWV",
+    "it": "Valvola dell'acqua SWV",
+    "ko": "워터 밸브 SWV",
+    "nl": "Waterklep SWV",
+    "no": "Vannventil SWV",
+    "pl": "Zawór wodny SWV",
+    "ru": "Водяной клапан SWV"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "measure_water",
+    "meter_water",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "AA",
+      "AA",
+      "AA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "SWV"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          32,
+          1028,
+          2821,
+          64599,
+          64529
+        ],
+        "bindings": [
+          1,
+          6,
+          1028
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/SWV/assets/learn.svg",
+      "instruction": {
+        "en": "Press the button for 5 seconds until the light start blink.",
+        "da": "Tryk på knappen i 5 sekunder, indtil lyset begynder at blinke.",
+        "de": "Drücken Sie die Taste 5 Sekunden lang, bis das Licht zu blinken beginnt.",
+        "es": "Presione el botón durante 5 segundos hasta que la luz comience a parpadear.",
+        "fr": "Appuyez sur le bouton pendant 5 secondes jusqu’à ce que le voyant commence à clignoter.",
+        "it": "Premere il pulsante per 5 secondi fino a quando la luce inizia a lampeggiare.",
+        "ko": "표시등이 깜박일 때까지 버튼을 5초 동안 누릅니다.",
+        "nl": "Houd de knop 5 seconden ingedrukt totdat het lampje begint te knipperen.",
+        "no": "Trykk på knappen i 5 sekunder til lyset begynner å blinke.",
+        "pl": "Naciśnij przycisk przez 5 sekund, aż lampka zacznie migać.",
+        "ru": "Нажмите кнопку и удерживайте ее в течение 5 секунд, пока индикатор не начнет мигать.",
+        "sv": "Tryck på knappen i 5 sekunder tills lampan börjar blinka."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "reset_water_meter",
+      "type": "checkbox",
+      "label": {
+        "en": "Reset water meter",
+        "sv": "Återställ vattenmätare",
+        "da": "Nulstil vandmåler",
+        "de": "Wasserzähler zurücksetzen",
+        "es": "Restablecer medidor de agua",
+        "fr": "Réinitialiser le compteur d'eau",
+        "it": "Ripristina contatore dell'acqua",
+        "ko": "급수계 재설정",
+        "nl": "Reset watermeter",
+        "no": "Tilbakestill vannmåler",
+        "pl": "Resetuj licznik wody",
+        "ru": "Сбросить счетчик воды"
+      },
+      "hint": {
+        "en": "Check this box to reset the total water usage counter to zero. The checkbox will automatically uncheck after reset.",
+        "sv": "Markera denna ruta för att återställa den totala vattenanvändningsräknaren till noll. Kryssrutan avmarkeras automatiskt efter återställning.",
+        "da": "Marker dette felt for at nulstille den samlede vandforbrugstæller til nul. Afkrydsningsfeltet framarkeres automatisk efter nulstilling.",
+        "de": "Aktivieren Sie dieses Kontrollkästchen, um den Gesamtwasserverbrauchszähler auf Null zurückzusetzen. Das Kontrollkästchen wird nach dem Zurücksetzen automatisch deaktiviert.",
+        "es": "Marca esta casilla para restablecer el contador de uso total de agua a cero. La casilla se desmarcará automáticamente después del restablecimiento.",
+        "fr": "Cochez cette case pour remettre le compteur d'utilisation totale d'eau à zéro. La case se décochera automatiquement après la réinitialisation.",
+        "it": "Seleziona questa casella per ripristinare il contatore del consumo totale di acqua a zero. La casella si deselezionerà automaticamente dopo il ripristino.",
+        "ko": "총 물 사용량 카운터를 0으로 재설정하려면 이 상자를 선택하십시오. 재설정 후 확인란이 자동으로 선택 해제됩니다.",
+        "nl": "Vink dit vakje aan om de totale waterverbruik teller naar nul te resetten. Het vakje wordt automatisch uitgevinkt na het resetten.",
+        "no": "Kryss av denne boksen for å tilbakestille den totale vannforbrukstelleren til null. Avkryssingsboksen vil automatisk fjerne markeringen etter tilbakestilling.",
+        "pl": "Zaznacz to pole, aby zresetować licznik całkowitego zużycia wody do zera. Pole wyboru automatycznie się odznacz po resecie.",
+        "ru": "Установите этот флажок, чтобы сбросить счетчик общего потребления воды на ноль. Флажок автоматически снимется после сброса."
+      },
+      "value": false
+    }
+  ],
+  "firmwareUpdates": {
+    "wakeInstruction": {
+      "en": "Press the button on the valve once to wake it up so the update can start.",
+      "sv": "Tryck en gång på knappen på ventilen för att väcka den så att uppdateringen kan starta."
+    },
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware v1.0.4 — fixes the bug where the valve could shut itself off automatically after some time on v1.0.3.",
+          "sv": "Firmware v1.0.4 — åtgärdar felet där ventilen kunde stänga av sig själv automatiskt efter en stund på v1.0.3."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "SWV"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4100,
+            "imageType": 8202,
+            "manufacturerCode": 4742,
+            "size": 272354,
+            "name": "zbswv_v1.0.4.ota",
+            "integrity": "sha256:6b59bffc4823df4fabbddc6007daad947ae4689b1bc01197607362a56ba152bf"
+          }
+        ]
+      }
+    ]
+  }
+}

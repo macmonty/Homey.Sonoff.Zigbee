@@ -1,0 +1,567 @@
+{
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/MINI-ZB1GSP/assets/images/large.png",
+    "small": "/drivers/MINI-ZB1GSP/assets/images/small.png"
+  },
+  "name": {
+    "en": "Switch MINI-ZB1GSP (with power monitoring)",
+    "sv": "Strömbrytare MINI-ZB1GSP (med effektmätning)",
+    "da": "Afbryder MINI-ZB1GSP (med effektmåling)",
+    "de": "Schalter MINI-ZB1GSP (mit Leistungsmessung)",
+    "es": "Interruptor MINI-ZB1GSP (con medición de energía)",
+    "fr": "Interrupteur MINI-ZB1GSP (avec mesure de puissance)",
+    "it": "Interruttore MINI-ZB1GSP (con misurazione di potenza)",
+    "no": "Bryter MINI-ZB1GSP (med effektmåling)",
+    "pl": "Przełącznik MINI-ZB1GSP (z pomiarem mocy)",
+    "ru": "Выключатель MINI-ZB1GSP (с измерением мощности)",
+    "ko": "스위치 MINI-ZB1GSP (전력 모니터링 포함)",
+    "nl": "Schakelaar MINI-ZB1GSP (met vermogensmeting)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "measure_voltage",
+    "measure_current",
+    "meter_power",
+    "meter_power.exported",
+    "meter_power_today",
+    "meter_power_month",
+    "output_energy_today",
+    "output_energy_month",
+    "alarm_generic",
+    "alarm_generic.metering_error",
+    "alarm_generic.overload_protection"
+  ],
+  "capabilitiesOptions": {
+    "meter_power.exported": {
+      "title": {
+        "en": "Exported",
+        "es": "Exportada"
+      }
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "Overheated",
+        "es": "Sobrecalentado"
+      }
+    },
+    "alarm_generic.metering_error": {
+      "title": {
+        "en": "Metering error",
+        "es": "Error de medición"
+      }
+    },
+    "alarm_generic.overload_protection": {
+      "title": {
+        "en": "Overload protection",
+        "es": "Protección de sobrecarga"
+      }
+    }
+  },
+  "energy": {
+    "cumulative": true,
+    "cumulativeImportedCapability": "meter_power",
+    "cumulativeExportedCapability": "meter_power.exported"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "MINI-ZB1GSP"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          64529
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/MINI-ZB1GSP/assets/learn.svg",
+      "instruction": {
+        "en": "Press the button on the top for aprox. 10 seconds until the green LED blinks rapidly.",
+        "es": "Presione el botón en la parte superior durante aprox. 10 segundos hasta que el LED verde parpadee rápidamente."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "network_indicator",
+      "type": "checkbox",
+      "label": {
+        "en": "Network indicator LED",
+        "sv": "Nätverksindikator-LED"
+      },
+      "value": true,
+      "hint": {
+        "en": "Turn the blue network status LED on or off.",
+        "sv": "Tänd eller släck den blå nätverksstatuslampan."
+      }
+    },
+    {
+      "id": "turbo_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Turbo mode",
+        "es": "Modo turbo"
+      },
+      "value": false,
+      "hint": {
+        "en": "Boosts Zigbee radio transmit power to improve range.",
+        "es": "Aumenta la potencia de transmisión Zigbee para mejorar el alcance."
+      }
+    },
+    {
+      "id": "switch_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Switch mode",
+        "sv": "Brytarläge",
+        "da": "Skift tilstand",
+        "de": "Switch-Modus",
+        "es": "Modo de cambio",
+        "fr": "Mode de l'interrupteur",
+        "it": "Modalità interruttore",
+        "ko": "스위치 모드",
+        "nl": "Schakelmodus",
+        "no": "Bryter modus",
+        "pl": "Tryb przełącznika",
+        "ru": "Режим переключателя"
+      },
+      "value": "0",
+      "hint": {
+        "en": "Type of external switch wired to the device. Use 'Pulse' for self-resetting (momentary) buttons. 'Edge' is the default for a normal rocker.",
+        "es": "Tipo de interruptor físico conectado al dispositivo. Usa 'Pulso' para pulsadores autorretorno (momentáneos). 'Borde' es el valor por defecto para un interruptor basculante normal."
+      },
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Edge (rocker)",
+            "sv": "Kant (vippbrytare)",
+            "da": "Rand (vippekontakt)",
+            "de": "Kante (Wippe)",
+            "es": "Borde (basculante)",
+            "fr": "Bord (basculant)",
+            "it": "Bordo (bilanciere)",
+            "ko": "가장자리 (로커)",
+            "nl": "Rand (tuimelschakelaar)",
+            "no": "Kant (vippebryter)",
+            "pl": "Krawędź (kołyskowy)",
+            "ru": "Край (клавишный)"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Pulse (momentary)",
+            "sv": "Puls (återfjädrande)",
+            "da": "Puls (momentan)",
+            "de": "Puls (Taster)",
+            "es": "Pulso (momentáneo)",
+            "fr": "Impulsion (poussoir)",
+            "it": "Impulso (momentaneo)",
+            "ko": "맥박 (모멘터리)",
+            "nl": "Puls (drukknop)",
+            "no": "Puls (selvfjærende)",
+            "pl": "Puls (chwilowy)",
+            "ru": "Импульс (нажимной)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Follow switch",
+            "sv": "Följ brytaren",
+            "da": "Følg kontakten",
+            "de": "Schalter folgen",
+            "es": "Interruptor de seguimiento",
+            "fr": "Suivre l'interrupteur",
+            "it": "Segui l'interruttore",
+            "ko": "팔로우 스위치",
+            "nl": "Volgschakelaar",
+            "no": "Følg bryteren",
+            "pl": "Podążaj za przełącznikiem",
+            "ru": "Переключатель слежения"
+          }
+        },
+        {
+          "id": "130",
+          "label": {
+            "en": "Follow switch (inverted)",
+            "sv": "Följ brytaren (inverterad)",
+            "da": "Følg kontakten (inverter)",
+            "de": "Schalter folgen (invertiert)",
+            "es": "Interruptor de seguimiento (invertir)",
+            "fr": "Suivre l'interrupteur (inverser)",
+            "it": "Segui l'interruttore (inverti)",
+            "ko": "팔로우 스위치 (반전)",
+            "nl": "Volgschakelaar (omgekeerd)",
+            "no": "Følg bryteren (invertert)",
+            "pl": "Podążaj za przełącznikiem (odwrócony)",
+            "ru": "Переключатель слежения (инвертированный)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-on behavior",
+        "da": "Adfærd ved opstart",
+        "de": "Verhalten beim Einschalten",
+        "es": "Comportamiento de encendido",
+        "fr": "Comportement de mise sous tension",
+        "it": "Comportamento all'accensione",
+        "ko": "전원 켜기 동작",
+        "nl": "Gedrag bij inschakelen",
+        "no": "Oppstartsatferd",
+        "pl": "Zachowanie podczas włączania",
+        "ru": "Поведение при включении питания",
+        "sv": "Beteende vid start"
+      },
+      "value": "off",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "da": "Af",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "De",
+            "it": "Spento",
+            "ko": "끄기",
+            "nl": "Af",
+            "no": "Av",
+            "pl": "Od",
+            "ru": "От",
+            "sv": "Bort"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "da": "På",
+            "de": "Auf",
+            "es": "En",
+            "fr": "Sur",
+            "it": "Su",
+            "ko": "에",
+            "nl": "Op",
+            "no": "På",
+            "pl": "Na",
+            "ru": "На",
+            "sv": "På"
+          }
+        },
+        {
+          "id": "last_state",
+          "label": {
+            "en": "Last state",
+            "da": "Sidste tilstand",
+            "de": "Letzter Zustand",
+            "es": "Último estado",
+            "fr": "Dernier état",
+            "it": "Ultimo stato",
+            "ko": "마지막 상태",
+            "nl": "Laatste staat",
+            "no": "Siste tilstand",
+            "pl": "Ostatni stan",
+            "ru": "Последнее состояние",
+            "sv": "Sista tillstånd"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Delayed power-on",
+        "es": "Encendido retardado"
+      },
+      "children": [
+        {
+          "id": "delayed_power_on_state",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable",
+            "es": "Activar"
+          },
+          "hint": {
+            "en": "Turn the device on automatically after the delay below, once powered.",
+            "es": "Enciende el dispositivo automáticamente tras el retardo indicado, al recibir alimentación."
+          },
+          "value": false
+        },
+        {
+          "id": "delayed_power_on_time",
+          "type": "number",
+          "label": {
+            "en": "Delay (seconds)",
+            "es": "Retardo (segundos)"
+          },
+          "hint": {
+            "en": "Time to wait before the delayed power-on action (0.5 - 3599.5 seconds).",
+            "es": "Tiempo de espera antes del encendido retardado (0.5 - 3599.5 segundos)."
+          },
+          "value": 0.5,
+          "min": 0.5,
+          "max": 3599.5,
+          "step": 0.5
+        }
+      ]
+    },
+    {
+      "id": "detach_relay",
+      "type": "checkbox",
+      "label": {
+        "en": "Detach relay (experimental)",
+        "es": "Separar relé (experimental)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Experimental: Sonoff firmware may reject this write from Homey with MALFORMED_COMMAND. Kept as a setting so it lights up automatically when a future firmware/SDK fix lands. When working: the physical rocker stops switching the relay — useful for controlling a smart bulb via scene instead.",
+        "es": "Experimental: el firmware de Sonoff puede rechazar esta escritura desde Homey con MALFORMED_COMMAND. Se mantiene como ajuste para que funcione automáticamente cuando llegue una futura corrección de firmware/SDK. Cuando funcione: el interruptor físico deja de accionar el relé — útil para controlar una bombilla inteligente mediante una escena."
+      }
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Inching",
+        "sv": "Inching",
+        "nl": "Inching",
+        "da": "Inching",
+        "de": "Inching",
+        "es": "Inching",
+        "fr": "Inching",
+        "it": "Inching",
+        "no": "Inching",
+        "pl": "Inching",
+        "ru": "Инчинг",
+        "ko": "인칭"
+      },
+      "children": [
+        {
+          "id": "inching_control",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable",
+            "sv": "Aktivera",
+            "nl": "Inschakelen",
+            "da": "Aktiver",
+            "de": "Aktivieren",
+            "es": "Activar",
+            "fr": "Activer",
+            "it": "Attiva",
+            "no": "Aktiver",
+            "pl": "Włącz",
+            "ru": "Включить",
+            "ko": "활성화"
+          },
+          "hint": {
+            "en": "Automatically turn off/on after a specified time",
+            "sv": "Stäng av/på automatiskt efter angiven tid"
+          },
+          "value": false
+        },
+        {
+          "id": "inching_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Action",
+            "sv": "Åtgärd",
+            "nl": "Actie",
+            "da": "Handling",
+            "de": "Aktion",
+            "es": "Acción",
+            "fr": "Action",
+            "it": "Azione",
+            "no": "Handling",
+            "pl": "Akcja",
+            "ru": "Действие",
+            "ko": "동작"
+          },
+          "hint": {
+            "en": "Turn off after turning on, or turn on after turning off",
+            "sv": "Stäng av efter att ha slagit på, eller slå på efter att ha stängt av"
+          },
+          "value": "off",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Turn off after on",
+                "sv": "Stäng av efter på",
+                "nl": "Uitschakelen na aan",
+                "da": "Sluk efter tændt",
+                "de": "Ausschalten nach Ein",
+                "es": "Apagar después de encender",
+                "fr": "Éteindre après allumage",
+                "it": "Spegni dopo accensione",
+                "no": "Slå av etter på",
+                "pl": "Wyłącz po włączeniu",
+                "ru": "Выключить после включения",
+                "ko": "켠 후 끄기"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Turn on after off",
+                "sv": "Slå på efter av",
+                "nl": "Inschakelen na uit",
+                "da": "Tænd efter slukket",
+                "de": "Einschalten nach Aus",
+                "es": "Encender después de apagar",
+                "fr": "Allumer après extinction",
+                "it": "Accendi dopo spegnimento",
+                "no": "Slå på etter av",
+                "pl": "Włącz po wyłączeniu",
+                "ru": "Включить после выключения",
+                "ko": "끈 후 켜기"
+              }
+            }
+          ]
+        },
+        {
+          "id": "inching_time",
+          "type": "number",
+          "label": {
+            "en": "Time (seconds)",
+            "sv": "Tid (sekunder)",
+            "nl": "Tijd (seconden)",
+            "da": "Tid (sekunder)",
+            "de": "Zeit (Sekunden)",
+            "es": "Tiempo (segundos)",
+            "fr": "Temps (secondes)",
+            "it": "Tempo (secondi)",
+            "no": "Tid (sekunder)",
+            "pl": "Czas (sekundy)",
+            "ru": "Время (секунды)",
+            "ko": "시간 (초)"
+          },
+          "hint": {
+            "en": "Time before automatic action (0.5 - 3599.5 seconds)",
+            "sv": "Tid före automatisk åtgärd (0.5 - 3599.5 sekunder)"
+          },
+          "value": 0.5,
+          "attr": {
+            "min": 0.5,
+            "max": 3599.5,
+            "step": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Power protector",
+        "es": "Protector de energía"
+      },
+      "children": [
+        {
+          "id": "max_current_protect",
+          "type": "number",
+          "label": {
+            "en": "Max current (A)",
+            "es": "Corriente máxima (A)"
+          },
+          "value": 16,
+          "min": 0.1,
+          "max": 16,
+          "step": 0.1
+        },
+        {
+          "id": "max_power_protect",
+          "type": "number",
+          "label": {
+            "en": "Max power (W)",
+            "es": "Potencia máxima (W)"
+          },
+          "value": 3840,
+          "min": 2,
+          "max": 3840,
+          "step": 0.1
+        },
+        {
+          "id": "max_voltage_protect_enabled",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable overvoltage protection",
+            "es": "Activar protección por sobretensión"
+          },
+          "value": false
+        },
+        {
+          "id": "max_voltage_protect",
+          "type": "number",
+          "label": {
+            "en": "Max voltage (V)",
+            "es": "Voltaje máximo (V)"
+          },
+          "value": 277,
+          "min": 85,
+          "max": 277,
+          "step": 1
+        },
+        {
+          "id": "min_voltage_protect_enabled",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable undervoltage protection",
+            "es": "Activar protección por baja tensión"
+          },
+          "value": false
+        },
+        {
+          "id": "min_voltage_protect",
+          "type": "number",
+          "label": {
+            "en": "Min voltage (V)",
+            "es": "Voltaje mínimo (V)"
+          },
+          "value": 85,
+          "min": 85,
+          "max": 277,
+          "step": 1
+        },
+        {
+          "id": "external_switch_only_recovery",
+          "type": "checkbox",
+          "label": {
+            "en": "Recover only via external switch",
+            "es": "Recuperar solo mediante interruptor externo"
+          },
+          "value": false
+        },
+        {
+          "id": "auto_recovery",
+          "type": "checkbox",
+          "label": {
+            "en": "Auto-recover when back in range",
+            "es": "Recuperar automáticamente al volver al rango"
+          },
+          "value": false
+        }
+      ]
+    }
+  ]
+}

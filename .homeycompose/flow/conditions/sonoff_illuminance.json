@@ -1,0 +1,52 @@
+{
+  "title": {
+    "en": "Illuminance is !{{bright|dim}}",
+    "nl": "Verlichting is !{{helder|gedimd}}",
+    "da": "Belysning er !{{lys|dæmpet}}",
+    "de": "Beleuchtung ist !{{hell|gedimmt}}",
+    "es": "La iluminancia está !{{brillante|tenue}}",
+    "fr": "L'éclairage est !{{brillant|atténué}}",
+    "it": "L'illuminazione è !{{luminosa|fioca}}",
+    "no": "Belysning er !{{lys|dempe}}",
+    "sv": "Ljusstyrka är !{{ljust|mörkt}}",
+    "pl": "Jasność jest !{{jasna|przyciemniona}}",
+    "ru": "Освещенность !{{яркая|тусклая}}",
+    "ko": "조도가 !{{밝음|어둑함}}"
+  },
+  "titleFormatted": {
+    "en": "[[device]] illuminance is !{{bright|dim}}",
+    "nl": "[[device]] verlichting is !{{helder|gedimd}}",
+    "da": "[[device]] belysning er !{{lys|dæmpet}}",
+    "de": "[[device]] Beleuchtung ist !{{hell|gedimmt}}",
+    "es": "[[device]] iluminancia está !{{brillante|tenue}}",
+    "fr": "[[device]] éclairage est !{{brillant|atténué}}",
+    "it": "[[device]] illuminazione è !{{luminosa|fioca}}",
+    "no": "[[device]] belysning er !{{lys|dempe}}",
+    "sv": "[[device]] ljusstyrka är !{{ljust|mörkt}}",
+    "pl": "[[device]] jasność jest !{{jasna|przyciemniona}}",
+    "ru": "[[device]] освещенность !{{яркая|тусклая}}",
+    "ko": "[[device]] 조도가 !{{밝음|어둑함}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "title": {
+        "en": "Device",
+        "nl": "Apparaat",
+        "da": "Enhed",
+        "de": "Gerät",
+        "es": "Dispositivo",
+        "fr": "Appareil",
+        "it": "Dispositivo",
+        "no": "Enhet",
+        "sv": "Enhet",
+        "pl": "Urządzenie",
+        "ru": "Устройство",
+        "ko": "장치"
+      },
+      "filter": "capabilities=sonoff_illuminance"
+    }
+  ],
+  "id": "sonoff_illuminance"
+}

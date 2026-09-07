@@ -1,7 +1,28 @@
 {
-  "id": "SonoffSNZB05P",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/SNZB-05P/assets/images/large.png",
+    "small": "/drivers/SNZB-05P/assets/images/small.png"
+  },
   "name": {
-    "en": "Flood/rain Sensor SNZB-05P"
+    "en": "Flood/rain Sensor SNZB-05P",
+    "da": "Oversvømmelses-/regnsensor SNZB-05P",
+    "de": "Überschwemmungs-/Regensensor SNZB-05P",
+    "es": "Sensor de inundación/lluvia SNZB-05P",
+    "fr": "Capteur d’inondation/pluie SNZB-05P",
+    "it": "Sensore di allagamento/pioggia SNZB-05P",
+    "ko": "홍수/비 센서 SNZB-05P",
+    "nl": "Overstromings-/regensensor SNZB-05P",
+    "no": "Flom-/regnsensor SNZB-05P",
+    "pl": "Czujnik powodzi/deszczu SNZB-05P",
+    "ru": "Датчик дождя и наводнения СНЗБ-05П",
+    "sv": "Översvämnings-/regnsensor SNZB-05P"
   },
   "class": "sensor",
   "capabilities": [
@@ -30,13 +51,47 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/SNZB-05P/assets/learn.svg",
       "instruction": {
-        "en": "Press button inside device for aprox 10 seconds until the red LED start blinking."
+        "en": "Press button inside device for aprox 10 seconds until the red LED start blinking.",
+        "da": "Tryk på knappen inde i enheden i ca. 10 sekunder, indtil den røde LED begynder at blinke.",
+        "de": "Drücken Sie die Taste im Gerät ca. 10 Sekunden lang, bis die rote LED zu blinken beginnt.",
+        "es": "Presione el botón dentro del dispositivo durante aproximadamente 10 segundos hasta que el LED rojo comience a parpadear.",
+        "fr": "Appuyez sur le bouton à l’intérieur de l’appareil pendant environ 10 secondes jusqu’à ce que la LED rouge commence à clignoter.",
+        "it": "Premere il pulsante all'interno del dispositivo per circa 10 secondi fino a quando il LED rosso inizia a lampeggiare.",
+        "ko": "빨간색 LED가 깜박이기 시작할 때까지 장치 내부의 버튼을 약 10초 동안 누릅니다.",
+        "nl": "Houd de knop in het apparaat ongeveer 10 seconden ingedrukt totdat de rode LED begint te knipperen.",
+        "no": "Trykk på knappen inne i enheten i ca. 10 sekunder til den røde LED-en begynner å blinke.",
+        "pl": "Naciśnij przycisk wewnątrz urządzenia przez około 10 sekund, aż czerwona dioda LED zacznie migać.",
+        "ru": "Нажмите кнопку внутри устройства примерно на 10 секунд, пока красный светодиод не начнет мигать.",
+        "sv": "Tryck på knappen inuti enheten i cirka 10 sekunder tills den röda lysdioden börjar blinka."
       }
     }
   },
-  "$extends": [
-    "defaults"
-  ]
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware from SONOFF (latest official release).",
+          "sv": "Firmware från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "SNZB-05P"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4098,
+            "imageType": 2059,
+            "manufacturerCode": 4742,
+            "size": 267632,
+            "name": "snzb-05p_v1.0.2.ota",
+            "integrity": "sha256:e00e6ed380c43f6efe1a64c4c7e1a6f25441c3208d4b1b65c0b2a9fe3aa7f71d"
+          }
+        ]
+      }
+    ]
+  }
 }

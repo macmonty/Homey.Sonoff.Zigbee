@@ -3,33 +3,73 @@
     {
       "id": "MINI-ZB2GS:click",
       "title": {
-        "en": "Single click",
-        "da": "Enkelt klik",
-        "de": "Einzelklick",
-        "es": "Clic único",
-        "fr": "Clic unique",
-        "it": "Clic singolo",
-        "no": "Enkel klikk",
-        "sv": "Enstaka klick",
-        "pl": "Pojedyncze kliknięcie",
-        "ru": "Одиночный клик",
-        "ko": "단일 클릭",
-        "nl": "Enkele klik"
+        "en": "Toggle switch",
+        "sv": "Strömbrytare aktiverad",
+        "nl": "Schakelaar bediend",
+        "da": "Afbryder aktiveret",
+        "de": "Schalter betätigt",
+        "es": "Interruptor pulsado",
+        "fr": "Interrupteur activé",
+        "it": "Interruttore azionato",
+        "no": "Bryter aktivert",
+        "pl": "Przełącznik naciśnięty",
+        "ru": "Выключатель нажат",
+        "ko": "스위치 토글됨"
+      },
+      "titleFormatted": {
+        "en": "Channel [[button]] toggled",
+        "sv": "Kanal [[button]] aktiverad",
+        "nl": "Kanaal [[button]] geschakeld",
+        "da": "Kanal [[button]] aktiveret",
+        "de": "Kanal [[button]] betätigt",
+        "es": "Canal [[button]] pulsado",
+        "fr": "Canal [[button]] activé",
+        "it": "Canale [[button]] azionato",
+        "no": "Kanal [[button]] aktivert",
+        "pl": "Kanał [[button]] naciśnięty",
+        "ru": "Канал [[button]] нажат",
+        "ko": "채널 [[button]] 토글됨"
       },
       "hint": {
-        "en": "This trigger fires when the physical switch is pressed and the 'Detach Relay' setting is enabled.",
-        "it": "Questo trigger si attiva quando viene premuto l'interruttore fisico e l'impostazione 'Stacca Relè' è abilitata.",
-        "nl": "Deze trigger wordt geactiveerd wanneer de fysieke schakelaar wordt ingedrukt en de instelling 'Relais ontkoppelen' is ingeschakeld.",
-        "da": "Denne trigger aktiveres, når der trykkes på den fysiske kontakt, og indstillingen 'Frakobl relæ' er aktiveret.",
-        "de": "Dieser Trigger wird ausgelöst, wenn der physische Schalter gedrückt wird und die Einstellung 'Relais trennen' aktiviert ist.",
-        "es": "Este activador se dispara cuando se presiona el interruptor físico y la configuración 'Desconectar relé' está habilitada.",
-        "fr": "Ce déclencheur s'active lorsque l'interrupteur physique est pressé et que le paramètre 'Détacher le relais' est activé.",
-        "no": "Denne utløseren aktiveres når den fysiske bryteren trykkes og innstillingen 'Koble fra relé' er aktivert.",
-        "sv": "Denna trigger aktiveras när den fysiska strömbrytaren trycks och inställningen 'Frånkoppla relä' är aktiverad.",
-        "pl": "Ten wyzwalacz uruchamia się, gdy zostanie naciśnięty fizyczny przełącznik, a ustawienie 'Odłącz przekaźnik' jest włączone.",
-        "ru": "Этот триггер срабатывает при нажатии физического переключателя и включенной настройке 'Отсоединить реле'.",
-        "ko": "물리적 스위치를 누르고 '릴레이 분리' 설정이 활성화된 경우 이 트리거가 실행됩니다."
-      }
+        "en": "Fires when an external switch wired to the device is operated. Most useful when 'Detach relay' is enabled for that channel.",
+        "sv": "Utlöses när en extern strömbrytare ansluten till enheten används. Mest användbart när 'Frikoppla relä' är aktiverat för den kanalen."
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Channel",
+            "sv": "Kanal"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "Channel 1",
+                "sv": "Kanal 1"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Channel 2",
+                "sv": "Kanal 2"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Channel",
+            "sv": "Kanal"
+          }
+        }
+      ]
     }
   ]
 }

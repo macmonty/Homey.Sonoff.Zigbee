@@ -23,6 +23,8 @@ class SonoffZBMINIL extends ZigBeeDevice {
             this.registerCapability('onoff', CLUSTER.ON_OFF);
         }
 
+        await this._setupMigrateToSocket();
+
         try {
             const { powerOnBehavior } = await this.zclNode.endpoints[1].clusters.onOff.readAttributes('powerOnBehavior');
             //const { switchType, switchAction } = await this.zclNode.endpoints[1].clusters.onOffSwitch.readAttributes('switchType', 'switchAction');
@@ -64,6 +66,26 @@ class SonoffZBMINIL extends ZigBeeDevice {
    */
     async onDeleted() {
         this.log("smartswitch removed");
+    }
+
+    // Show the migrate-to-socket maintenance action only for devices that
+    // were paired when the driver class was "light". Once they migrate
+    // (or for new pairings that already started as "socket") the capability
+    // is removed so it doesn't clutter the device settings.
+    async _setupMigrateToSocket() {
+        const isLight = this.getClass() === 'light';
+        if (isLight) {
+            if (!this.hasCapability('migrate_to_socket')) {
+                await this.addCapability('migrate_to_socket').catch(this.error);
+            }
+            this.registerCapabilityListener('migrate_to_socket', async () => {
+                this.log('Migrating device class from light to socket');
+                await this.setClass('socket');
+                await this.removeCapability('migrate_to_socket').catch(this.error);
+            });
+        } else if (this.hasCapability('migrate_to_socket')) {
+            await this.removeCapability('migrate_to_socket').catch(this.error);
+        }
     }
 
 }

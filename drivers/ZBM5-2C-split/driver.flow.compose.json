@@ -1,0 +1,122 @@
+{
+  "triggers": [
+    {
+      "id": "ZBM5-2C-split:click",
+      "title": {
+        "en": "Toggle switch",
+        "sv": "Strömbrytare aktiverad",
+        "nl": "Tuimelschakelaar",
+        "da": "Vippekontakt",
+        "de": "Kippschalter",
+        "es": "Interruptor pulsado",
+        "fr": "Interrupteur basculé",
+        "it": "Interruttore azionato",
+        "no": "Vippebryter",
+        "pl": "Przełącznik naciśnięty",
+        "ru": "Тумблер нажат",
+        "ko": "토글 스위치"
+      },
+      "titleFormatted": {
+        "en": "Switch [[button]] toggled",
+        "sv": "Strömbrytare [[button]] aktiverad",
+        "nl": "Schakelaar [[button]] geschakeld",
+        "da": "Kontakt [[button]] aktiveret",
+        "de": "Schalter [[button]] betätigt",
+        "es": "Interruptor [[button]] pulsado",
+        "fr": "Interrupteur [[button]] basculé",
+        "it": "Interruttore [[button]] azionato",
+        "no": "Bryter [[button]] aktivert",
+        "pl": "Przełącznik [[button]] naciśnięty",
+        "ru": "Выключатель [[button]] нажат",
+        "ko": "스위치 [[button]] 토글됨"
+      },
+      "hint": {
+        "en": "Fires when the physical rocker is pressed. Most useful when 'Detach relay' is enabled for that channel, so the rocker no longer toggles the relay but only emits an event for use in flows.",
+        "sv": "Utlöses när den fysiska vippan trycks ned. Mest användbart när 'Frikoppla relä' är aktiverat för den kanalen så att vippan inte längre växlar reläet utan bara skickar en händelse till flöden."
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "sv": "Knapp",
+            "nl": "Knop",
+            "da": "Knap",
+            "de": "Taste",
+            "es": "Botón",
+            "fr": "Bouton",
+            "it": "Pulsante",
+            "no": "Knapp",
+            "pl": "Przycisk",
+            "ru": "Кнопка",
+            "ko": "버튼"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "Button 1",
+                "sv": "Knapp 1",
+                "nl": "Knop 1",
+                "da": "Knap 1",
+                "de": "Taste 1",
+                "es": "Botón 1",
+                "fr": "Bouton 1",
+                "it": "Pulsante 1",
+                "no": "Knapp 1",
+                "pl": "Przycisk 1",
+                "ru": "Кнопка 1",
+                "ko": "버튼 1"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Button 2",
+                "sv": "Knapp 2",
+                "nl": "Knop 2",
+                "da": "Knap 2",
+                "de": "Taste 2",
+                "es": "Botón 2",
+                "fr": "Bouton 2",
+                "it": "Pulsante 2",
+                "no": "Knapp 2",
+                "pl": "Przycisk 2",
+                "ru": "Кнопка 2",
+                "ko": "버튼 2"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Button 3",
+                "sv": "Knapp 3",
+                "nl": "Knop 3",
+                "da": "Knap 3",
+                "de": "Taste 3",
+                "es": "Botón 3",
+                "fr": "Bouton 3",
+                "it": "Pulsante 3",
+                "no": "Knapp 3",
+                "pl": "Przycisk 3",
+                "ru": "Кнопка 3",
+                "ko": "버튼 3"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "sv": "Knapp"
+          }
+        }
+      ]
+    }
+  ]
+}

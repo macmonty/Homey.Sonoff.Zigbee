@@ -1,5 +1,15 @@
 {
-  "id": "SonoffSNZB04P",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/SNZB-04P/assets/images/large.png",
+    "small": "/drivers/SNZB-04P/assets/images/small.png"
+  },
   "name": {
     "en": "Door/window Sensor SNZB-04P",
     "sv": "Dörr-/fönstergivare SNZB-04P",
@@ -43,13 +53,21 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/SNZB-04P/assets/learn.svg",
       "instruction": {
-        "en": "Press button for aprox 10 seconds until the red LED start blinking."
+        "en": "Press button for aprox 10 seconds until the red LED start blinking.",
+        "da": "Tryk på knappen i ca. 10 sekunder, indtil den røde LED begynder at blinke.",
+        "de": "Drücken Sie die Taste ca. 10 Sekunden lang, bis die rote LED zu blinken beginnt.",
+        "es": "Presione el botón durante aproximadamente 10 segundos hasta que el LED rojo comience a parpadear.",
+        "fr": "Appuyez sur le bouton pendant environ 10 secondes jusqu’à ce que la LED rouge commence à clignoter.",
+        "it": "Premere il pulsante per circa 10 secondi fino a quando il LED rosso inizia a lampeggiare.",
+        "ko": "빨간색 LED가 깜박이기 시작할 때까지 약 10초 동안 버튼을 누릅니다.",
+        "nl": "Houd de knop ongeveer 10 seconden ingedrukt totdat de rode LED begint te knipperen.",
+        "no": "Trykk på knappen i ca. 10 sekunder til den røde LED-en begynner å blinke.",
+        "pl": "Naciśnij przycisk przez około 10 sekund, aż czerwona dioda LED zacznie migać.",
+        "ru": "Нажмите кнопку примерно на 10 секунд, пока красный светодиод не начнет мигать.",
+        "sv": "Tryck på knappen i cirka 10 sekunder tills den röda lysdioden börjar blinka."
       }
     }
-  },
-  "$extends": [
-    "defaults"
-  ]
+  }
 }

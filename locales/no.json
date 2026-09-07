@@ -1,1 +1,13 @@
-{}
+{
+  "ota": {
+    "up_to_date": "Oppdatert",
+    "new_firmware": "Ny fastvare tilgjengelig",
+    "starting": "Starter oppdatering til",
+    "updating": "Oppdaterer til",
+    "resuming": "Gjenopptar oppdatering til",
+    "complete": "Oppdatert til"
+  },
+  "settings": {
+    "press_button": "Trykk på knappen på enheten for å bekrefte de nye innstillingene."
+  }
+}

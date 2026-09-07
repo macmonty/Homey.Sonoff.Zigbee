@@ -1,66 +1,49 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { Cluster, ZCLDataTypes } = require('zigbee-clusters');
+const SonoffBase = require('../sonoffbase');
+const { Cluster } = require('zigbee-clusters');
+const SonoffCluster2 = require('../../lib/SonoffCluster2');
 
-class SonoffPrivateCluster extends Cluster {
-  static get NAME() { return 'sonoffPrivate'; }
-  static get ID() { return 0xFC12; }
-  static get ATTRIBUTES() {
-    return {
-      action: { id: 0x0000, type: ZCLDataTypes.uint8 },
-    };
-  }
-  static get COMMANDS() { return {}; }
-}
-Cluster.addCluster(SonoffPrivateCluster);
+Cluster.addCluster(SonoffCluster2);
 
 const ACTION_MAP = {
-  1: 'single',
-  2: 'double',
-  3: 'long',
-  4: 'triple',
+    1: 'single',
+    2: 'double',
+    3: 'long',
+    4: 'triple',
 };
 
-class SNZB01MDevice extends ZigBeeDevice {
+class SonoffSNZB01M extends SonoffBase {
 
-  async onNodeInit({ zclNode }) {
+    async onNodeInit({ zclNode }) {
+        super.onNodeInit({ zclNode });
 
-    // Initialization
+        const prefix = this.driver.id + ':';
+        this._buttonAction = this.homey.flow.getDeviceTriggerCard(prefix + 'button_action');
 
-    // ── Batería ───────────────────────────────────────────────────────────────
-    try {
-      const powerCluster = zclNode.endpoints[1].clusters.powerConfiguration;
-      powerCluster.on('attr.batteryPercentageRemaining', value => {
-        this.setCapabilityValue('measure_battery', Math.round(value / 2)).catch(this.error);
-      });
-    } catch (err) {
-      this.log('Error configurando batería:', err.message);
+        for (const endpointId of [1, 2, 3, 4]) {
+            const endpoint = zclNode.endpoints[endpointId];
+            if (!endpoint || !endpoint.clusters[SonoffCluster2.NAME]) {
+                this.log('Endpoint', endpointId, 'missing SonoffCluster2, skipping');
+                continue;
+            }
+            endpoint.clusters[SonoffCluster2.NAME]
+                .on('attr.keyActionEvent', value => this._onKeyAction(endpointId, value));
+        }
     }
 
-    // ── Botones ───────────────────────────────────────────────────────────────
-    for (let ep = 1; ep <= 4; ep++) {
-      const epNode = zclNode.endpoints[ep];
-      if (!epNode) continue;
-
-      const cluster = epNode.clusters[SonoffPrivateCluster.NAME];
-      if (!cluster) continue;
-
-      cluster.on('attr.action', value => {
+    _onKeyAction(buttonId, value) {
         const action = ACTION_MAP[value];
+        if (!action) {
+            this.log('Unknown keyActionEvent value', value, 'on button', buttonId);
+            return;
+        }
+        this.log('Button', buttonId, 'action', action);
 
-        if (!ACTION_MAP[value]) return;
-
-        const triggerId = `SNZB-01M:button${ep}_${action}`;
-        this.homey.flow
-          .getDeviceTriggerCard(triggerId)
-          .trigger(this, {}, {})
-          .catch(err => this.error(`Trigger ${triggerId} ERROR:`, err.message));
-      });
+        const tokens = { button: String(buttonId), action };
+        const state = { button: String(buttonId), action };
+        this._buttonAction.trigger(this, tokens, state).catch(this.error);
     }
-
-  }
-
 }
 
-module.exports = SNZB01MDevice;
+module.exports = SonoffSNZB01M;

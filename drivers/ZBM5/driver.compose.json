@@ -1,0 +1,358 @@
+{
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/ZBM5/assets/images/large.png",
+    "small": "/drivers/ZBM5/assets/images/small.png"
+  },
+  "deprecated": true,
+  "name": {
+    "en": "Wall switch ZBM5",
+    "sv": "Väggströmbrytare ZBM5",
+    "nl": "Wandschakelaar ZBM5",
+    "da": "Vægkontakt ZBM5",
+    "de": "Wandschalter ZBM5",
+    "es": "Interruptor de pared ZBM5",
+    "fr": "Interrupteur mural ZBM5",
+    "it": "Interruttore a parete ZBM5",
+    "no": "Veggbryter ZBM5",
+    "pl": "Włącznik ścienny ZBM5",
+    "ru": "Настенный выключатель ZBM5",
+    "ko": "벽 스위치 ZBM5"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Channel 1",
+        "sv": "Kanal 1",
+        "nl": "Kanaal 1",
+        "da": "Kanal 1",
+        "de": "Kanal 1",
+        "es": "Canal 1",
+        "fr": "Canal 1",
+        "it": "Canale 1",
+        "no": "Kanal 1",
+        "pl": "Kanał 1",
+        "ru": "Канал 1",
+        "ko": "채널 1"
+      },
+      "insightsTitleTrue": {
+        "en": "Channel 1 turned on",
+        "sv": "Kanal 1 påslagen"
+      },
+      "insightsTitleFalse": {
+        "en": "Channel 1 turned off",
+        "sv": "Kanal 1 avslagen"
+      }
+    },
+    "onoff.l2": {
+      "title": {
+        "en": "Channel 2",
+        "sv": "Kanal 2",
+        "nl": "Kanaal 2",
+        "da": "Kanal 2",
+        "de": "Kanal 2",
+        "es": "Canal 2",
+        "fr": "Canal 2",
+        "it": "Canale 2",
+        "no": "Kanal 2",
+        "pl": "Kanał 2",
+        "ru": "Канал 2",
+        "ko": "채널 2"
+      },
+      "insightsTitleTrue": {
+        "en": "Channel 2 turned on",
+        "sv": "Kanal 2 påslagen"
+      },
+      "insightsTitleFalse": {
+        "en": "Channel 2 turned off",
+        "sv": "Kanal 2 avslagen"
+      }
+    },
+    "onoff.l3": {
+      "title": {
+        "en": "Channel 3",
+        "sv": "Kanal 3",
+        "nl": "Kanaal 3",
+        "da": "Kanal 3",
+        "de": "Kanal 3",
+        "es": "Canal 3",
+        "fr": "Canal 3",
+        "it": "Canale 3",
+        "no": "Kanal 3",
+        "pl": "Kanał 3",
+        "ru": "Канал 3",
+        "ko": "채널 3"
+      },
+      "insightsTitleTrue": {
+        "en": "Channel 3 turned on",
+        "sv": "Kanal 3 påslagen"
+      },
+      "insightsTitleFalse": {
+        "en": "Channel 3 turned off",
+        "sv": "Kanal 3 avslagen"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF"
+    ],
+    "productId": [
+      "ZBM5-1C-120",
+      "ZBM5-1C-80/86",
+      "ZBM5-2C-120",
+      "ZBM5-2C-80/86",
+      "ZBM5-3C-120",
+      "ZBM5-3C-80/86"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          64529
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/ZBM5/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold any rocker for approx. 10 seconds until the LED blinks rapidly.",
+        "sv": "Tryck och håll in valfri vippa i ca 10 sekunder tills LED-lampan blinkar snabbt.",
+        "nl": "Houd een willekeurige wip ongeveer 10 seconden ingedrukt totdat de LED snel knippert.",
+        "da": "Tryk og hold en vilkårlig vippe nede i ca. 10 sekunder, indtil LED'en blinker hurtigt.",
+        "de": "Halten Sie eine beliebige Wippe ca. 10 Sekunden lang gedrückt, bis die LED schnell blinkt.",
+        "es": "Mantenga pulsado cualquier balancín durante aproximadamente 10 segundos hasta que el LED parpadee rápidamente.",
+        "fr": "Maintenez n'importe quelle bascule enfoncée pendant environ 10 secondes jusqu'à ce que la LED clignote rapidement.",
+        "it": "Tenere premuto un bilanciere qualsiasi per circa 10 secondi fino a quando il LED lampeggia rapidamente.",
+        "no": "Trykk og hold en vilkårlig vippe i ca. 10 sekunder til LED-en blinker raskt.",
+        "pl": "Naciśnij i przytrzymaj dowolny klawisz przez około 10 sekund, aż dioda LED zacznie szybko migać.",
+        "ru": "Нажмите и удерживайте любую клавишу около 10 секунд, пока светодиод не начнет быстро мигать.",
+        "ko": "LED가 빠르게 깜박일 때까지 아무 로커나 약 10초 동안 누르고 있으세요."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "network_indicator",
+      "type": "checkbox",
+      "label": {
+        "en": "Network indicator LED",
+        "sv": "Nätverksindikator-LED",
+        "nl": "Netwerkindicator-LED",
+        "da": "Netværksindikator-LED",
+        "de": "Netzwerkindikator-LED",
+        "es": "LED indicador de red",
+        "fr": "LED indicateur réseau",
+        "it": "LED indicatore di rete",
+        "no": "Nettverksindikator-LED",
+        "pl": "Dioda LED wskaźnika sieci",
+        "ru": "Светодиод сетевого индикатора",
+        "ko": "네트워크 표시기 LED"
+      },
+      "value": true,
+      "hint": {
+        "en": "Turn the blue network status LED on or off.",
+        "sv": "Tänd eller släck den blå nätverksstatuslampan."
+      }
+    },
+    {
+      "id": "device_work_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Device mode",
+        "sv": "Enhetsläge",
+        "nl": "Apparaatmodus",
+        "da": "Enhedstilstand",
+        "de": "Gerätemodus",
+        "es": "Modo del dispositivo",
+        "fr": "Mode appareil",
+        "it": "Modalità dispositivo",
+        "no": "Enhetsmodus",
+        "pl": "Tryb urządzenia",
+        "ru": "Режим устройства",
+        "ko": "장치 모드"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "End device",
+            "sv": "Slutenhet",
+            "de": "Endgerät",
+            "fr": "Périphérique terminal",
+            "it": "Dispositivo finale",
+            "es": "Dispositivo final",
+            "no": "Sluttenhet",
+            "da": "Slutenhed",
+            "nl": "Eindapparaat",
+            "pl": "Urządzenie końcowe",
+            "ru": "Конечное устройство",
+            "ko": "엔드 디바이스"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Router",
+            "sv": "Router",
+            "de": "Router",
+            "fr": "Routeur",
+            "it": "Router",
+            "es": "Enrutador",
+            "no": "Router",
+            "da": "Router",
+            "nl": "Router",
+            "pl": "Router",
+            "ru": "Маршрутизатор",
+            "ko": "라우터"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Router mode strengthens the Zigbee mesh but the device cannot sleep. End device mode saves power.",
+        "sv": "Routerläge stärker Zigbee-nätet men enheten kan inte sova. Slutenhetsläge sparar ström."
+      }
+    },
+    {
+      "id": "detach_relay_l1",
+      "type": "checkbox",
+      "label": {
+        "en": "Detach relay — Channel 1 (experimental)",
+        "sv": "Frikoppla relä — Kanal 1 (experimentell)",
+        "nl": "Relais loskoppelen — Kanaal 1 (experimenteel)",
+        "da": "Frakobl relæ — Kanal 1 (eksperimentel)",
+        "de": "Relais trennen — Kanal 1 (experimentell)",
+        "es": "Desacoplar relé — Canal 1 (experimental)",
+        "fr": "Détacher le relais — Canal 1 (expérimental)",
+        "it": "Scollega relè — Canale 1 (sperimentale)",
+        "no": "Koble fra relé — Kanal 1 (eksperimentell)",
+        "pl": "Odłącz przekaźnik — Kanał 1 (eksperymentalne)",
+        "ru": "Отсоединить реле — Канал 1 (экспериментально)",
+        "ko": "릴레이 분리 — 채널 1 (실험적)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Experimental: ZBM5 firmware currently rejects this write from Homey with MALFORMED_COMMAND, even though zigbee2mqtt sends an identical frame and the device accepts it there. Kept as a setting so it lights up automatically when a future firmware/SDK fix lands. When working: the physical rocker for channel 1 stops switching the relay — useful for controlling a smart bulb via scene instead.",
+        "sv": "Experimentell: ZBM5:s firmware avvisar för närvarande denna skrivning från Homey med MALFORMED_COMMAND, även om zigbee2mqtt skickar en identisk frame och enheten accepterar den där. Behålls som inställning så den fungerar automatiskt när framtida firmware/SDK-fix kommer. När den fungerar: den fysiska vippan för kanal 1 slutar växla reläet — användbart för att istället styra en smart lampa via scen."
+      }
+    },
+    {
+      "id": "detach_relay_l2",
+      "type": "checkbox",
+      "label": {
+        "en": "Detach relay — Channel 2 (experimental)",
+        "sv": "Frikoppla relä — Kanal 2 (experimentell)",
+        "nl": "Relais loskoppelen — Kanaal 2 (experimenteel)",
+        "da": "Frakobl relæ — Kanal 2 (eksperimentel)",
+        "de": "Relais trennen — Kanal 2 (experimentell)",
+        "es": "Desacoplar relé — Canal 2 (experimental)",
+        "fr": "Détacher le relais — Canal 2 (expérimental)",
+        "it": "Scollega relè — Canale 2 (sperimentale)",
+        "no": "Koble fra relé — Kanal 2 (eksperimentell)",
+        "pl": "Odłącz przekaźnik — Kanał 2 (eksperymentalne)",
+        "ru": "Отсоединить реле — Канал 2 (экспериментально)",
+        "ko": "릴레이 분리 — 채널 2 (실험적)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Experimental — see Channel 1 note. Only relevant on 2-channel and 3-channel ZBM5 models.",
+        "sv": "Experimentell — se anmärkning för kanal 1. Endast relevant på 2- och 3-kanalsmodeller av ZBM5."
+      }
+    },
+    {
+      "id": "detach_relay_l3",
+      "type": "checkbox",
+      "label": {
+        "en": "Detach relay — Channel 3 (experimental)",
+        "sv": "Frikoppla relä — Kanal 3 (experimentell)",
+        "nl": "Relais loskoppelen — Kanaal 3 (experimenteel)",
+        "da": "Frakobl relæ — Kanal 3 (eksperimentel)",
+        "de": "Relais trennen — Kanal 3 (experimentell)",
+        "es": "Desacoplar relé — Canal 3 (experimental)",
+        "fr": "Détacher le relais — Canal 3 (expérimental)",
+        "it": "Scollega relè — Canale 3 (sperimentale)",
+        "no": "Koble fra relé — Kanal 3 (eksperimentell)",
+        "pl": "Odłącz przekaźnik — Kanał 3 (eksperymentalne)",
+        "ru": "Отсоединить реле — Канал 3 (экспериментально)",
+        "ko": "릴레이 분리 — 채널 3 (실험적)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Experimental — see Channel 1 note. Only relevant on 3-channel ZBM5 models.",
+        "sv": "Experimentell — se anmärkning för kanal 1. Endast relevant på 3-kanalsmodeller av ZBM5."
+      }
+    }
+  ],
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware from SONOFF (latest official release).",
+          "sv": "Firmware från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "ZBM5-1C-120",
+            "ZBM5-1C-80/86",
+            "ZBM5-2C-120",
+            "ZBM5-2C-80/86",
+            "ZBM5-3C-120",
+            "ZBM5-3C-80/86"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4100,
+            "imageType": 9,
+            "manufacturerCode": 4742,
+            "size": 273908,
+            "name": "zbm5-120-zed_v1.0.4.ota",
+            "integrity": "sha256:3ac028728cec1ae6c1a654eb7629090d98484c9b4f3931b4c1ce52257c2eca09"
+          },
+          {
+            "fileVersion": 4102,
+            "imageType": 10,
+            "manufacturerCode": 4742,
+            "size": 295168,
+            "name": "zbm5-120-zr_v1.0.6.ota",
+            "integrity": "sha256:ac88f7addb1b30fe57df810313ab4ee6000a22bde0c5710f03496a03c9c7318c"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -2,9 +2,35 @@
   "triggers": [
     {
       "id": "on_receive",
-      "title": { 
-          "en": "Receive RF" 
-      }
+      "title": {
+        "en": "Receive RF",
+        "da": "Modtag RF",
+        "de": "RF empfangen",
+        "es": "Recibir RF",
+        "fr": "Réception RF",
+        "it": "Ricevi RF",
+        "ko": "RF 수신",
+        "nl": "RF ontvangen",
+        "no": "Motta RF",
+        "pl": "Odbieranie fal radiowych",
+        "ru": "Прием РЧ",
+        "sv": "Ta emot RF"
+      },
+      "titleFormatted": {
+        "en": "Receive RF",
+        "da": "Modtag RF",
+        "de": "RF empfangen",
+        "es": "Recibir RF",
+        "fr": "Réception RF",
+        "it": "Ricevi RF",
+        "ko": "RF 수신",
+        "nl": "RF ontvangen",
+        "no": "Motta RF",
+        "pl": "Odbieranie fal radiowych",
+        "ru": "Прием РЧ",
+        "sv": "Ta emot RF"
+      },
+      "args": []
     }
   ]
 }

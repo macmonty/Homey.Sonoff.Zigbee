@@ -1,0 +1,10 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Switch device type to socket",
+    "sv": "Byt enhetstyp till strömuttag"
+  },
+  "getable": false,
+  "setable": true,
+  "uiComponent": "button"
+}

@@ -20,11 +20,13 @@ class SonoffSNZB06P extends SonoffBase {
 
 		super.onNodeInit({zclNode});
 
-		//Fix upgrade from 1.0.14 
+		//Fix upgrade from 1.0.14
 		if (this.hasCapability('alarm_contact') === true) {
 			await this.removeCapability('alarm_contact');
 			await this.addCapability('alarm_motion');
 		}
+
+		this.presenceCapability = this.hasCapability('alarm_presence') ? 'alarm_presence' : 'alarm_motion';
 
 		this.configureAttributeReporting([
 			{
@@ -37,7 +39,7 @@ class SonoffSNZB06P extends SonoffBase {
 				cluster: CLUSTER.OCCUPANCY_SENSING,
 				attributeName: 'occupancy'
 			}
-		]).catch(this.error);
+		]).catch(err => this.log('configureAttributeReporting not supported by device:', err.message));
 
 		let brightCondition = 
 			this.homey.flow.getConditionCard('is_bright');
@@ -50,13 +52,13 @@ class SonoffSNZB06P extends SonoffBase {
 		zclNode.endpoints[1].clusters[CLUSTER.OCCUPANCY_SENSING.NAME]
 			.on('attr.occupancy', (value) => {
 				if (!value.occupied) //Check illuminance first when occupied
-					this.setCapabilityValue('alarm_motion', value.occupied).catch(this.error);	
+					this.setCapabilityValue(this.presenceCapability, value.occupied).catch(this.error);
 			});
 
 		zclNode.endpoints[1].clusters[SonoffCluster.NAME]
 			.on('attr.illuminance', (value) => {
-				this.setCapabilityValue('sonoff_illuminance', value ? 'bright' : 'dim').catch(this.error);	
-				this.setCapabilityValue('alarm_motion', true).catch(this.error);	
+				this.setCapabilityValue('sonoff_illuminance', value ? 'bright' : 'dim').catch(this.error);
+				this.setCapabilityValue(this.presenceCapability, true).catch(this.error);
 			});
 
 		this.checkAttributes();
@@ -75,7 +77,7 @@ class SonoffSNZB06P extends SonoffBase {
 		// 	//this.setCapabilityValue('light_presence', data.illuminance).catch(this.error);
 		// });
 		this.readAttribute(CLUSTER.OCCUPANCY_SENSING, Attributes, (data) => {
-			this.setCapabilityValue('alarm_motion', data.occupancy.occupied).catch(this.error);
+			this.setCapabilityValue(this.presenceCapability, data.occupancy.occupied).catch(this.error);
 			this.setSettings({
 				occupied_to_unoccupied_delay: data.ultrasonicOccupiedToUnoccupiedDelay,
 				occupied_threshold: data.ultrasonicUnoccupiedToOccupiedThreshold.toString()

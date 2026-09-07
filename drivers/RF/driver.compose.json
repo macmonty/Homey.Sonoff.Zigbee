@@ -1,20 +1,37 @@
 {
-  "id": "SonoffRF",
-  "connectivity": ["rf433"],
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "rf433"
+  ],
+  "images": {
+    "large": "/drivers/RF/assets/images/large.png",
+    "small": "/drivers/RF/assets/images/small.png"
+  },
   "name": {
     "en": "RF-button",
-    "sv": "RF-knapp"
+    "sv": "RF-knapp",
+    "da": "RF-knap",
+    "de": "RF-Taster",
+    "es": "Botón RF",
+    "fr": "Bouton RF",
+    "it": "Pulsante RF",
+    "ko": "RF 버튼",
+    "nl": "RF-knop",
+    "no": "RF-knapp",
+    "pl": "Przycisk RF",
+    "ru": "RF-кнопка"
   },
   "class": "button",
   "capabilities": [
     "button"
   ],
-  "energy": {
-  },
+  "energy": {},
   "rf433": {
     "satelliteMode": true
   },
-  "$extends": ["defaults"],
   "pair": [
     {
       "id": "rf_receiver_learn",
@@ -23,13 +40,46 @@
       },
       "options": {
         "title": {
-          "en": "Create a RF button"
+          "en": "Create a RF button",
+          "da": "Opret en RF-knap",
+          "de": "Erstellen einer RF-Taste",
+          "es": "Crear un botón de RF",
+          "fr": "Créer un bouton RF",
+          "it": "Creare un pulsante RF",
+          "ko": "RF 버튼 만들기",
+          "nl": "Een RF-knop maken",
+          "no": "Opprett en RF-knapp",
+          "pl": "Utwórz przycisk RF",
+          "ru": "Создание кнопки RF",
+          "sv": "Skapa en RF-knapp"
         },
         "instruction": {
-          "en": "Set your device in lerning mode and then click next button below."
+          "en": "Set your device in lerning mode and then click next button below.",
+          "da": "Indstil din enhed i lerning-tilstand, og klik derefter på næste knap nedenfor.",
+          "de": "Versetzen Sie Ihr Gerät in den Lernmodus und klicken Sie dann unten auf die Schaltfläche Weiter.",
+          "es": "Configure su dispositivo en modo de lectura y luego haga clic en el botón siguiente a continuación.",
+          "fr": "Réglez votre appareil en mode d’activation, puis cliquez sur le bouton suivant ci-dessous.",
+          "it": "Imposta il tuo dispositivo in modalità di lettura e quindi fai clic sul pulsante Avanti in basso.",
+          "ko": "장치를 lerning 모드로 설정하고 아래의 다음 버튼을 클릭하십시오.",
+          "nl": "Zet uw apparaat in de lerning-modus en klik vervolgens op de volgende knop hieronder.",
+          "no": "Sett enheten i lerning-modus, og klikk deretter på neste-knappen nedenfor.",
+          "pl": "Ustaw urządzenie w trybie lerning, a następnie kliknij przycisk Dalej poniżej.",
+          "ru": "Переведите свое устройство в режим lerning и нажмите кнопку «Далее» ниже.",
+          "sv": "Ställ in din enhet i lerning-läge och klicka sedan på nästa knapp nedan."
         },
         "copyFromRemote": {
-          "en": "Copy from Remote"
+          "en": "Copy from Remote",
+          "da": "Kopier fra fjernbetjening",
+          "de": "Kopieren von Remote",
+          "es": "Copiar desde el control remoto",
+          "fr": "Copie à partir de la télécommande",
+          "it": "Copia da remoto",
+          "ko": "원격에서 복사",
+          "nl": "Kopiëren van afstandsbediening",
+          "no": "Kopier fra fjernkontroll",
+          "pl": "Kopiowanie z pilota",
+          "ru": "Копирование из удаленного управления",
+          "sv": "Kopiera från fjärrkontrollen"
         }
       }
     },
@@ -37,7 +87,18 @@
       "id": "rf_transmitter_learn",
       "options": {
         "instruction": {
-          "en": "Press any button on your remote."
+          "en": "Press any button on your remote.",
+          "da": "Tryk på en vilkårlig knap på din fjernbetjening.",
+          "de": "Drücken Sie eine beliebige Taste auf Ihrer Fernbedienung.",
+          "es": "Presiona cualquier botón de tu control remoto.",
+          "fr": "Appuyez sur n’importe quel bouton de votre télécommande.",
+          "it": "Premi un pulsante qualsiasi sul telecomando.",
+          "ko": "리모컨의 아무 버튼이나 누릅니다.",
+          "nl": "Druk op een willekeurige knop op uw afstandsbediening.",
+          "no": "Trykk på en hvilken som helst knapp på fjernkontrollen.",
+          "pl": "Naciśnij dowolny przycisk na pilocie.",
+          "ru": "Нажмите любую кнопку на пульте дистанционного управления.",
+          "sv": "Tryck på valfri knapp på fjärrkontrollen."
         }
       },
       "navigation": {
@@ -51,7 +112,18 @@
       },
       "options": {
         "instruction": {
-          "en": "Did the device turn off and on?"
+          "en": "Did the device turn off and on?",
+          "da": "Slukkede og tændte enheden?",
+          "de": "Hat sich das Gerät aus- und wieder eingeschaltet?",
+          "es": "¿El dispositivo se apagó y se encendió?",
+          "fr": "L’appareil s’est-il éteint et rallumé ?",
+          "it": "Il dispositivo si è spento e riacceso?",
+          "ko": "장치가 껐다가 켜졌습니까?",
+          "nl": "Is het apparaat in- en uitgeschakeld?",
+          "no": "Ble enheten slått av og på?",
+          "pl": "Czy urządzenie się wyłączyło i włączyło?",
+          "ru": "Устройство выключилось и включилось?",
+          "sv": "Stängdes enheten av och på?"
         }
       }
     }

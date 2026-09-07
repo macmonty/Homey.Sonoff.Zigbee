@@ -1,0 +1,40 @@
+{
+  "triggers": [
+    {
+      "id": "MINI-ZB1GSP:single_click",
+      "title": {
+        "en": "Single click",
+        "es": "Clic simple"
+      },
+      "titleFormatted": {
+        "en": "Single click",
+        "es": "Clic simple"
+      },
+      "args": []
+    },
+    {
+      "id": "MINI-ZB1GSP:double_click",
+      "title": {
+        "en": "Double click",
+        "es": "Doble clic"
+      },
+      "titleFormatted": {
+        "en": "Double click",
+        "es": "Doble clic"
+      },
+      "args": []
+    },
+    {
+      "id": "MINI-ZB1GSP:long_press",
+      "title": {
+        "en": "Long press",
+        "es": "Pulsación larga"
+      },
+      "titleFormatted": {
+        "en": "Long press",
+        "es": "Pulsación larga"
+      },
+      "args": []
+    }
+  ]
+}

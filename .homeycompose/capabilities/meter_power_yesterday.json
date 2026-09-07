@@ -1,0 +1,31 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Energy yesterday",
+    "sv": "Energi igår",
+    "nl": "Energie gisteren",
+    "da": "Energi i går",
+    "de": "Energie gestern",
+    "es": "Energía ayer",
+    "fr": "Énergie hier",
+    "it": "Energia ieri",
+    "no": "Energi i går",
+    "pl": "Energia wczoraj",
+    "ru": "Энергия вчера",
+    "ko": "어제 에너지"
+  },
+  "units": {
+    "en": "kWh"
+  },
+  "insights": true,
+  "desc": {
+    "en": "Energy consumed yesterday",
+    "sv": "Energi förbrukad igår"
+  },
+  "chartType": "spline",
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/energy.svg"
+}

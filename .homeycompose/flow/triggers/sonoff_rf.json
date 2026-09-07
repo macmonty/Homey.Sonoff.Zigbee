@@ -1,24 +1,75 @@
-{       
-    "title": { 
-        "en": "Receive RF" 
-    },
-    "titleFormatted": {
-        "en": "Receive RF [[code]]"
-    },
-    "tokens": [       
-        {
-        "name": "code",
-        "type": "string",
-        "title": { "en": "Code" },
-        "example": { "en": "123ABC" }
-        }
-    ],
-    "args": [
-        {
-            "name": "code",
-            "title": { "en": "Code" },
-            "type": "text",
-            "required": false
-        }
-    ]
+{
+  "title": {
+    "en": "Receive RF",
+    "sv": "Ta emot RF",
+    "nl": "RF ontvangen",
+    "da": "Modtag RF",
+    "de": "RF empfangen",
+    "es": "Recibir RF",
+    "fr": "Recevoir RF",
+    "it": "Ricevi RF",
+    "no": "Motta RF",
+    "pl": "Odbierz RF",
+    "ru": "Получить RF",
+    "ko": "RF 수신"
+  },
+  "titleFormatted": {
+    "en": "Receive RF [[code]]",
+    "sv": "Ta emot RF [[code]]",
+    "nl": "RF ontvangen [[code]]",
+    "da": "Modtag RF [[code]]",
+    "de": "RF empfangen [[code]]",
+    "es": "Recibir RF [[code]]",
+    "fr": "Recevoir RF [[code]]",
+    "it": "Ricevi RF [[code]]",
+    "no": "Motta RF [[code]]",
+    "pl": "Odbierz RF [[code]]",
+    "ru": "Получить RF [[code]]",
+    "ko": "RF 수신 [[code]]"
+  },
+  "tokens": [
+    {
+      "name": "code",
+      "type": "string",
+      "title": {
+        "en": "Code",
+        "sv": "Kod",
+        "nl": "Code",
+        "da": "Kode",
+        "de": "Code",
+        "es": "Código",
+        "fr": "Code",
+        "it": "Codice",
+        "no": "Kode",
+        "pl": "Kod",
+        "ru": "Код",
+        "ko": "코드"
+      },
+      "example": {
+        "en": "123ABC"
+      }
+    }
+  ],
+  "args": [
+    {
+      "name": "code",
+      "title": {
+        "en": "Code",
+        "sv": "Kod",
+        "nl": "Code",
+        "da": "Kode",
+        "de": "Code",
+        "es": "Código",
+        "fr": "Code",
+        "it": "Codice",
+        "no": "Kode",
+        "pl": "Kod",
+        "ru": "Код",
+        "ko": "코드"
+      },
+      "type": "text",
+      "required": false
+    }
+  ],
+  "id": "sonoff_rf"
 }

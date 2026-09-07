@@ -1,1 +1,13 @@
-{}
+{
+  "ota": {
+    "up_to_date": "Opdateret",
+    "new_firmware": "Ny firmware tilgængelig",
+    "starting": "Starter opdatering til",
+    "updating": "Opdaterer til",
+    "resuming": "Genoptager opdatering til",
+    "complete": "Opdateret til"
+  },
+  "settings": {
+    "press_button": "Tryk på knappen på enheden for at bekræfte de nye indstillinger."
+  }
+}

@@ -1,13 +1,47 @@
 {
-  "id": "SonoffZBMINIR2",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/ZBMINIR2/assets/images/large.png",
+    "small": "/drivers/ZBMINIR2/assets/images/small.png"
+  },
   "name": {
-    "en": "ZBMINI-R2 Switch",
-    "sv": "ZBMINI-R2 Strömbrytare"
+    "en": "Switch ZBMINI-R2",
+    "sv": "Strömbrytare ZBMINI-R2",
+    "da": "Skift ZBMINI-R2",
+    "de": "Schalter ZBMINI-R2",
+    "es": "Interruptor ZBMINI-R2",
+    "fr": "Switch ZBMINI-R2",
+    "it": "Interruttore ZBMINI-R2",
+    "ko": "스위치 ZBMINI-R2",
+    "nl": "Schakelaar ZBMINI-R2",
+    "no": "Bytt ZBMINI-R2",
+    "pl": "Przełącznik ZBMINI-R2",
+    "ru": "Переключатель ZBMINI-R2"
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "migrate_to_socket"
   ],
+  "capabilitiesOptions": {
+    "migrate_to_socket": {
+      "maintenanceAction": true,
+      "title": {
+        "en": "Switch device type to socket",
+        "sv": "Byt enhetstyp till strömuttag"
+      },
+      "desc": {
+        "en": "Tap to switch this device from 'light' to 'socket' type. Then you can use 'What's plugged in?' under device settings to choose what's actually connected. Warning: existing flow cards targeting this device as a light may stop working.",
+        "sv": "Tryck för att byta enhetens typ från 'lampa' till 'strömuttag'. Sedan kan du välja 'Vad är inkopplat?' under inställningar. Varning: befintliga flödeskort som styr enheten som lampa kan sluta fungera."
+      }
+    }
+  },
   "zigbee": {
     "manufacturerName": [
       "SONOFF"
@@ -28,11 +62,302 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/ZBMINIR2/assets/learn.svg",
       "instruction": {
-        "en": "Press the button on the top for aprox. 10 seconds until the green LED blinks rapidly."
+        "en": "Press the button on the top for aprox. 10 seconds until the green LED blinks rapidly.",
+        "da": "Tryk på knappen øverst i ca. 10 sekunder, indtil den grønne LED blinker hurtigt.",
+        "de": "Drücken Sie den Knopf auf der Oberseite für ca. 10 Sekunden, bis die grüne LED schnell blinkt.",
+        "es": "Presione el botón en la parte superior durante aprox. 10 segundos hasta que el LED verde parpadee rápidamente.",
+        "fr": "Appuyez sur le bouton en haut pour plus d’informations. 10 secondes jusqu’à ce que la LED verte clignote rapidement.",
+        "it": "Premere il pulsante in alto per ca. 10 secondi fino a quando il LED verde lampeggia rapidamente.",
+        "ko": "위쪽에 있는 버튼을 눌러 약식을 확인합니다. 녹색 LED가 빠르게 깜박일 때까지 10초 동안 기다립니다.",
+        "nl": "Druk op de knop aan de bovenkant voor ongeveer. 10 seconden totdat de groene LED snel knippert.",
+        "no": "Trykk på knappen på toppen i ca. 10 sekunder til den grønne LED-lampen blinker raskt.",
+        "pl": "Naciśnij przycisk na górze, aby uzyskać ok. 10 sekund, aż zielona dioda LED zacznie szybko migać.",
+        "ru": "Нажмите кнопку вверху для приблизости. 10 секунд, пока зеленый светодиод не начнет быстро мигать.",
+        "sv": "Tryck på knappen på ovansidan för ca. 10 sekunder tills den gröna lysdioden blinkar snabbt."
       }
     }
   },
-  "$extends": ["defaults"]
+  "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-on behavior",
+        "da": "Adfærd ved opstart",
+        "de": "Verhalten beim Einschalten",
+        "es": "Comportamiento de encendido",
+        "fr": "Comportement de mise sous tension",
+        "it": "Comportamento all'accensione",
+        "ko": "전원 켜기 동작",
+        "nl": "Gedrag bij inschakelen",
+        "no": "Oppstartsatferd",
+        "pl": "Zachowanie podczas włączania",
+        "ru": "Поведение при включении питания",
+        "sv": "Beteende vid start"
+      },
+      "value": "off",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "da": "Af",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "De",
+            "it": "Spento",
+            "ko": "끄기",
+            "nl": "Af",
+            "no": "Av",
+            "pl": "Od",
+            "ru": "От",
+            "sv": "Bort"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "da": "På",
+            "de": "Auf",
+            "es": "En",
+            "fr": "Sur",
+            "it": "Su",
+            "ko": "에",
+            "nl": "Op",
+            "no": "På",
+            "pl": "Na",
+            "ru": "На",
+            "sv": "På"
+          }
+        },
+        {
+          "id": "toggle",
+          "label": {
+            "en": "Toggle",
+            "da": "Skifte",
+            "de": "Umschalten",
+            "es": "Alternar",
+            "fr": "Cabillot",
+            "it": "Cavicchio",
+            "ko": "토글",
+            "nl": "Knevel",
+            "no": "Veksle",
+            "pl": "Przełączać",
+            "ru": "Коленчатый рычаг",
+            "sv": "Växla"
+          }
+        },
+        {
+          "id": "last_state",
+          "label": {
+            "en": "Last state",
+            "da": "Sidste tilstand",
+            "de": "Letzter Zustand",
+            "es": "Último estado",
+            "fr": "Dernier état",
+            "it": "Ultimo stato",
+            "ko": "마지막 상태",
+            "nl": "Laatste staat",
+            "no": "Siste tilstand",
+            "pl": "Ostatni stan",
+            "ru": "Последнее состояние",
+            "sv": "Sista tillstånd"
+          }
+        }
+      ]
+    },
+    {
+      "id": "power_on_delay_state",
+      "type": "checkbox",
+      "label": {
+        "en": "Power on delay state",
+        "da": "Forsinkelsestilstand for tænding",
+        "de": "Einschaltverzögerungsstatus",
+        "es": "Estado de retardo de encendido",
+        "fr": "État de retard de mise sous tension",
+        "it": "Stato di ritardo all'accensione",
+        "ko": "전원 켜기 지연 상태",
+        "nl": "Vertraagde status bij inschakelen",
+        "no": "Strøm på forsinkelsestilstand",
+        "pl": "Stan opóźnienia włączenia zasilania",
+        "ru": "Состояние задержки включения питания",
+        "sv": "Fördröjningsläge för påslagning"
+      }
+    },
+    {
+      "id": "power_on_delay_time",
+      "type": "number",
+      "label": {
+        "en": "Power on delay time",
+        "da": "Forsinkelsestid for tænding",
+        "de": "Einschaltverzögerungszeit",
+        "es": "Tiempo de retardo de encendido",
+        "fr": "Temps de retard de mise sous tension",
+        "it": "Tempo di ritardo all'accensione",
+        "ko": "전원 켜기 지연 시간",
+        "nl": "Vertragingstijd bij inschakelen",
+        "no": "Strøm på forsinkelsestid",
+        "pl": "Czas opóźnienia włączenia",
+        "ru": "Время задержки включения питания",
+        "sv": "Fördröjningstid för påslagning"
+      },
+      "min": 1,
+      "max": 3600,
+      "step": 1
+    },
+    {
+      "id": "switch_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Switch mode",
+        "da": "Skift tilstand",
+        "de": "Switch-Modus",
+        "es": "Modo de cambio",
+        "fr": "Changer de mode",
+        "it": "Cambia modalità",
+        "ko": "스위치 모드",
+        "nl": "Wissel modus",
+        "no": "Bytt modus",
+        "pl": "Przełącz tryb",
+        "ru": "Переключение режима",
+        "sv": "Växla läge"
+      },
+      "value": "0",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Edge",
+            "da": "Rand",
+            "de": "Rand",
+            "es": "Borde",
+            "fr": "Bord",
+            "it": "Bordo",
+            "ko": "가장자리",
+            "nl": "Rand",
+            "no": "Kant",
+            "pl": "Brzeg",
+            "ru": "Край",
+            "sv": "Kant"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Pulse",
+            "da": "Puls",
+            "de": "Puls",
+            "es": "Pulso",
+            "fr": "Pouls",
+            "it": "Polso",
+            "ko": "맥박",
+            "nl": "Polsslag",
+            "no": "Puls",
+            "pl": "Puls",
+            "ru": "Пульс",
+            "sv": "Puls"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Follow switch",
+            "da": "Følg kontakten",
+            "de": "Schalter folgen",
+            "es": "Interruptor de seguimiento",
+            "fr": "Suivre l’interrupteur",
+            "it": "Segui l'interruttore",
+            "ko": "팔로우 스위치",
+            "nl": "Volgschakelaar",
+            "no": "Følg bryteren",
+            "pl": "Podążaj za przełącznikiem",
+            "ru": "Переключатель слежения",
+            "sv": "Följ omkopplaren"
+          }
+        },
+        {
+          "id": "130",
+          "label": {
+            "en": "Follow switch (invert)",
+            "da": "Følg kontakten (inverter)",
+            "de": "Follow-Schalter (invertieren)",
+            "es": "Interruptor de seguimiento (invertir)",
+            "fr": "Suivre l’interrupteur (inverser)",
+            "it": "Segui l'interruttore (inverti)",
+            "ko": "팔로우 스위치(반전)",
+            "nl": "Volgschakelaar (omkeren)",
+            "no": "Følg bryteren (inverter)",
+            "pl": "Podążaj za przełącznikiem (odwróć)",
+            "ru": "Переключатель слежения (инвертированный)",
+            "sv": "Följ omkopplaren (invertera)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "detach_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Detach switch",
+        "da": "Afbryder kontakten",
+        "de": "Schalter abnehmen",
+        "es": "Interruptor de desconexión",
+        "fr": "Interrupteur de détachement",
+        "it": "Interruttore di distacco",
+        "ko": "분리 스위치",
+        "nl": "Schakelaar loskoppelen",
+        "no": "Koble fra bryteren",
+        "pl": "Odłącz przełącznik",
+        "ru": "Отсоединяющийся переключатель",
+        "sv": "Lossa omkopplare"
+      }
+    },
+    {
+      "id": "turbo_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Turbo mode",
+        "da": "Turbo-tilstand",
+        "de": "Turbo-Modus",
+        "es": "Modo turbo",
+        "fr": "Mode turbo",
+        "it": "Modalità turbo",
+        "ko": "터보 모드",
+        "nl": "Turbo modus",
+        "no": "Turbo-modus",
+        "pl": "Tryb turbo",
+        "ru": "Турбо режим",
+        "sv": "Turboläge"
+      }
+    }
+  ],
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "Firmware from SONOFF (latest official release).",
+          "sv": "Firmware från SONOFF (senaste officiella version)."
+        },
+        "device": {
+          "manufacturerName": "SONOFF",
+          "productId": [
+            "ZBMINIR2"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 4104,
+            "imageType": 8,
+            "manufacturerCode": 4742,
+            "size": 277180,
+            "name": "zbminir2_v1.0.8.ota",
+            "integrity": "sha256:2c8b13851a05ee1c17b28cbe37b7edce5280c437dca8da4894a17aae84501220"
+          }
+        ]
+      }
+    ]
+  }
 }

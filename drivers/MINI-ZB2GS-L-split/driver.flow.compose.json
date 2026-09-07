@@ -1,0 +1,50 @@
+{
+  "triggers": [
+    {
+      "id": "MINI-ZB2GS-L-split:click",
+      "title": {
+        "en": "Toggle switch",
+        "sv": "Strömbrytare aktiverad",
+        "nl": "Schakelaar bediend",
+        "da": "Afbryder aktiveret",
+        "de": "Schalter betätigt",
+        "es": "Interruptor pulsado",
+        "fr": "Interrupteur activé",
+        "it": "Interruttore azionato",
+        "no": "Bryter aktivert",
+        "pl": "Przełącznik naciśnięty",
+        "ru": "Выключатель нажат",
+        "ko": "스위치 토글됨"
+      },
+      "titleFormatted": {
+        "en": "Channel [[button]] toggled",
+        "sv": "Kanal [[button]] aktiverad",
+        "nl": "Kanaal [[button]] geschakeld",
+        "da": "Kanal [[button]] aktiveret",
+        "de": "Kanal [[button]] betätigt",
+        "es": "Canal [[button]] pulsado",
+        "fr": "Canal [[button]] activé",
+        "it": "Canale [[button]] azionato",
+        "no": "Kanal [[button]] aktivert",
+        "pl": "Kanał [[button]] naciśnięty",
+        "ru": "Канал [[button]] нажат",
+        "ko": "채널 [[button]] 토글됨"
+      },
+      "hint": {
+        "en": "Fires when an external switch wired to the device is operated.",
+        "sv": "Utlöses när en extern strömbrytare ansluten till enheten används."
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Channel",
+            "sv": "Kanal"
+          }
+        }
+      ],
+      "args": []
+    }
+  ]
+}

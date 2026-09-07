@@ -1,8 +1,28 @@
 {
-  "id": "SonoffZBCurtain",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/ZBCurtain/assets/images/large.png",
+    "small": "/drivers/ZBCurtain/assets/images/small.png"
+  },
   "name": {
-    "en": "ZBCurtain SCurtainwitch",
-    "sv": "ZBCurtain Gardin"
+    "en": "Curtain ZBCurtain",
+    "sv": "Gardin ZBCurtain",
+    "da": "Gardin ZBCurtain",
+    "de": "Vorhang ZBCurtain",
+    "es": "Cortina ZBCurtain",
+    "fr": "Rideau ZBCurtain",
+    "it": "Tenda ZBCurtain",
+    "ko": "커튼 ZBCurtain",
+    "nl": "Gordijn ZBCurtain",
+    "no": "Gardin ZBCurtain",
+    "pl": "Kurtyna ZBCurtain",
+    "ru": "Штора ZBCurtain"
   },
   "class": "curtain",
   "capabilities": [
@@ -35,16 +55,26 @@
           258,
           64599
         ],
-        "bindings": [
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/ZBCurtain/assets/learn.svg",
       "instruction": {
-        "en": "Press the button on side for aprox. 10 seconds until the LED blinks rapidly."
+        "en": "Press the button on side for aprox. 10 seconds until the LED blinks rapidly.",
+        "da": "Tryk på knappen på siden i ca. 10 sekunder, indtil LED'en blinker hurtigt.",
+        "de": "Drücken Sie den Knopf an der Seite für ca. 10 Sekunden, bis die LED schnell blinkt.",
+        "es": "Presione el botón en el lado durante aprox. 10 segundos hasta que el LED parpadee rápidamente.",
+        "fr": "Appuyez sur le bouton sur le côté pour aprox. 10 secondes jusqu’à ce que la LED clignote rapidement.",
+        "it": "Premere il pulsante sul lato per circa. 10 secondi fino a quando il LED lampeggia rapidamente.",
+        "ko": "측면에 있는 버튼을 눌러 앞당깁니다. LED가 빠르게 깜박일 때까지 10초 동안 기다립니다.",
+        "nl": "Druk op de knop aan de zijkant voor ongeveer. 10 seconden totdat de LED snel knippert.",
+        "no": "Trykk på knappen på siden i ca. 10 sekunder til LED-lampen blinker raskt.",
+        "pl": "Naciśnij przycisk z boku, aby uzyskać odpowiednio. 10 sekund, aż dioda LED zacznie szybko migać.",
+        "ru": "Нажмите кнопку сбоку для прибл. 10 секунд, пока светодиод не начнет быстро мигать.",
+        "sv": "Tryck på knappen på sidan för ca. 10 sekunder tills lysdioden blinkar snabbt."
       }
     }
   },
-  "$extends": ["defaults"]
+  "settings": []
 }
