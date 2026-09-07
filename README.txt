@@ -73,11 +73,21 @@ Support devices (grouped by the version each was added in):
 -Sonoff SNZB-02P  (Round thermometer)
 -Sonoff SNZB-02LD (Outdoor thermometer with probe — existed before v1.7.3)
 
---- v1.16.0 ---
+--- v1.15.1 ---
 -Sonoff MINI-ZBDIM (Smart dimmer)
 -Sonoff ZBMINI    (Switch)
 -Sonoff MINI-ZB1GS (Smart switch)
 -Sonoff MINI-ZB1GSP (Smart switch with power monitoring)
-
---- v1.17.0 ---
 -Sonoff MINI-ZBD  (Dry-contact switch)
+
+Changelog (fixes, not new devices)
+-----------------------------------
+
+--- v1.15.1 ---
+-Added MINI-ZBDIM, ZBMINI, MINI-ZB1GS and MINI-ZB1GSP. Fixed power/voltage/current readings on S60ZBTPF and MINI-ZBDIM (wrong cluster). Added calibration, delayed power-on and power-protector support where applicable. ZBMINIR2 now also matches MINI-ZBD (dry-contact relabel, same firmware). Restored real OTA firmware for 21 drivers.
+
+--- v1.15.2 ---
+-Zigbee attribute write rejections (e.g. MALFORMED_COMMAND, UNSUPPORTED_ATTRIBUTE) are now logged with the exact attribute name and reason, instead of being silently swallowed.
+
+--- v1.16.0 ---
+-Silenced harmless but noisy log errors from Sonoff scene buttons (e.g. SNZB-01M) using their remote-control feature (group/identify/on-off commands to other devices), which no driver handled. Removed a validation warning on S60ZBTPF caused by a redundant energy setting (it only measures import, not export).

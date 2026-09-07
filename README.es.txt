@@ -73,11 +73,21 @@ Dispositivos de soporte (agrupados por la versión en la que se añadió cada un
 -Sonoff SNZB-02P  (Termómetro redondo)
 -Sonoff SNZB-02LD (Termómetro de exterior con sonda — existía antes de v1.7.3)
 
---- v1.16.0 ---
+--- v1.15.1 ---
 -Sonoff MINI-ZBDIM (Atenuador inteligente)
 -Sonoff ZBMINI    (Interruptor)
 -Sonoff MINI-ZB1GS (Interruptor inteligente)
 -Sonoff MINI-ZB1GSP (Interruptor inteligente con medición de energía)
-
---- v1.17.0 ---
 -Sonoff MINI-ZBD  (Interruptor de contacto seco)
+
+Changelog (correcciones, no dispositivos nuevos)
+--------------------------------------------------
+
+--- v1.15.1 ---
+-Añadidos MINI-ZBDIM, ZBMINI, MINI-ZB1GS y MINI-ZB1GSP. Corregida la lectura de potencia/voltaje/corriente en S60ZBTPF y MINI-ZBDIM (cluster incorrecto). Añadido soporte de calibración, encendido retardado y protector de energía donde aplica. ZBMINIR2 ahora también reconoce MINI-ZBD (misma placa, versión de contacto seco). Restaurado el firmware OTA real en 21 drivers.
+
+--- v1.15.2 ---
+-Los rechazos de escritura de atributos Zigbee (p.ej. MALFORMED_COMMAND, UNSUPPORTED_ATTRIBUTE) ahora quedan registrados con el nombre exacto del atributo y el motivo, en vez de silenciarse.
+
+--- v1.16.0 ---
+-Silenciados errores de log inofensivos pero repetitivos, causados por botones de escena Sonoff (p.ej. SNZB-01M) al usar su función de mando a distancia (comandos de grupo/identify/on-off hacia otros dispositivos), que ningún driver gestionaba. Eliminado un aviso de validación en S60ZBTPF causado por un ajuste de energía redundante (solo mide consumo, no exportación).
