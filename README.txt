@@ -2,6 +2,12 @@ Sonoff Zigbee
 
 The Homey App will add support for Sonoff devices.
 
+Fork of the original app by StyraHem — their last version published to
+GitHub was v1.7.0 (preserved on the "backup" branch). This fork continues
+from there with community-added device support and fixes.
+
+Current version: 1.16.1 (latest version published to this repository, master).
+
 Support devices (grouped by the version each was added in):
 
 --- v1.0.9 ---
@@ -95,5 +101,5 @@ Changelog (fixes, not new devices)
 --- v1.16.0 ---
 -Silenced harmless but noisy log errors from Sonoff scene buttons (e.g. SNZB-01M) using their remote-control feature (group/identify/on-off commands to other devices), which no driver handled. Removed a validation warning on S60ZBTPF caused by a redundant energy setting (it only measures import, not export).
 
---- v1.16.1 ---
+--- v1.16.1 (latest published) ---
 -Added SNZB-09P (siren): activate/cancel via on/off, sound/light/volume/duration presets as settings, tamper alarm and battery. Built from documentation only, not yet verified against real hardware.

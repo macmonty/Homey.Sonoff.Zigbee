@@ -2,11 +2,15 @@
 
 Homey app adding support for SONOFF Zigbee devices.
 
-**Current version: 1.16.1**
+Fork of the original app by StyraHem — their last version published to
+GitHub was **v1.7.0** (preserved on the [`backup`](https://github.com/macmonty/Homey.Sonoff.Zigbee/tree/backup) branch). This fork
+continues from there with community-added device support and fixes.
+
+**Current version: 1.16.1** — latest version published to this repository (`master`).
 
 ## Changelog (fixes)
 
-- **v1.16.1** — Added SNZB-09P (siren): activate/cancel via on/off, sound/light/volume/duration presets as settings, tamper alarm and battery. Built from documentation only, not yet verified against real hardware.
+- **v1.16.1** (latest published) — Added SNZB-09P (siren): activate/cancel via on/off, sound/light/volume/duration presets as settings, tamper alarm and battery. Built from documentation only, not yet verified against real hardware.
 - **v1.16.0** — Silenced harmless but noisy log errors from Sonoff scene buttons (e.g. SNZB-01M) using their remote-control feature (group/identify/on-off commands to other devices), which no driver handled. Removed a validation warning on S60ZBTPF caused by a redundant energy setting (it only measures import, not export).
 - **v1.15.2** — Zigbee attribute write rejections (e.g. `MALFORMED_COMMAND`, `UNSUPPORTED_ATTRIBUTE`) are now logged with the exact attribute name and reason, instead of being silently swallowed.
 - **v1.15.1** — Added MINI-ZBDIM, ZBMINI, MINI-ZB1GS and MINI-ZB1GSP. Fixed power/voltage/current readings on S60ZBTPF and MINI-ZBDIM (wrong cluster). Added calibration, delayed power-on and power-protector support where applicable. ZBMINIR2 now also matches MINI-ZBD (dry-contact relabel, same firmware). Restored real OTA firmware for 21 drivers.
