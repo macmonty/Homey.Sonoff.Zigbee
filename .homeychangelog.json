@@ -10,5 +10,9 @@
   "1.16.0": {
     "en": "Silenced harmless but noisy log errors from Sonoff scene buttons (e.g. SNZB-01M) using their remote-control feature (group/identify/on-off commands to other devices), which no driver handled. Removed a validation warning on S60ZBTPF caused by a redundant energy setting (it only measures import, not export).",
     "es": "Silenciados errores de log inofensivos pero repetitivos, causados por botones de escena Sonoff (p.ej. SNZB-01M) al usar su función de mando a distancia (comandos de grupo/identify/on-off hacia otros dispositivos), que ningún driver gestionaba. Eliminado un aviso de validación en S60ZBTPF causado por un ajuste de energía redundante (solo mide consumo, no exportación)."
+  },
+  "1.16.1": {
+    "en": "Added SNZB-09P (Wi-Fi/Zigbee siren): activate/cancel via on/off, sound/light/volume/duration presets as settings, tamper alarm and battery. Built from documentation only, not yet verified against real hardware.",
+    "es": "Añadido soporte para SNZB-09P (sirena): activar/cancelar mediante on/off, preajustes de sonido/luz/volumen/duración como ajustes, alarma de manipulación y batería. Implementado a partir de documentación, todavía sin verificar contra un dispositivo real."
   }
 }

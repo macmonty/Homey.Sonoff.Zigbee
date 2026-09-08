@@ -1,0 +1,145 @@
+{
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/SNZB-09P/assets/images/large.png",
+    "small": "/drivers/SNZB-09P/assets/images/small.png"
+  },
+  "name": {
+    "en": "Siren SNZB-09P",
+    "es": "Sirena SNZB-09P"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "alarm_tamper",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR123A"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "SONOFF",
+      "eWeLink"
+    ],
+    "productId": [
+      "SNZB-09P"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          64529
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/SNZB-09P/assets/learn.svg",
+      "instruction": {
+        "en": "Press and hold the button for approx 5 seconds until the LED blinks rapidly.",
+        "es": "Mantén presionado el botón durante aproximadamente 5 segundos hasta que el LED parpadee rápidamente."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "alarm_sound_enable",
+      "type": "checkbox",
+      "label": {
+        "en": "Sound enabled",
+        "es": "Sonido activado"
+      },
+      "hint": {
+        "en": "Whether the siren plays a sound when activated.",
+        "es": "Si la sirena reproduce sonido al activarse."
+      },
+      "value": true
+    },
+    {
+      "id": "alarm_light_enable",
+      "type": "checkbox",
+      "label": {
+        "en": "Light enabled",
+        "es": "Luz activada"
+      },
+      "hint": {
+        "en": "Whether the siren's light flashes when activated.",
+        "es": "Si la luz de la sirena parpadea al activarse."
+      },
+      "value": true
+    },
+    {
+      "id": "alarm_sound_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Sound preset",
+        "es": "Preajuste de sonido"
+      },
+      "hint": {
+        "en": "Sound preset played when the siren is activated. The device only labels these as presets 0-9, without further description.",
+        "es": "Preajuste de sonido reproducido al activar la sirena. El propio dispositivo solo los identifica como preajustes 0-9, sin más descripción."
+      },
+      "value": "0",
+      "values": [
+        { "id": "0", "label": { "en": "Preset 0", "es": "Preajuste 0" } },
+        { "id": "1", "label": { "en": "Preset 1", "es": "Preajuste 1" } },
+        { "id": "2", "label": { "en": "Preset 2", "es": "Preajuste 2" } },
+        { "id": "3", "label": { "en": "Preset 3", "es": "Preajuste 3" } },
+        { "id": "4", "label": { "en": "Preset 4", "es": "Preajuste 4" } },
+        { "id": "5", "label": { "en": "Preset 5", "es": "Preajuste 5" } },
+        { "id": "6", "label": { "en": "Preset 6", "es": "Preajuste 6" } },
+        { "id": "7", "label": { "en": "Preset 7", "es": "Preajuste 7" } },
+        { "id": "8", "label": { "en": "Preset 8", "es": "Preajuste 8" } },
+        { "id": "9", "label": { "en": "Preset 9", "es": "Preajuste 9" } }
+      ]
+    },
+    {
+      "id": "alarm_volume_level",
+      "type": "dropdown",
+      "label": {
+        "en": "Volume",
+        "es": "Volumen"
+      },
+      "value": "1",
+      "values": [
+        { "id": "0", "label": { "en": "Low", "es": "Bajo" } },
+        { "id": "1", "label": { "en": "Medium", "es": "Medio" } },
+        { "id": "2", "label": { "en": "High", "es": "Alto" } },
+        { "id": "3", "label": { "en": "Highest", "es": "Máximo" } }
+      ]
+    },
+    {
+      "id": "alarm_duration",
+      "type": "number",
+      "label": {
+        "en": "Duration",
+        "es": "Duración"
+      },
+      "hint": {
+        "en": "How long the siren sounds when activated. Range: 1 - 900 seconds.",
+        "es": "Cuánto tiempo suena la sirena al activarse. Rango: 1 - 900 segundos."
+      },
+      "value": 60,
+      "attr": {
+        "min": 1,
+        "max": 900,
+        "step": 1
+      },
+      "units": {
+        "en": "s",
+        "es": "s"
+      }
+    }
+  ]
+}

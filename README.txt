@@ -80,6 +80,9 @@ Support devices (grouped by the version each was added in):
 -Sonoff MINI-ZB1GSP (Smart switch with power monitoring)
 -Sonoff MINI-ZBD  (Dry-contact switch)
 
+--- v1.16.1 ---
+-Sonoff SNZB-09P  (Siren)
+
 Changelog (fixes, not new devices)
 -----------------------------------
 
@@ -91,3 +94,6 @@ Changelog (fixes, not new devices)
 
 --- v1.16.0 ---
 -Silenced harmless but noisy log errors from Sonoff scene buttons (e.g. SNZB-01M) using their remote-control feature (group/identify/on-off commands to other devices), which no driver handled. Removed a validation warning on S60ZBTPF caused by a redundant energy setting (it only measures import, not export).
+
+--- v1.16.1 ---
+-Added SNZB-09P (siren): activate/cancel via on/off, sound/light/volume/duration presets as settings, tamper alarm and battery. Built from documentation only, not yet verified against real hardware.

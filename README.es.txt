@@ -80,6 +80,9 @@ Dispositivos de soporte (agrupados por la versión en la que se añadió cada un
 -Sonoff MINI-ZB1GSP (Interruptor inteligente con medición de energía)
 -Sonoff MINI-ZBD  (Interruptor de contacto seco)
 
+--- v1.16.1 ---
+-Sonoff SNZB-09P  (Sirena)
+
 Changelog (correcciones, no dispositivos nuevos)
 --------------------------------------------------
 
@@ -91,3 +94,6 @@ Changelog (correcciones, no dispositivos nuevos)
 
 --- v1.16.0 ---
 -Silenciados errores de log inofensivos pero repetitivos, causados por botones de escena Sonoff (p.ej. SNZB-01M) al usar su función de mando a distancia (comandos de grupo/identify/on-off hacia otros dispositivos), que ningún driver gestionaba. Eliminado un aviso de validación en S60ZBTPF causado por un ajuste de energía redundante (solo mide consumo, no exportación).
+
+--- v1.16.1 ---
+-Añadido soporte para SNZB-09P (sirena): activar/cancelar mediante on/off, preajustes de sonido/luz/volumen/duración como ajustes, alarma de manipulación y batería. Implementado a partir de documentación, todavía sin verificar contra un dispositivo real.

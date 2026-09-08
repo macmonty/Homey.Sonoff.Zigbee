@@ -12,6 +12,7 @@ changelog de usuario (eso vive en `.homeychangelog.json` / README).
 - [Tipos ZCL construidos a mano](#tipos-zcl-construidos-a-mano)
 - [Sesión 2026-09-06 — dispositivos añadidos/modificados](#sesión-2026-09-06--dispositivos-añadidosmodificados)
 - [Sesión 2026-09-07 — SNZB-01M no reportaba pulsaciones](#sesión-2026-09-07--snzb-01m-no-reportaba-pulsaciones)
+- [Sesión 2026-09-08 — SNZB-09P (sirena) añadido](#sesión-2026-09-08--snzb-09p-sirena-añadido)
 
 ---
 
@@ -419,3 +420,70 @@ la "default response" ZCL genérica. No se ha aplicado ningún fix para esto en
 `SNZB-01M` porque no era la causa del problema (el dispositivo nunca llegó a
 mandar `checkIn` en las pruebas), pero queda anotado por si aparece en otro
 dispositivo sleepy de esta app.
+
+---
+
+## Sesión 2026-09-08 — SNZB-09P (sirena) añadido
+
+Nuevo driver, añadido **sin hardware real para probar** — implementado a
+partir de la documentación de
+[zigbee2mqtt](https://www.zigbee2mqtt.io/devices/SNZB-09P.html) y del PR real
+que le dio soporte en zigbee-herdsman-converters
+([Koenkk/zigbee-herdsman-converters#12337](https://github.com/Koenkk/zigbee-herdsman-converters/pull/12337)).
+Antes de dar por bueno el emparejamiento con un dispositivo físico, revisar
+los puntos marcados como asunción a continuación.
+
+**Cluster:** reutiliza `customClusterEwelink` = `0xFC11` (64529), el mismo
+cluster que ya teníamos como `lib/SonoffCluster.js` (compartido con
+MINI-ZBDIM, MINI-ZB1GSP, S60ZBTPF, etc.). Se añadieron sus atributos y
+comando propios a ese fichero compartido, no un cluster nuevo:
+
+- `power_supply_mode` (`0x0024`, uint8): 0=batería, 1=externa. Solo lectura,
+  no expuesto como capability (informativo).
+- `alarm_sound_enable` (`0x2026`, bool), `alarm_light_enable` (`0x2022`,
+  bool), `alarm_sound_type` (`0x2023`, uint8, 0-9), `alarm_volume_level`
+  (`0x2024`, uint8: 0=low/1=medium/2=high/3=highest), `alarm_duration`
+  (`0x2025`, uint16, segundos 1-900): configuración de la sirena, expuesta
+  como **settings** del driver (no capabilities) — se leen en el momento de
+  activar la sirena, no se empujan al dispositivo de forma proactiva.
+- `tamper` (`0x2000`, uint8): **reutiliza el atributo `tamper` que ya
+  existía** en `SonoffCluster.js` (mismo id, ya usado por `SNZB-04P`) — en
+  la documentación de z2m aparece como `spilt`, pero es el mismo id/tipo.
+
+**Comando `alertCommand` (`0x0f`, manufacturer-specific):** no es un simple
+atributo — es un comando con un buffer de bytes crudos, **bidireccional**:
+- Para activar: `[0x02, 0x00, voice, light, alertSound, volume,
+  durationLow, durationHigh, 0x00]` (`SonoffCluster.createAlertPayload()`).
+- Para cancelar: `[0x01]` (`SonoffCluster.createCancelAlertPayload()`).
+- El dispositivo **también manda el mismo comando hacia nosotros** cuando el
+  estado cambia (activado a mano, por escena, o cancelado) — `data[1]` = 0
+  (ninguno), 1 (manual) o 2 (escena). Por eso `device.js` registra un
+  `BoundCluster` (`SirenAlertBoundCluster`) con un método `alertCommand()`,
+  igual que `PushButtonBoundCluster` en `drivers/SNZB-01/device.js` hace con
+  `onOff` — mismo patrón, comando distinto.
+
+**Capabilities:** `onoff` (activa/cancela la sirena), `alarm_tamper`
+(estándar de Homey), `measure_battery` (vía `powerConfiguration`, igual que
+el resto de sensores de esta app — sin necesidad de nada especial).
+
+**Asunciones sin verificar contra hardware real (revisar en el primer
+emparejamiento):**
+- `manufacturerName`: el PR de zigbee-herdsman-converters no incluye un
+  `fingerprint` explícito con manufacturerName para este dispositivo (usa
+  fallback genérico). Puse `["SONOFF", "eWeLink"]` en
+  `driver.compose.json` cubriendo ambas variantes que usan otros drivers de
+  esta app (`SNZB-02DR2` usa `SONOFF`, `SNZB-04P` usa `eWeLink`), pero no
+  está confirmado cuál usa el `SNZB-09P` real.
+- Lista de `clusters`/`endpoints` (`0, 1, 3, 64529` en endpoint 1): inferida
+  por analogía con `SNZB-04P` (sensor de batería con el mismo cluster
+  propietario), no hay log de interview real de este modelo.
+- **Assets**: `large.png`/`small.png` ya son fotos reales del producto
+  (aportadas por el usuario, 500×500/75×75 — tamaño correcto sin necesidad
+  de redimensionar). `icon.svg`/`learn.svg` siguen siendo la copia
+  provisional de `SNZB-06P` (silueta vectorial, no hay una real todavía).
+
+**Versión:** `1.16.1` — entrada añadida en `.homeychangelog.json` y README
+(en/es), siguiendo la convención de minor bump para dispositivo nuevo. Ojo:
+el `version` real vive en `.homeycompose/app.json` (Homey Compose regenera
+`app.json` a partir de ahí en cada `validate`/`run` — editar `app.json`
+directamente no persiste).

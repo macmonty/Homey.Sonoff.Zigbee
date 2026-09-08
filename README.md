@@ -2,10 +2,11 @@
 
 Homey app adding support for SONOFF Zigbee devices.
 
-**Current version: 1.16.0**
+**Current version: 1.16.1**
 
 ## Changelog (fixes)
 
+- **v1.16.1** — Added SNZB-09P (siren): activate/cancel via on/off, sound/light/volume/duration presets as settings, tamper alarm and battery. Built from documentation only, not yet verified against real hardware.
 - **v1.16.0** — Silenced harmless but noisy log errors from Sonoff scene buttons (e.g. SNZB-01M) using their remote-control feature (group/identify/on-off commands to other devices), which no driver handled. Removed a validation warning on S60ZBTPF caused by a redundant energy setting (it only measures import, not export).
 - **v1.15.2** — Zigbee attribute write rejections (e.g. `MALFORMED_COMMAND`, `UNSUPPORTED_ATTRIBUTE`) are now logged with the exact attribute name and reason, instead of being silently swallowed.
 - **v1.15.1** — Added MINI-ZBDIM, ZBMINI, MINI-ZB1GS and MINI-ZB1GSP. Fixed power/voltage/current readings on S60ZBTPF and MINI-ZBDIM (wrong cluster). Added calibration, delayed power-on and power-protector support where applicable. ZBMINIR2 now also matches MINI-ZBD (dry-contact relabel, same firmware). Restored real OTA firmware for 21 drivers.
@@ -33,6 +34,7 @@ Homey app adding support for SONOFF Zigbee devices.
 | v1.14.0 | DUO — separate channels driver |
 | v1.15.0 | DUO-L — separate channels driver, ZBM5 (Wall switch, 1/2/3-channel — separate channel drivers added) |
 | v1.15.1 | MINI-ZBDIM (Smart dimmer), ZBMINI (Switch), MINI-ZB1GS (Smart switch), MINI-ZB1GSP (Smart switch with power monitoring), MINI-ZBD (Dry-contact switch) |
+| v1.16.1 | SNZB-09P (Siren) |
 | *(exact version not recorded)* | SNZB-01 (Square button), SNZB-01P (Round button), SNZB-02P (Round thermometer), SNZB-02LD (Outdoor thermometer with probe — existed before v1.7.3) |
 
 > Note: version numbers were renumbered during development to align with the actual App Store release line (starting at v1.15.0). Both tables above use the current, consistent numbering.
